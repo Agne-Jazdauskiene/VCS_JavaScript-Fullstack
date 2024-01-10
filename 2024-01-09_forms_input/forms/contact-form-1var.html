@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact form 1 var.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #df37ad;
+
+      /* spalva per visą ekrano aukštį */
+      height: 100vh;
+
+      /* išcentruoja elementą-conteinerį- ir horizontaliai, ir vertikaliai */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .conteiner {
+      max-width: 100%;
+      width: 350px;
+      background-color: #fff;
+      text-align: center;
+      padding: 35px 25px 35px;
+    }
+
+    .login-signup {
+      width: 100%;
+      margin-bottom: 20px;
+      height: 40px;
+      /* flex naudojamas sustatyti inline elementus vieną šalia kito. 
+      Tuomet abiejuose elementuose žymiu width: 50%  */
+      /* sustatau abu mygtukus vieną šalia kito */
+      display: flex;
+
+    }
+
+    .login {
+      background-color: #df37ad;
+      color: #fff;
+      font-weight: 500;
+      text-decoration: none;
+
+      /* nes tėviniame elemente width: 100% */
+      width: 50%;
+      padding: 8px;
+    }
+
+    .signup {
+      border: 1px solid #949494;
+      color: #333;
+      font-weight: 500;
+      text-decoration: none;
+      background-color: #fff;
+
+      /* nes tėviniame elemente width: 100% */
+      width: 50%;
+      padding: 8px;
+    }
+
+    h1 {
+      margin-bottom: 25px;
+    }
+
+    input {
+      height: 40px;
+      width: 100%;
+      padding-left: 10px;
+
+    }
+
+    .email {
+      margin-bottom: 15px;
+    }
+
+    .input-password {
+      margin-bottom: 4px;
+    }
+
+    .password {
+      color: #df37ad;
+      text-align: left;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #df37ad;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      width: 100%;
+      height: 40px;
+      /* border: 1px solid #949494; */
+      border: none;
+      margin-bottom: 30px;
+    }
+
+    .member-signup {
+      font-size: 13px;
+    }
+
+    .member-signup a {
+      text-decoration: none;
+      color: #df37ad;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form class="conteiner">
+
+    <h1>Login Form</h1>
+
+    <div class="login-signup">
+      <a href="#" class="login">Login</a>
+      <a href="#" class="signup">Signup</a>
+    </div>
+
+    <div class="email">
+      <input type="text" placeholder="Email Address">
+    </div>
+
+    <div class="input-password">
+      <input type="password" placeholder="Password">
+    </div>
+
+    <p class="password">Forgot password?</p>
+
+    <button>Login</button>
+
+    <div class="member-signup">
+      <span>Not a member?</span>
+      <a href="#">Signup now</a>
+    </div>
+
+
+  </form>
+</body>
+
+</html>

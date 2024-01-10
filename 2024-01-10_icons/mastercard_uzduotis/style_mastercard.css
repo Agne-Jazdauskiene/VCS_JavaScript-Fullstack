@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: rgb(190, 233, 250);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.conteiner {
+  width: 650px;
+  background-color: #fff;
+  padding: 40px 25px 25px 25px;
+}
+
+button {
+  background-color: #3a75f5;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+  height: 40px;
+  border: none;
+}
+
+.box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 26px;
+}
+
+.box-last {
+  margin-bottom: 60px;
+}
+
+.input-big {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cac9c9;
+  margin-bottom: 26px;
+}
+
+.left {
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  border: none;
+  height: 38px;
+  text-align: center;
+  font-size: 12px;
+}
+
+img {
+  height: 26px;
+  margin: 0 10px;
+}
+
+.box-input-small {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.input-medium {
+  width: 50%;
+  height: 40px;
+  border: 1px solid #cac9c9;
+  display: flex;
+  align-items: center;
+}
+
+.cardholder {
+}
+
+.input-small {
+  height: 40px;
+  border: 1px solid #cac9c9;
+  display: flex;
+  justify-content: center;
+}
+
+h4,
+p {
+  font-size: 12px;
+}
+
+span {
+  display: block;
+}
+
+p {
+  color: #999;
+}
+
+.edit-link {
+  text-decoration: none;
+  color: #3a75f5;
+}
+
+.bi-pencil {
+  color: #3a75f5;
+  font-size: 12px;
+}
+
+.text {
+  width: 50%;
+}
+
+.bi-eye,
+.bi-person {
+  padding-right: 6px;
+}
+
+/* input::placeholder {
+  font-weight: 600;
+  color: red;
+} */

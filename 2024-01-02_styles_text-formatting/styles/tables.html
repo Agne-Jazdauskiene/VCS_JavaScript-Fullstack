@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables</title>
+  <style>
+    table {
+      /* rgb{}, hex su # */
+      /* border savybei perduodamos trys reikšmės: storis, stilius ir spalva */
+      /* border savybė apgliaubia elementų kra6tine iš visų keturių pusių */
+      border-left: 1px solid #000;
+      border-top: 1px solid #000;
+      /* panaikina-sulieja tarpelius tarp eilučių ir stulpelių */
+      border-collapse: collapse;
+    }
+
+    th {
+      /* border-top
+      border-left
+      border-right
+      border-bottom */
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+
+      background-color: aqua;
+    }
+
+    td {
+      border-right: 1px solid #000;
+      border-bottom: 1px solid #000;
+    }
+
+    /* klasės selektorius */
+    .pastorinimas {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- table elementas nurodo lentelę -->
+  <table>
+    <!-- lentelės antraštė -->
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Produktas</th>
+        <th>Kiekis</th>
+      </tr>
+    </thead>
+
+    <!-- lentelės turinys -->
+    <tbody>
+      <!-- table row -->
+      <!-- table data -->
+      <tr>
+        <td>1</td>
+        <td>Televizorius</td>
+        <td>15</td>
+      </tr>
+
+
+      <tr>
+        <td>2</td>
+        <td>Kompiuteris</td>
+        <td>2</td>
+      </tr>
+    </tbody>
+
+    <!-- lentelės pabaiga -->
+    <tfoot>
+
+    </tfoot>
+  </table>
+
+  <table class="pastorinimas">
+    <tbody>
+      <tr>
+        <!-- colspan nurodo per kiek stulpelių turėtų būti ištemptas pasirinktas -->
+        <td colspan="2">1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <!-- rowspan atlieka tą patį tik su eilutėmis -->
+        <td rowspan="2">7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+
+      </tr>
+    </tbody>
+  </table>
+  </tbody>
+
+
+
+
+
+  </table>
+</body>
+
+</html>

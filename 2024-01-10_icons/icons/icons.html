@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap icons</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    .custom-style {
+      font-size: 100px;
+      color: blueviolet;
+      /* bold neveiks, nes icona jau sudeliota */
+      /* border: 1px solid purple; kvadraciukas  apie icona */
+    }
+
+    h1::before {
+      content: "\F67E";
+      /* paimu koda is iconu psl prie tos iconos */
+      font-family: bootstrap-icons;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <i class="bi bi-yin-yang custom-style"></i>
+  <h1>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur, necessitatibus.</h1>
+</body>
+
+</html>

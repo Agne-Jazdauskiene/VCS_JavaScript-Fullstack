@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo elements</title>
+  <style>
+    h1::before {
+      /* content b8rinai turi buri "" */
+      /* gali buti ir kitu savybiu, ne tik content */
+      content: "Antraštė: ";
+      background-color: tomato;
+      color: aliceblue;
+      display: block;
+      padding: 10px 20px;
+      /* visos tos pacios savybes */
+    }
+
+    h1::after {
+      content: "Antraštės pabaiga";
+      background-color: green;
+      color: aliceblue;
+      display: block;
+      padding: 10px 20px;
+    }
+
+    body::after {
+      content: "";
+      width: 100px;
+      height: 100px;
+      display: block;
+      background-color: coral;
+      /* padaroma tiesiiai iš CSS, o turinio htmle nėra */
+      /* labai patogu, nei kurti htmle tuščius elementus */
+    }
+
+    div {
+      width: 50px;
+      height: 50px;
+      background-color: black;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic, atque?</h1>
+  <h2>
+    <div></div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, cumque.
+  </h2>
+</body>
+
+
+</html>

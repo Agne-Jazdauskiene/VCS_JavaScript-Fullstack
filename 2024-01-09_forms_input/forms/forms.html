@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <style>
+    /* kad visi elementai būtų blokiniai elementai ir eilutės nebūtų susiplakusios */
+    label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    input {
+      display: block;
+      /* width: 100%; */
+      width: 200px;
+      /* blogai gaunasi */
+      border: 1px solid #777;
+      padding: 10px 20px;
+      background-color: azure;
+    }
+
+    /* selektorius skirtas norint i6filtruoti element1 pagal atribut1 ir jo reik6m3 */
+    input[type="checkbox"] {
+      width: unset;
+      display: inline;
+      /* checkbox radio kvadratėlių neišeis labai stilizuoti, minimliai, jie generuojami automatiškai */
+    }
+
+    input[type="radio"] {
+      width: unset;
+      display: inline;
+    }
+
+    select {
+      /* irgi nelabai stilizuojama */
+      width: 100%;
+      border: 1px solid #777;
+      padding: 10px 20px;
+      background-color: azure;
+    }
+
+    textarea {
+      width: 100%;
+      height: 100px;
+      resize: none;
+      /* išimam galimybę keisti to langelio dydį, kad varatotojai netampytų to langelio */
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- galima formas atvaziduoti ir be sio form tago. tačiau jis turi savo unikalų funkcionalumą -->
+  <form>
+    <!-- input = laukelis -->
+    <!-- type atributas nurodo laukelio turinio tipą  -->
+    <!-- text =  tekstinis laukelis priimantis visus simbolius -->
+    <!-- input laukelis yra inline tipo  -->
+    <div>
+      <input type="text">
+    </div>
+    <div>
+      <!-- label elementas skirtas nrodyti laukelio turinį vartotojui -->
+      <label>Jūsų vardas:</label>
+      <input type="text">
+    </div>
+    <div>
+      <!-- placeholder atributas yra išnykstantis tekstas iš laukelio vidaus pradedant rašyti -->
+      <input type="text" placeholder="Jūsų vardas">
+    </div>
+    <div>
+      <label>Jūsų vardas:</label>
+      <input type="text" placeholder="Jonas Jonaitis">
+
+    </div>
+    <div>
+      <!-- password tipas paslepia vedamą tekstą -->
+      <label>Slaptažodis</label>
+      <input type="password">
+    </div>
+    <div>
+      <!-- daugiau pasiskaityti variantus -->
+      <label>Jūsų amžius</label>
+      <input type="number">
+    </div>
+    <div>
+      <label>Pasirinkite spalvą</label>
+      <input type="color">
+    </div>
+    <div>
+      <label>Pasirinkite spalvą iš sarašo</label>
+      <input type="color" list="spalvos">
+      <datalist id="spalvos">
+        <option value="#212529">Pirma</option>
+        <option value="#f1f1f1">Antra</option>
+      </datalist>
+    </div>
+    <div>
+      <label>Datos pasirinkimas</label>
+      <input type="date">
+    </div>
+    <div>
+      <!-- neveikia kazkodel -->
+      <label>Datos ir laiko pasirinkimas</label>
+      <input type="datetime">
+    </div>
+    <div>
+      <input type="datetime-local">
+    </div>
+    <div>
+      <label>Failo pasirinkimas</label>
+      <input type="file">
+    </div>
+    <div>
+      <!-- veikia taip pat kaip ir failo pasirink -->
+      <label>Kelių failų pasirinkimas</label>
+      <input type="file" multiple>
+    </div>
+    <div>
+      <label>Priskirta reikšmė</label>
+      <input type="text" value="Prieš tai buvusi reikšmė">
+    </div>
+    <div>
+      <!-- jei nepasirinkome spalvos, tai laukelis neaktyvuojamas, kai pasirenkame- aktyvuojamas -->
+      <label>Išjungti laukeliai</label>
+      <input type="text" value="https://google.com" disabled>
+    </div>
+    <div>
+      <!-- neredaguojamas laukelis -->
+      <label>Neredaguojami laukeliai</label>
+      <input type="text" value="https://google.com" readonly>
+    </div>
+    <div>
+      <!-- varnelei uždėti  -->
+      <input type="checkbox">
+    </div>
+    <div>
+      <!-- varnelė neužsidės jei ant teksto spausiu  -->
+      <input type="checkbox">
+      <label>Sutinku su vartojimo politika</label>
+    </div>
+    <div>
+      <!-- varnelė užsidės spaudžiant ant teksto - <label> apglaubiu tekstą </label>  -->
+      <label>
+        <input type="checkbox">
+        Sutinku su vartojimo politik
+      </label>
+    </div>
+    <div>
+
+      <input type="checkbox" id="naujienlaiškis">
+      <label for="naujienlaiškis">Sutinku gauti naujienlaiškį</label>
+    </div>
+    <div>
+      <!-- kad pasirinktumėm vieną iš kelių variantų -->
+      <input type="radio">
+      <input type="radio">
+      <input type="radio">
+      <input type="radio">
+
+    </div>
+    <h4>Pasirinkite dominančią temą</h4>
+    <div>
+      <!-- kad pasirinktumėm vieną iš kelių variantų -->
+      <!-- bet pasirenkami visi 4 var. jei nenaud name -->
+      <label>
+        <input type="radio">
+        Sąskaitos
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio">
+        Dakaras
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio">
+        Naujų paslaugų užsakymas
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio">
+        Atsiliepimas
+      </label>
+    </div>
+
+    <h4>Pasirinkite dominančią temą</h4>
+    <div>
+      <!-- kad pasirinktumėm vieną iš kelių variantų -->
+      <!-- pasirinkimas tik vienas iš keturių variantų -->
+      <label>
+        <input type="radio" name="topic">
+        Sąskaitos
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="topic">
+        Dakaras
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="topic">
+        Naujų paslaugų užsakymas
+      </label>
+    </div>
+    <div>
+      <label>
+        <input type="radio" name="topic">
+        Atsiliepimas
+      </label>
+      <!-- radio rečiau sutinkamas jau -->
+      <div>
+        <!-- dažniausiai naudojama -->
+        <h4>Pasirinkite paštomatą</h4>
+        <select>
+          <!-- value g.b. naudojamas, bet vizualiai jis nieko nedaro, ateityje reikės -->
+          <option>Sapiegos g. 12, Kaunas</option>
+          <option>Klaipėda</option>
+          <option>Vilnius maxima</option>
+          <option>Sapiegos g. 12, Kaunas</option>
+        </select>
+      </div>
+      <div>
+        <!-- jei norime parašyti tekstą per klaias eilutes -->
+        <label>Jūsų žinutė</label>
+        <textarea></textarea>
+      </div>
+      <div>
+        <!-- mygtukas -->
+        <button>Siųsti</button>
+      </div>
+  </form>
+
+
+</body>
+
+</html>

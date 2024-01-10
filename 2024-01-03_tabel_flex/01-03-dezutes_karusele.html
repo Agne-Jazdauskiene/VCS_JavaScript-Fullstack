@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01-02-03-dėžutės</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #192123;
+      height: 100vh;
+      /* width: 100%; */
+      display: flex;
+      justify-content: center;
+      /* align-items: center; */
+    }
+
+    .container {
+      /* width: 900px; */
+      display: flex;
+      flex-wrap: wrap;
+      width: 550px;
+      justify-content: center;
+      align-content: center;
+      gap: 18px;
+      /* margin: 0 auto; */
+    }
+
+    .main {
+
+      /* display: flex;
+      align-items: center; */
+    }
+
+
+    .dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .boxes {
+      display: flex;
+      gap: 30px;
+
+    }
+
+    .boxes p {
+      background-color: #4b5659;
+
+      padding: 80px 95px 0px 15px;
+    }
+
+    .dots p {
+      height: 8px;
+      width: 8px;
+      background-color: #95a5a6;
+    }
+
+    /* arba suteikti antrą klasę - active */
+    p:first-child {
+      background-color: #b4e900;
+    }
+
+    p {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #192123;
+      font-size: 46px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class="main"> -->
+  <div class="container">
+    <div class="boxes">
+      <!-- lektorius naudoja div boxams -->
+      <p>01</p>
+      <p>02</p>
+      <p>03</p>
+    </div>
+    <div class="dots">
+      <!-- lektorius naudoja div dots -->
+      <p></p>
+      <p></p>
+      <p></p>
+    </div>
+  </div>
+  <!-- </div> -->
+
+</body>
+
+</html>

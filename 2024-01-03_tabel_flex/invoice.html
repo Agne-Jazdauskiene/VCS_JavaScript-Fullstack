@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    thead {
+      text-transform: uppercase;
+      font-size: 28px;
+      color: #777;
+      text-align: left;
+      display: inline-block;
+      padding-bottom: 42px;
+    }
+
+    table {
+      /* width: 100%; */
+      /* border: 1px solid #555; */
+      width: 600px;
+      margin: 0 auto;
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; */
+
+      /* panaikina baltus brūkšnelius tarp stulpelių eilutėje su backgroundu */
+      border-collapse: collapse;
+    }
+
+    td {
+      /* border-right: 1px solid #555;
+      border-bottom: 1px solid #555; */
+      height: 28px;
+    }
+
+    .bill-ship {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .space-big {
+      height: 50px;
+    }
+
+    .space-small {
+      height: 30px;
+    }
+
+    .description {
+      text-transform: uppercase;
+      text-align: center;
+      background-color: #5485a0;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .subt-disc {
+      text-transform: uppercase;
+      text-align: right;
+    }
+
+    .bal-due {
+      font-weight: bold;
+      text-align: right;
+      font-size: 20px;
+    }
+
+    td:first-child {
+      width: 250px;
+    }
+
+    td:last-child {
+      /* width: 80px; */
+      /* greičiausiai neveikia, nes kažkur yra colspan panaudotas */
+    }
+
+    /* galima vienam td priskirti klasę su atitinkamu pločiu ir jis bus taikomas visam stulpeliui */
+    /* arba vietoje aprašyti <td style="width: 150px;"  */
+    .total-width {
+      width: 150px;
+    }
+
+    .date {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .sum {
+      background-color: #a5d8f3;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+
+    <tbody>
+      <thead>
+        <tr>
+          <th>invoice</th>
+        </tr>
+      </thead>
+
+      <tr>
+        <td>Your Company Name</td>
+        <td></td>
+        <td></td>
+        <td class="date">2023-06-16</td>
+      </tr>
+      <tr>
+        <td>123 Street Address</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr>
+        <td>City, State, Zip/Post Code</td>
+        <td></td>
+        <td></td>
+
+        <td class="date">20230616</td>
+      </tr>
+      <tr>
+        <td>Phone Number</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr>
+        <td>Email Address</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr class="space-big">
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+
+      <tr class="bill-ship">
+        <td>bill to</td>
+        <td>ship to</td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr class="space-small">
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr>
+        <td>Contact Name</td>
+        <td colspan="2">Name / Dept</td>
+        <td></td>
+
+
+      </tr>
+      <tr>
+        <td>Client Company Name</td>
+        <td colspan="2">Client Company Name</td>
+        <td></td>
+
+
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td colspan="2">Address</td>
+        <td></td>
+
+
+      </tr>
+      <tr>
+        <td>Phone, Email</td>
+        <td>Phone</td>
+        <td></td>
+        <td></td>
+
+      </tr>
+
+      <tr class="space-big">
+        <td>&nbsp;</td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+      </tr>
+      <tr class="description">
+        <td>description</td>
+        <td>qty</td>
+        <td>unit price</td>
+
+        <td class="total-width">total</td>
+        <!-- style="width: 80px;" -->
+      </tr>
+      <tr>
+        <td>Monitorius</td>
+        <td>10</td>
+        <td>100.99</td>
+        <td>1,009.9</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.00</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.00</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.00</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.00</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>0.00</td>
+
+      </tr>
+      <tr class="subt-disc">
+        <td></td>
+        <td></td>
+        <td>subtotal</td>
+
+        <td>1,009.9</td>
+      </tr>
+      <tr class="subt-disc">
+        <td></td>
+        <td></td>
+        <td>discount</td>
+
+        <td>0.00</td>
+      </tr>
+      <tr class="bal-due">
+        <td></td>
+        <td></td>
+        <td>Balance</td>
+        <td rowspan="2" class="sum">&#8364; 1,009.90</td>
+
+      </tr>
+      <tr class="bal-due">
+        <td></td>
+        <td></td>
+        <td>Due</td>
+        <td></td>
+        >
+      </tr>
+
+
+    </tbody>
+  </table>
+</body>
+
+</html>

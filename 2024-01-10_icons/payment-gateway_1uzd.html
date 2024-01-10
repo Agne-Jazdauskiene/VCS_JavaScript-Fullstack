@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Gateaway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Ubuntu', sans-serif;
+      background-color: #628dd6;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .conteiner {
+      max-width: 100%;
+      width: 340px;
+      background-color: #f7f5f5;
+      padding: 50px 25px 25px 25px;
+    }
+
+    input {
+      border: none;
+      text-align: center;
+
+
+      height: 40px;
+      width: 100%;
+      border-left: none;
+      background: none;
+    }
+
+    .input-big {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #777;
+      background-color: white;
+      padding-left: 8px;
+    }
+
+    .input-small {
+      height: 40px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border: 1px solid #777;
+      background-color: white;
+      padding-left: 8px;
+    }
+
+    .input-small-box {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+      color: #444;
+      font-size: 24px;
+    }
+
+    span {
+      font-size: 14px;
+      color: #444;
+      /* span el. yra inline, todėl jam neveikia margin */
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    button {
+      height: 35px;
+      width: 100%;
+      background-color: #628dd6;
+      color: #fff;
+      border: none;
+    }
+
+    .half {
+      width: 50%;
+    }
+
+    i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="conteiner">
+    <h1>Payment Gateway</h1>
+    <span>Card holder:</span>
+
+    <div class="input-big">
+      <i class="bi bi-person-fill"></i>
+      <input type="text" placeholder="Coding Market">
+    </div>
+
+    <span>Card number:</span>
+    <div class="input-big">
+      <i class="bi bi-credit-card"></i>
+      <input type="number" placeholder="Card Number">
+    </div>
+
+
+    <div class="input-small-box">
+      <div class="half">
+        <span>Expire date:</span>
+        <div class="input-small">
+          <i class="bi bi-calendar-date"></i>
+          <input type="text" placeholder="00 / 00">
+        </div>
+      </div>
+
+      <div class="half">
+        <span>CVC:</span>
+        <div class="input-small">
+          <i class="bi bi-lock-fill"></i>
+          <input type="number" placeholder="000">
+        </div>
+      </div>
+    </div>
+    <button>Pay</button>
+
+  </div>
+
+
+</body>
+
+</html>
