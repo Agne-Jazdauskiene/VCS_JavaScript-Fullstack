@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positions</title>
+  <style>
+    .box {
+      width: 250px;
+      height: 250px;
+    }
+
+    .purple {
+      background-color: purple;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .green {
+      background-color: green;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+
+    .absolute {
+      position: absolute;
+      /* atsiranda galimybė nurodyti dar 4 savybes */
+      /* visada prioritetas bus duodamas top ir left reikšmėms. jos visada ims vir67*/
+      /* top: 50;
+      left: 180;
+      right: 0;
+      bottom: 0; */
+    }
+
+    .top-left {
+      top: 100px;
+      left: 180px;
+    }
+
+    /* šitos nereaguoja */
+    .bottom-right {
+      /* norint nerašyti top ir left pozicijos, naudojame unset. Tada veikia bottom ir right */
+      top: unset;
+      left: unset;
+      bottom: 50px;
+      right: 50px;
+    }
+
+    /* yra daug skirtingų būdų, tai vienasa pvz */
+    .hidden-corner {
+      /* į kairę pusę galime slėpti elementą */
+      top: -50px;
+      left: -50px;
+
+      /* iš dešinės pusės mes jo nepaslėpsim, jis bus vis tiek matomas */
+      /* right: -50px;
+      bottom: -50px; */
+
+    }
+
+    /* nurodo absolute el. ribas */
+    .relative {
+      position: relative;
+      /* reliatyvus el. atsistumia nuo kraštų */
+      top: 100px;
+      left: 50px;
+    }
+
+    .parent {
+      width: 100%;
+      height: 500px;
+    }
+
+    .small-box {
+      width: 50px;
+      height: 50px;
+      top: 0;
+      left: 0;
+    }
+
+
+
+    .large box {}
+
+    span {
+      font-size: 80px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- position static, blokiniai elemenetai -->
+  <h1>Lorem, ipsum dolor.</h1>
+  <h1 style="margin-top: -58px;">Lorem ipsum dolor sit amet.</h1>
+  <h2>Lorem ipsum dolor sit. Illo, delectus vero. Reiciendis
+    i</h2>
+
+  <div class="box purple absolute top-left bottom-right"></div>
+  <div class="box orange absolute hidden-corner"></div>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit ullam impedit recusandae quisquam quos magni suscipit
+  officiis quo itaque nesciunt, voluptate accusamus laborum rerum iure debitis aliquid maxime neque culpa? Modi
+  recusandae nisi odit at, assumenda laudantium quod, enim laborum a velit obcaecati rerum libero fugit earum deserunt
+  doloribus. Ipsam.
+
+  <div class="relative green parent">
+    <div class="box blue absolute bottom-right">
+      <div class="small-box orange absolute top-left"></div>
+    </div>
+  </div>
+
+  <div class="relative parent orange">
+    <div class="blue large box">
+      <div class="box purple absolute bottom-right"><span>R</span></div>
+    </div>
+  </div>
+  <!-- ta pati taisyklė galiotų, jei absoliučiame elemente turėtume kitą abs. el. -->
+</body>
+
+</html>

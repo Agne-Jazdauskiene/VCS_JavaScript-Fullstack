@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.conteiner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.articles ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+img {
+  width: 100%;
+
+  /* tam, kad dog foto apačia lygiuotų su šoniniais elementais  */
+  height: 100%;
+  display: block;
+}
+
+.articles li {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.icon {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 95%;
+}
+
+.element {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  /* kad dog-vidurinis elementas apačioje lygiuotų su šonuose esančiais elementais */
+  flex-grow: 1;
+}
+
+.date {
+  color: #b1b1b1;
+}
+.icon-red {
+  background-color: #ff0000;
+  padding: 5px 15px;
+}
+
+.icon-blue {
+  background-color: #3939f7;
+
+  padding: 5px 15px;
+}
+
+.two-icons {
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 5px;
+  padding-bottom: 15px;
+}
+
+/* pritaikome prie įvairaus pločio ekranų, mažinant ekraną- stulpeliai krenta žemyn */
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+  }
+  .articles ul {
+    display: block;
+  }
+}

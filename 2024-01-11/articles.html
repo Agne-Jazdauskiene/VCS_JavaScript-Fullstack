@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles</title>
+  <style>
+    .conteiner {
+      max-width: 1100px;
+      margin: 0 auto;
+
+    }
+
+    .related-articles ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 20px;
+
+    }
+
+    .related-articles li {
+      width: 33.33333%;
+      position: relative;
+    }
+
+    img {
+      width: 100%;
+      /* kad dingtu tarpelis po img, nes img yra inline el. */
+      display: block;
+    }
+
+    .icon {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .relative {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="conteiner">
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quas quos illo, deserunt, quo alias libero,
+      modi esse ullam nesciunt quae laboriosam tempore id reiciendis eaque hic sint repellat eveniet non commodi. Ea
+      tempore ad molestias in tenetur aspernatur officia voluptatum deserunt nam consequatur nostrum corporis doloribus
+      eligendi vitae eius vel porro sequi mollitia debitis, magni consectetur. Aliquid laudantium tempore fuga iusto,
+      quisquam quasi, iste quos possimus nemo rerum molestiae modi ipsam totam natus vitae voluptas, ut quam officiis
+      exercitationem cupiditate. Quod minus, hic harum labore sint cumque illum. Officiis laborum reiciendis tenetur
+      adipisci suscipit impedit soluta minima dolores a enim et error sed voluptatibus explicabo, est minus aliquid
+      inventore obcaecati? Illo minima tenetur distinctio eaque doloremque quis dicta quo consequatur illum! Quo ipsum
+      laborum suscipit vel expedita facilis est saepe labore tenetur, laboriosam maxime dicta eveniet ipsam ducimus
+      veniam, esse, provident porro eligendi libero pariatur voluptatibus rem quisquam. Ducimus, impedit quas
+      praesentium harum iusto repellendus ad est necessitatibus qui, sit vero assumenda repudiandae, beatae earum
+      obcaecati. Illum recusandae vitae sunt aliquid, possimus repudiandae voluptatem optio quod impedit qui cupiditate
+      ab aliquam obcaecati cum consequatur. Temporibus sequi ut corporis maiores eveniet impedit dolores tempore,
+      eligendi porro voluptates perspiciatis ea praesentium?</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quas quos illo, deserunt, quo alias libero,
+      modi esse ullam nesciunt quae laboriosam tempore id reiciendis eaque hic sint repellat eveniet non commodi. Ea
+      tempore ad molestias in tenetur aspernatur officia voluptatum deserunt nam consequatur nostrum corporis doloribus
+      eligendi vitae eius vel porro sequi mollitia debitis, magni consectetur. Aliquid laudantium tempore fuga iusto,
+      quisquam quasi, iste quos possimus nemo rerum molestiae modi ipsam totam natus vitae voluptas, ut quam officiis
+      exercitationem cupiditate. Quod minus, hic harum labore sint cumque illum. Officiis laborum reiciendis tenetur
+      adipisci suscipit impedit soluta minima dolores a enim et error sed voluptatibus explicabo, est minus aliquid
+      inventore obcaecati? Illo minima tenetur distinctio eaque doloremque quis dicta quo consequatur illum! Quo ipsum
+      laborum suscipit vel expedita facilis est saepe labore tenetur, laboriosam maxime dicta eveniet ipsam ducimus
+      veniam, esse, provident porro eligendi libero pariatur voluptatibus rem quisquam. Ducimus, impedit quas
+      praesentium harum iusto repellendus ad est necessitatibus qui, sit vero assumenda repudiandae, beatae earum
+      obcaecati. Illum recusandae vitae sunt aliquid, possimus repudiandae voluptatem optio quod impedit qui cupiditate
+      ab aliquam obcaecati cum consequatur. Temporibus sequi ut corporis maiores eveniet impedit dolores tempore,
+      eligendi porro voluptates perspiciatis ea praesentium?</p>
+
+
+
+    <div class="related-articles">
+      <ul>
+        <li>
+          <div class="relative">
+            <!-- img yra inline tipo elementas, atsiranda po foto tarpelis -->
+            <img src="1suo.jpg" alt="">
+            <span class="icon">Tiesiogiai</span>
+          </div>
+          <h3>Lorem ipsum dolor sit amet.</h3>
+        </li>
+
+
+        <li>
+          <div class="relative">
+            <img src="1suo.jpg" alt="">
+            <span class="icon">Tiesiogiai</span>
+          </div>
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias?</h3>
+        </li>
+
+
+        <li>
+          <div class="relative">
+            <img src="1suo.jpg" alt="">
+            <span class="icon">Tiesiogiai</span>
+          </div>
+          <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>
