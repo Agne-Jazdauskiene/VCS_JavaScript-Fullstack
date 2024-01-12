@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border radius</title>
+  <style>
+    .box {
+      width: 250px;
+      height: 250px;
+
+    }
+
+    .purple {
+      background-color: purple;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    .tomato {
+      background-color: tomato;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .radius {
+      /* viena reikšmė visiems keturiems kampasm */
+      /* border-radius: 20px; */
+
+
+      /* left top right bottom individualus užlenkimas */
+      border-radius: 20px 50px 30px 100px;
+    }
+
+    /* netelpantis tekstas-turinys paslepiamas už užlenktų kampų */
+    .overflow {
+      overflow: hidden;
+    }
+
+    .content {
+      padding: 50px;
+    }
+
+    /* Apskritimas */
+    .circle {
+      /* jei didinu dėžutės matmenis, tuomet px netinka, nes pasikeis užlenkimai */
+      /* border-radius: 150px; */
+      width: 400px;
+      height: 400px;
+
+      /* tod4l naudojame 50% !!!!! - liks visada apskritimas */
+      border-radius: 50%;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box purple radius"></div>
+
+  <!-- dėžutės dydis vis tiek lieka kvadratas, tekstas nepasislepia už kampų. turime perteklių - overflow -->
+  <div class="box orange radius overflow">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere, modi porro!
+    Harum
+    saepe animi enim, sint autem deleniti maiores dolor atque veniam aspernatur recusandae quibusdam, voluptate iusto
+    corrupti tempore sapiente corporis doloremque incidunt? Iure, architecto alias accusamus aspernatur omnis eum
+    quaerat iste. Consectetur recusandae nihil et iste, veniam eius earum possimus? Vero molestias, officia pariatur
+    quod voluptatum quas facilis blanditiis.!</div>
+
+  <!-- neturime nurodyto fiksuotoo aukščio, todėl tempiasi per visą ekraną -->
+  <div class="content tomato radius overflow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, earum
+    impedit dolore voluptas alias aliquid suscipit maxime accusamus laborum sunt ab repellendus optio quibusdam eos
+    ratione obcaecati amet pariatur eius, expedita labore in sapiente. Facere minus nam, corporis quaerat saepe nihil
+    velit reprehenderit ab alias id libero quisquam incidunt quis tempora! Aspernatur doloremque libero delectus vel
+    iusto perspiciatis accusamus excepturi at dolorem facilis nemo ipsam vitae consequuntur a eaque in, fugiat
+    necessitatibus? Exercitationem voluptatum ut voluptate maiores alias, quod dicta aut esse deleniti sequi
+    voluptatibus neque aperiam ad. Iste dignissimos minus magnam eius voluptate qui quasi praesentium sed dolores esse.
+  </div>
+
+  <div class="box yellow circle"></div>
+
+
+
+
+</body>
+
+</html>
