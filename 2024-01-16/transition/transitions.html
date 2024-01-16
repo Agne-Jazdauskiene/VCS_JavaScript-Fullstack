@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Transition</title>
   <style>
     body {
       margin: 0;
@@ -37,12 +37,12 @@
       height: 300px;
       margin: 0 auto;
       /* ne visada norime animuoi visas savybes, galime isvardinti  */
+
       /* transition: all 500ms ease-in-out; */
       /* transition: background-color, width, heith 500ms ease-in-out; */
 
       /* galima nurodyti atskirai skirtingą animaciją atskiroms savybėms  */
       transition: background-color 500ms ease-in-out,
-
         width 1s ease-in-out,
         heith 2s ease-in-out,
         color 1s ease;
@@ -52,7 +52,7 @@
       background-color: orange;
     }
 
-    /* neb8tinai turi b8ti nuoroda naudoti hover'į */
+    /* neb8tinai turi b8ti nuoroda, kad naudotume hover'į */
     .box:hover {
       background-color: red;
       width: 500px;
