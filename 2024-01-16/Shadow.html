@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: aqua;
+      margin: 100px auto;
+    }
+
+    .outer-shadow {
+      /* pirma reikšmė į dešinę- nurodo x ašį */
+      /* antroji reikšmė nurodo y ašį */
+      /* trečioji reikšmė - blur - spalvos išskaidymą */
+      /* ketvirtoji reikšmė - spread - nurodo šešėlio paryškinimą */
+      /* dar galima reguliuoti šešėlio permaomumą su - a reikšme */
+      box-shadow: 10px 10px 70px 0 rgba(0, 0, 0, 0.675);
+    }
+
+    .purple {
+      background-color: purple;
+    }
+
+    .inner-shadow {
+      /* inset nurodo, jog šešėlis krenta į elemento vidų */
+      box-shadow: inset 10px 10px 20px 0 black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box outer-shadow"></div>
+  <div class="box purple inner-shadow"></div>
+
+</body>
+
+</html>

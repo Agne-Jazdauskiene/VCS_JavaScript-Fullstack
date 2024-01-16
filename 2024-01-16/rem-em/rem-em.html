@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rem-em</title>
+  <style>
+    html {
+      font-size: 20px;
+      /* tada 1rem tampa 20px */
+      /* patogu, jei pereiname5 mobili1 versiją ir pakeičiam tik vieną dydį - pasikeičia visur */
+    }
+
+    /* standartinis 6rifto dysis yra 16px */
+    /* 1rem = 16px */
+    .box {
+      /* 20rem = 320px */
+      width: 20rem;
+      height: 20rem;
+      margin: 100px auto;
+    }
+
+    /* jei turim rem'us - žiūrim prie html šrifto dydį */
+    .orange {
+      background-color: orange;
+    }
+
+    /* jei turim em'us - žiūrim šriftą prie tėvinio el. */
+    .em-box {
+      width: 20em;
+      height: 20em;
+      margin: 0 auto;
+    }
+
+    .purple {
+      background-color: purple;
+    }
+
+    /* em'ais mes žiūrime į tėvinį elemenntą. Jei tėviniam elementui nenurodytas dydis, tuomet galios bendras html dydis */
+    /* pravartu keičiant mąstelį */
+    /* pvz. padding savybei visur naudoti em */
+    .parent {
+      font-size: 14px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <div class="box orange"></div>
+  <div class="parent">
+    <div class="em-box purple"></div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  background: url(Design_Contact\ Us.svg) no-repeat center center / cover;
+  /* min-height: 100vh; */
+}
+
+.conteiner {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  width: 1440px;
+  height: 912px;
+  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 50px;
+  padding: 50px 80px;
+  position: relative;
+
+  /* padaro green foną su border-radius užlenkimais */
+  overflow: hidden;
+}
+.contact-conteiner {
+  padding-right: 50px;
+}
+h1 {
+  color: #000;
+  font-size: 46px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+h1 span {
+  color: #6de1c2;
+}
+.heading p {
+  color: #000;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+input {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-bottom: 1px solid #8e8e8e;
+  font-size: 16px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+.city-postcode-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.city-postcode-box input:first-child {
+  width: 70%;
+}
+.city-postcode-box input:last-child {
+  width: 30%;
+}
+
+.upload-file-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 35px 150px;
+  border: 2px dotted #8e8e8e;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.upload-file-box i {
+  width: 24px;
+  height: 24px;
+}
+.upload-file-box p {
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.attach-file {
+  margin-bottom: 30px;
+}
+.checkbox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.checkbox input {
+  color: #383c3e;
+  width: 18px;
+  height: 18px;
+}
+
+.checkbox p {
+  color: #383c3e;
+  font-size: 14px;
+}
+
+button {
+  height: 50px;
+  background-color: #0982fe;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  display: block;
+
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.icon-box {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-box i {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-text p {
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
+}
+.icon-text a {
+  color: #dd5471;
+  font-size: 13px;
+}
+
+.map-conteiner {
+  position: relative;
+}
+.map-img {
+  width: 638px;
+  height: 819px;
+  position: relative;
+}
+.address-box {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  background-color: #fff;
+  color: #0982fe;
+  font-size: 13px;
+  width: 157px;
+  height: 98px;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+.address-box p:first-child,
+.address-box p:nth-child(2) {
+  font-weight: 700;
+}
+
+.green {
+  background-color: #6de1c2;
+  width: 419px;
+  height: 912px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

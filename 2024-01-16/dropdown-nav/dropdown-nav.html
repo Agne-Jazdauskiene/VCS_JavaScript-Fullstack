@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Rubik;
+    }
+
+    .conteiner {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    nav {
+      background-color: aliceblue;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      /* kei netaikom - nav prilimpa graziai prie virsaus */
+      /* padding: 10px 0;
+      gap: 20px; */
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding: 15px 20px;
+      transition: all .5s ease-in-out;
+    }
+
+
+    a:hover {
+      background-color: black;
+      color: white;
+    }
+
+
+
+    li ul {
+      display: none;
+    }
+
+    li:hover ul {
+      display: block;
+      /* nenustumia teksto apacion, jis lipa ant virsaus */
+      position: absolute;
+      background-color: white;
+      width: 300px;
+    }
+
+
+
+    /* šalia esančio ellemento parinkimas, t.y. kito */
+    a:hover+ul {}
+
+    li ul a {
+      padding: 8px 20px;
+
+    }
+
+    li ul a:hover {
+      background-color: white;
+      color: black;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="conteiner">
+
+    <nav>
+      <ul>
+        <li><a href="#">Drabužiai moterims</a>
+          <ul>
+            <li>
+              <a href="#">Megstiniai</a>
+              <a href="#">D=insai</a>
+              <a href="#">Kelnes</a>
+              <a href="#">Striukes</a>
+              <a href="#">Maudymukai</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#">Drabužiai vyrams</a></li>
+        <li><a href="#">Avalynė</a></li>
+        <li><a href="#">Drabužiai vaikams</a></li>
+        <li><a href="#">Aksesuarai</a></li>
+
+      </ul>
+    </nav>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores alias tempore fugit voluptate autem. Tenetur ad
+    dignissimos molestias, deleniti incidunt maxime vitae veniam! Doloremque harum, voluptas repellat totam dolorum modi
+    adipisci? Exercitationem quam enim optio nulla ullam sit. Vel voluptatem nemo enim dolorem asperiores provident ea
+    excepturi debitis accusamus, explicabo possimus eius doloribus mollitia ullam sapiente accusantium incidunt
+    quisquam, aliquid sed! Sapiente nam, voluptate distinctio illo accusantium, ab a cupiditate odio totam dolores
+    vitae, hic dolorum aliquam labore aperiam aliquid accusamus repellat saepe architecto consectetur impedit nostrum.
+    Ipsam, possimus enim aperiam labore perferendis deserunt similique voluptatum fugiat nam ipsa beatae.
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .button {
+      background-color: black;
+      color: white;
+      display: block;
+      padding: 10px 20px;
+      border-radius: 3px;
+      text-decoration: none;
+      /* 1s ž 1000ms */
+      /* pusė sekundės ž 0.5s arba 500ms */
+      /* 1- savybė, kurią norime animuoti; 2- animacijos trukmė; 3 - animacijos tipas - pasibandyti */
+      transition: background-color 500ms ease;
+    }
+
+    .button:hover {
+      background-color: red;
+    }
+
+    .conteiner {
+      max-width: 768px;
+      margin: 0 auto;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto;
+      /* ne visada norime animuoi visas savybes, galime isvardinti  */
+      /* transition: all 500ms ease-in-out; */
+      /* transition: background-color, width, heith 500ms ease-in-out; */
+
+      /* galima nurodyti atskirai skirtingą animaciją atskiroms savybėms  */
+      transition: background-color 500ms ease-in-out,
+
+        width 1s ease-in-out,
+        heith 2s ease-in-out,
+        color 1s ease;
+    }
+
+    .orange {
+      background-color: orange;
+    }
+
+    /* neb8tinai turi b8ti nuoroda naudoti hover'į */
+    .box:hover {
+      background-color: red;
+      width: 500px;
+      height: 500px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#" class="button"> Užvesk pelę ant manaęs</a>
+  <div class="box orange">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas distinctio tempore, praesentium
+    voluptates doloremque maxime. Saepe esse molestias assumenda doloribus.</div>
+</body>
+
+</html>
