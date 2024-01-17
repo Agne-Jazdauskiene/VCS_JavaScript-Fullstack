@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Form aiskinimas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fa4299;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fa4299;
+    }
+
+    .login {
+      width: 450px;
+      margin: 100px auto;
+      background-color: #fff;
+      padding: 30px;
+    }
+
+    .login h1 {
+      font-weight: 600;
+      font-size: 35px;
+      text-align: center;
+      margin: 0 0 25px;
+    }
+
+    .links {
+      border: 1px solid #d7d7d7;
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .links a {
+      /* text-decoration: none; */
+      color: #29120b;
+      /* nebutinai pazymeti block, nes jei pazymim links - flex, mygtukai automatiskai tampa block el. */
+      display: block;
+      width: 50%;
+      text-align: center;
+      font-size: 19px;
+      font-weight: 500;
+      padding: 8px 8px;
+    }
+
+    /* nurodyti tiesiog klasės pavadinimą neužtenka */
+    /* jei neveikia, pasitikrinti devtools selektoriu hierarchija */
+    /* kuo tiksliau nurodome selektoriu */
+    .links .active {
+      color: #fff;
+      background-color: #fa4299;
+    }
+
+    form input {
+      width: 100%;
+      border: 1px solid #d7d7d7;
+      /* border-bottom: 2px solid #d7d7d7; */
+      /* galime nurodyti tik storį: */
+      border-bottom-width: 2px;
+      font-weight: 17px;
+      /* input laukeliai nepaveldi šrifto iš body elemento */
+      /* reikia font-family nurodyti papildomai */
+      font-family: 'Poppins', sans-serif;
+      padding: 8px 15px;
+    }
+
+    form input:first-child {
+      margin-bottom: 20px;
+    }
+
+    form button {
+      background-color: #fa4299;
+      color: #fff;
+      border: none;
+      width: 100%;
+      /* reikia font-family nurodyti papildomai */
+      font-family: 'Poppins', sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      padding: 8px 0;
+    }
+
+    .signup-link {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .forgot-password {
+      /* margin-top: 3px;
+      margin-bottom: 15px; */
+      /* suujungiam į vieną */
+      margin: 4px 0 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Login Form</h1>
+    <div class="links">
+      <a href="#" class="active">Login</a>
+      <a href="#">Signup</a>
+    </div>
+    <form>
+      <!-- šiaip naudotume type=email -->
+      <input type="text" placeholder="Email Address">
+      <input type="password" placeholder="Password">
+      <!-- Vilius mėgsta atitraukimus daryti geriau su tėviniu elementu -->
+      <div class="forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+      <button>Login</button>
+    </form>
+    <div class="signup-link">
+      <!-- geriau nepalikti paprasto teksto, geriau apgliaubti su span el. Tuomet aiškiai matoma viskas -->
+      <span>Not a member?</span>
+      <a href="#">Signup now</a>
+    </div>
+
+
+
+  </div>
+
+</body>
+
+</html>
