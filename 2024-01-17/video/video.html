@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video</title>
+</head>
+
+<body>
+  <!-- autoplay - failas pasileidžia automatiškai -->
+  <!-- loop - begalinis video kartojimas, sukasi vis iš naujo -->
+  <!-- controls - galime kontroliuoti rokymą - yra slankmatis apačioje
+  vartotojo sąsajoje atsiranda kontroliavimo panelė (play, stop, skip ir t.t.) -->
+  <video autoplay loop controls>
+    <!-- galime nurodyti kelis skirtingus failus, 
+      jei kurio nors nepalaikytu kuri nors narsykle -->
+    <!-- tikslus failo formatas - mime type - video/mp4 arba kitas-->
+    <!-- turėsime papild.atributus ir jų pagalba nurodysime, ką mes norime prie to failo priskirti, pvz autoplay, controls -->
+    <source src="1(1080p).mp4" type="video/mp4">
+  </video>
+
+  <!-- galima src nurodyti iš karto prie video -->
+  <!-- bet standartiškai naudojamas viršutinis variantas -->
+  <!-- <video src="1(1080p).mp4" autoplay loop controls> -->
+
+  </video>
+
+  <!--  audio formatui - identiškas talpinimas. 
+    Truputį limituotas aprašymas, stilizavimas. Su JavaScript daugiau -->
+</body>
+
+</html>

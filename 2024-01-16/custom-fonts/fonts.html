@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonts</title>
+  <style>
+    /* Šrifto registravimas */
+    /* kiekviena stiliu priregistruojame atskirai - bold, regular, medium etc. */
+    @font-face {
+      /* galime bet koki pavadinima parasyti, nesusije su failo pav. Galime rasyti tiesiog "Manosriftas" */
+      font-family: Gilroy;
+      src: url(Gilroy-Regular.ttf);
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: Gilroy;
+      src: url(Gilroy-Medium.ttf);
+      font-weight: 400;
+    }
+
+    @font-face {
+      font-family: Gilroy;
+      src: url(Gilroy-Bold.ttf);
+      font-weight: 600;
+    }
+
+    /* kai nurodome savybę font-style: italic; mes kreipiamės būtent į šitą šrifto failą */
+    @font-face {
+      font-family: Gilroy;
+      src: url(Gilroy-SemiBoldItalic.ttf);
+      font-weight: 500;
+      font-style: italic;
+    }
+
+    /* jei kurį nors stiliaus registravimą panaikini
+     - tuomet pritaikomas kažkoks artimiausias šriftas */
+
+    /* priskiriame, kur norime naudoti Gilroy srifta */
+    body {
+      font-family: Gilroy;
+    }
+
+    /* niekas nepasikeicia, nes jau priskirta srifto faile. 
+    Bet gali to nebuti i rreikes atskirai priskirti font-weight */
+    h1 {
+      font-weight: 600;
+    }
+
+    h2 {
+      font-weight: 400;
+    }
+
+    h3 {
+      font-weight: 500;
+
+    }
+
+    h3 {
+      font-weight: 500;
+      font-style: italic;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Gilroy Bold -->
+  <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, nesciunt!</h1>
+
+  <!-- Gilroy Regular -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorem voluptas reprehenderit fugiat? Labore
+    facere consectetur quod pariatur necessitatibus repellendus. Reiciendis quia suscipit nihil consequatur ipsa veniam!
+    Eum, dolorem nam!</p>
+
+  <!-- Gilroy Medium -->
+  <h2>Lorem ipsum dolor sit amet.</h2>
+
+
+  <!-- Gilroy Semibold Italic -->
+  <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+</body>
+
+</html>

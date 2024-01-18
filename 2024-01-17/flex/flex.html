@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      height: 100px;
+    }
+
+    .logo {
+      /* width: 100px; */
+      /* flex-shrink: 1;
+      flex-grow: 0; */
+      flex: 0 1 50px;
+    }
+
+    nav {
+      /* flex-grow nurodo, kaip tas elementas turėtų didėti 
+      kitų elementų atžvilgiu neužtenkant tėvinio el. pločio. Nurodoma prie pačio elemento */
+      /* flex-grow: 1; */
+      /* vienu metu reikia naudoti ir flex-grow ir flex-shrink */
+      /* flex-shrink: 0; */
+
+
+      /* flex-basis nurodo elemento bazinį plotį užtenkant vietos */
+      /* mūsų navigacija bsu 50% tėvinio el. pločio, jei užtenka vietos */
+      /* flex-basis: 80%; */
+      /* flex-basis: 40px; */
+
+      flex: 0 0 80%;
+      background-color: black;
+      /* align-self nurodo būtent to vieno elemento lygiavimą vertikalioje padėtyje */
+      align-self: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      /* color: black; */
+      text-decoration: none;
+      color: white;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .boxes {
+      display: flex;
+      gap: 20px;
+      height: 200px;
+      background-color: black;
+      align-items: center;
+    }
+
+    .box {
+      background-color: aqua;
+      height: 100px;
+      width: 30%;
+    }
+
+    .top {
+      align-self: flex-start;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+
+      <div class="logo">
+        <img src="logo.png" alt="">
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Titulinis</a></li>
+          <li><a href="#">Apie mus</a></li>
+          <li><a href="#">Kontaktai</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <div class="boxes">
+    <div class="box"></div>
+    <div class="box top"></div>
+    <div class="box"></div>
+  </div>
+</body>
+
+</html>

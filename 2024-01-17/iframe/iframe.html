@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe</title>
+  <style>
+    h1 {
+      color: red;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      border: 10px solid black;
+      /* nepriskiria prie maps, nes nuorodoje nurodyta border=0 */
+
+    }
+
+    .youtube {
+      width: 560px;
+    }
+  </style>
+</head>
+
+<body>
+
+</body>
+<!-- inframe yra inline el. -->
+<!-- skirtas integruoti failams is kito puslapio -->
+<!-- su frameborder panaikiname krastine aplink faiala -->
+<!-- stilizuoti galime tik vidiniame-child faile, tėviniame faile neveiks -->
+<iframe src="child.html" frameborder></iframe>
+
+<!-- Google maps integravimas -->
+<!-- nuoroda iš google maps. iframe naudojama būtent tokiems dalykams -->
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d147675.53825219674!2d25.3198336!3d54.66685439999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1slt!2slt!4v1705582006944!5m2!1slt!2slt"
+  width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+<!-- Youtube video integravimas -->
+<iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/jhamyN8TXbY?si=2iJfFYqvN1YBX_1S"
+  title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  allowfullscreen></iframe>
+
+
+<!-- Google tinklapio integravimas - google neleidžia integruoti su iframe -->
+
+
+</html>

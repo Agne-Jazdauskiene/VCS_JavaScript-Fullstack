@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables - kintamieji</title>
+  <style>
+    /* kai kur kintamieji būna aprašyti prie root selektoriaus */
+    /* root selektorius nukreipia į html elementą */
+    .root {}
+
+    /* kintamieji yra paveldimi, 
+    turi buti nurodyti prire tevinio elemento */
+    html {
+      --kintamojo-pavadinimas: #1f70d9;
+      --atitraukimai: 0 20px;
+      --atitraukimai-is-isores: 10px 0;
+    }
+
+    /* kintamuosius galime priskirti prie kiekv.elemento, bet dazn. naud. su JS */
+
+    h1 {
+      /* color: #1f70d9; */
+      color: var(--kintamojo-pavadinimas);
+      padding: var(--atitraukimai);
+
+      /* --atitraukimai-is-isores: 10px 0; */
+    }
+
+    button {
+      border: none;
+      background-color: var(--kintamojo-pavadinimas);
+      ;
+      /* background-color: #1f70d9; */
+      color: white;
+      /* kintamasis nepaveldimas, 
+      jei bus priskirtas ne prie tevinio elemento pvz h1 */
+      margin: var(--atitraukimai-is-isores);
+    }
+
+    h2 {
+      /* color: #1f70d9; */
+      color: var(--kintamojo-pavadinimas);
+      padding: var(--atitraukimai);
+    }
+
+    p {
+      /* color: #1f70d9; */
+      color: var(--kintamojo-pavadinimas);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+
+  </header>
+  <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, voluptas!</h1>
+  <button>Hello</button>
+  <h2>Lorem ipsum dolor sit amet consectetur.</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio accusantium velit dignissimos repellat, iusto
+    dolore?</p>
+
+
+</body>
+
+</html>

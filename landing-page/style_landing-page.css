@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif; */
+  margin: 0;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: aqua;
+
+  width: 1140px;
+  height: 80px;
+  margin: 0 auto;
+  font-size: 16px;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+ul a {
+  text-decoration: none;
+  color: #101928;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.logo {
+  width: 160px;
+  height: 34px;
+}
+
+.active {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+button {
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  width: 170px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.btn-log-in {
+  background-color: transparent;
+  color: #545be8;
+  border: 2px solid #545be8;
+}
+
+.btn-register {
+  background-color: #545be8;
+  color: #fff;
+  border: none;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Web Design - Max-width</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Poppins;
+
+    }
+
+    .container {
+      /* max-width: 1140px; */
+      max-width: 1170px;
+      /* jei priskyrem padding, tuomet ir container padidinam */
+      /* width: 100%; */
+      margin: 0 auto;
+      padding: 15px;
+
+    }
+
+    .articles {
+      display: flex;
+      gap: 20px;
+
+    }
+
+    .article {
+      width: 25%;
+      height: 300px;
+      background-color: aqua;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    /* labai svarbu eiles tvarka !!!! */
+
+
+    /* dabar mazejancia tvarka darom */
+    @media screen and (max-width: 1024px) {
+
+      .articles {
+        flex-wrap: wrap;
+      }
+    }
+
+    .articles {
+      width: calc(50% -10px);
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .articles {
+        flex-direction: column;
+      }
+    }
+
+    .article {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="articles">
+
+      <div class="article"></div>
+      <div class="article">2</div>
+      <div class="article">3</div>
+      <div class="article">4</div>
+
+    </div>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora alias beatae similique facere maiores modi,
+    architecto aliquid fugit at nulla dolore optio? Nihil ea, delectus nisi ratione a fugiat repudiandae.
+  </div>
+
+</body>
+
+</html>
