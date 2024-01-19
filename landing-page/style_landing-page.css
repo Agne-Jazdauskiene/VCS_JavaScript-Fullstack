@@ -10,18 +10,26 @@ body {
 }
 
 .container {
-  width: 1440px;
+  /* max-width: 1140px; */
+  /* kodėl plotis per mažas, kai nustatau max-width ??? */
+  width: 1140px;
   margin: 0 auto;
 }
 
+/* HEADER - NAVIGATION */
 header {
-  background-color: aqua;
+  background-color: #fff;
+  width: 100%;
 
-  width: 1140px;
   height: 80px;
-  margin: 0 auto;
   font-size: 16px;
   position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+}
+
+header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,15 +61,20 @@ ul a {
   font-size: 16px;
 }
 
-button {
+.btns-login-register a,
+.btn-register {
   font-family: Inter, sans-serif;
   font-size: 18px;
   font-weight: 700;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 12px 50px; */
   width: 170px;
   height: 48px;
   border-radius: 10px;
 }
-
 .btn-log-in {
   background-color: transparent;
   color: #545be8;
@@ -72,4 +85,82 @@ button {
   background-color: #545be8;
   color: #fff;
   border: none;
+}
+
+/* HERO SECTION */
+.hero-section {
+  background-color: #f5f5f5;
+  height: 705px;
+  max-width: 100%;
+  padding-top: 150px;
+}
+
+.text-img-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.text-box {
+  width: 50%;
+}
+.text p {
+  font-family: Inter, sans-serif;
+  color: #545be8;
+  font-size: 18px;
+}
+
+.text span {
+  font-weight: 700;
+}
+
+.text h1 {
+  color: #141e32;
+  font-size: 64px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.text h1 span {
+  color: #545be8;
+}
+
+.text p:last-child {
+  color: #969696;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.two-buttons {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.btn-play-video {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-play-video p {
+  color: #141e32;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+}
+
+.btn-register {
+  text-decoration: none;
+  /* likusį stilių žiūrėti prie nav mygtukų */
+}
+
+.img-box {
+  width: 50%;
+  display: flex;
+  justify-content: end;
+}
+
+.img-hero-section {
+  width: 520px;
+  height: 520px;
 }
