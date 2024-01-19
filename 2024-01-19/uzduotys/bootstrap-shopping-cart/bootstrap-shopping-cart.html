@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Shooping Cart</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <style>
+    .border-bold {
+      border-top: 2px solid #dee2e6;
+    }
+
+    /* .table {
+      margin-bottom: 40px;
+          } */
+
+    .custom-table {
+      margin-bottom: 50px;
+    }
+
+    .custom-table td {
+      padding: 30px 10px;
+    }
+
+    .custom-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .custom-table thead tr th {
+      padding: 15px 15px;
+    }
+
+    .checkout {
+      padding: 10px 45px;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div style="text-align: center;">
+      <h2>Shopping Cart</h2>
+      <p><span class="text-primary fst-italic">3</span> <span class="text-secondary">items in your cart</span></p>
+    </div>
+
+    <table class="table custom-table">
+      <thead class="border-top ">
+        <tr>
+          <th style="width: 250px;">Product</th>
+          <th style="width: 600px;">&nbsp;</th>
+          <th style="width: 110px;">Price</th>
+          <th style="width: 120px;">Quantity</th>
+          <th style="width: 150px;">&nbsp;</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="m-5">
+          <td>
+            <div><img src="1.jpg" class="rounded" alt=""></div>
+          </td>
+          <td class="text-start">
+            <h4>Product Name</h4>
+            <p class="text-secondary">Brand & Name</p>
+          </td>
+          <td>&dollar;49.00</td>
+          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td class="text-end">
+            <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
+            <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <div class=""><img src="2.jpg" class="rounded" alt=""></div>
+          </td>
+          <td class="text-start">
+            <h4>Product Name</h4>
+            <p class="text-secondary">Brand & Name</p>
+          </td>
+          <td>&dollar;49.00</td>
+          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td class="text-end">
+            <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
+            <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
+          </td>
+        </tr>
+
+        <tr class="border-top">
+          <td>
+            <div class=""><img src="3.jpg" class="rounded" alt=""></div>
+          </td>
+          <td class="text-start">
+            <h4>Product Name</h4>
+            <p class="text-secondary">Brand & Name</p>
+          </td>
+          <td>&dollar;49.00</td>
+          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td class="text-end">
+            <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
+            <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <div style="text-align: right;" class="mb-5">
+      <h4>Subtotal</h4>
+      <h2>&dollar;99.00</h2>
+    </div>
+
+    <div class="d-flex justify-content-between mb-5">
+      <div class="d-flex align-items-center">
+        <i class=" bi bi-arrow-left-short text-primary" style="font-size: 24px;"></i>
+        <p class="text-primary fs-6" style="margin: 0;">Continue Shopping</p>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary btn-lg checkout fs-5">Checkout</button>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
