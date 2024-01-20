@@ -61,7 +61,22 @@ ul a {
   font-size: 16px;
 }
 
-.btns-login-register a,
+/* MAIN - .btn */
+.btn {
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+/* .btns-login-register a,
 .btn-register {
   font-family: Inter, sans-serif;
   font-size: 18px;
@@ -70,11 +85,11 @@ ul a {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding: 12px 50px; */
-  width: 170px;
+   width: 170px;
   height: 48px;
   border-radius: 10px;
-}
+} */
+
 .btn-log-in {
   background-color: transparent;
   color: #545be8;
@@ -101,31 +116,34 @@ ul a {
   width: 100%;
 }
 
-.text-box {
+.hero-text-box {
   width: 50%;
 }
-.text p {
+
+.hero-text p {
   font-family: Inter, sans-serif;
   color: #545be8;
   font-size: 18px;
+  font-weight: 400;
 }
 
-.text span {
+.hero-text span {
   font-weight: 700;
+  text-transform: capitalize;
 }
 
-.text h1 {
+.hero-text h1 {
   color: #141e32;
   font-size: 64px;
   font-weight: 700;
   margin: 0;
 }
 
-.text h1 span {
+.hero-text h1 span {
   color: #545be8;
 }
 
-.text p:last-child {
+.hero-text p:last-child {
   color: #969696;
   margin-bottom: 30px;
   line-height: 1.5;
@@ -163,4 +181,97 @@ ul a {
 .img-hero-section {
   width: 520px;
   height: 520px;
+}
+
+/* WHAT DO YOU GET FROM - SECTION */
+.what-get-section {
+  background-color: #fff;
+  height: 550px;
+  max-width: 100%;
+  padding-top: 100px;
+}
+.what-get-box {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}
+.what-get-text-box {
+  width: 30%;
+}
+.what-get-carousel-box {
+  width: 70%;
+}
+.carousel-text-box {
+  display: flex;
+  gap: 25px;
+}
+
+.what-get-text p {
+  font-family: Inter, sans-serif;
+  color: #545be8;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.what-get-text h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #141e32;
+}
+
+.what-get-text p:last-child {
+  font-size: 18px;
+  font-weight: 400;
+  color: #969696;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+.carousel-card {
+  background-color: #545be8;
+  height: 267px;
+  width: 267px;
+  border-radius: 10px;
+  padding: 40px 20px 40px 20px;
+}
+
+.icon-carousel {
+  background-color: #fff;
+  height: 48px;
+  width: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-card h3 {
+  color: #fff;
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: 18;
+  margin-top: 10px;
+}
+
+.carousel-card p {
+  color: #ddd;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.carousel-text-box {
+  margin-bottom: 25px;
+}
+
+.carousel-btn-box {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+.carousel-btn-box button {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: none;
 }
