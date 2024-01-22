@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <style>
     .border-bold {
-      border-top: 2px solid #dee2e6;
+      border-top: 2px solid var(--bs-border-color);
+      /* #dee2e6  */
     }
 
     /* .table {
@@ -26,10 +27,12 @@
     }
 
     .custom-table tr:last-child td {
+      /* .custom-table tbody tr:last-child { */
       border-bottom: none;
     }
 
-    .custom-table thead tr th {
+    /* .custom-table thead tr th { */
+    .custom-table th {
       padding: 15px 15px;
     }
 
@@ -69,7 +72,7 @@
             <p class="text-secondary">Brand & Name</p>
           </td>
           <td>&dollar;49.00</td>
-          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td><input type="number" class="form-control form-control-lg" value="1" style="width: 80px;"></td>
           <td class="text-end">
             <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
             <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
@@ -85,7 +88,7 @@
             <p class="text-secondary">Brand & Name</p>
           </td>
           <td>&dollar;49.00</td>
-          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td><input type="number" class="form-control form-control-lg" value="1" style="width: 80px;"></td>
           <td class="text-end">
             <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
             <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
@@ -101,7 +104,7 @@
             <p class="text-secondary">Brand & Name</p>
           </td>
           <td>&dollar;49.00</td>
-          <td><input type="number" class="form-control" value="1" style="width: 80px;"></td>
+          <td><input type="number" class="form-control form-control-lg" value="1" style="width: 80px;"></td>
           <td class="text-end">
             <button class="btn btn-outline-secondary fs-5"><i class="bi bi-arrow-repeat text-dark"></i></button>
             <button class="btn btn-outline-secondary fs-5"></i><i class="bi bi-trash-fill text-dark"></i></i></button>
@@ -117,10 +120,13 @@
     </div>
 
     <div class="d-flex justify-content-between mb-5">
-      <div class="d-flex align-items-center">
+      <!-- čia turėtų būti nuoroda a -->
+      <!-- <div class="d-flex align-items-center"> -->
+      <a href="#" class="d-flex align-items-center gap-2 text-decoration-none">
         <i class=" bi bi-arrow-left-short text-primary" style="font-size: 24px;"></i>
         <p class="text-primary fs-6" style="margin: 0;">Continue Shopping</p>
-      </div>
+      </a>
+      <!-- </div> -->
       <div>
         <button type="button" class="btn btn-primary btn-lg checkout fs-5">Checkout</button>
       </div>
