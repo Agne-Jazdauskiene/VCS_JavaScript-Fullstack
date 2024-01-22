@@ -289,9 +289,13 @@ ul a {
 
 /* SECTION - PEOPLE TAKING COURSES */
 .taking-courses-section {
-  background-color: #545be8;
+  background: rgb(84, 90, 219);
+  background: linear-gradient(
+    90deg,
+    rgba(84, 90, 219, 1) 57%,
+    rgba(39, 45, 176, 1) 100%
+  );
 
-  /* gradient */
   height: 643px;
   max-width: 100%;
 }
@@ -354,4 +358,49 @@ ul a {
   color: #ddd;
   text-transform: capitalize;
   margin: 0;
+}
+
+/* SECTION - AVAILABLE COURSES */
+.available-courses-section {
+  max-width: 100%;
+}
+.available-courses-container {
+  width: 100%;
+  display: flex;
+}
+.cards-container {
+  width: 70%;
+}
+
+.card-text-container {
+  width: 30%;
+}
+
+.card-img-absoluts {
+  position: relative;
+}
+.absoluts div:first-child {
+  text-transform: capitalize;
+  font-weight: 700;
+  color: #fff;
+  width: 123px;
+  height: 43px;
+  background-color: #545be8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.absoluts div:last-child {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #545be8;
+  width: 94px;
+  height: 32px;
+  position: absolute;
+  top: 200px;
+  right: 250px;
 }
