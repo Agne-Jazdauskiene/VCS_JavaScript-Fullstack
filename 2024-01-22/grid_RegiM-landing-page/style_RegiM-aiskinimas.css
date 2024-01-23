@@ -1,0 +1,152 @@
+@font-face {
+  font-family: General Sans;
+  /* src: url(../fonts/GeneralSans-Regular); */
+  src: url(GeneralSans-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: General Sans;
+  /* src: url(../fonts/GeneralSans-Regular); */
+  src: url(GeneralSans-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: General Sans;
+  /* src: url(../fonts/GeneralSans-Regular); */
+  src: url(GeneralSans-Semibold.ttf);
+  font-weight: 600;
+}
+
+body {
+  font-family: General Sans;
+  color: var(--bs-gray);
+  /* spalva bus panaudota eleentams, kurie neturi atskirai 
+  priskirtos spalvos , pvz h1 -h6 priskyrem dark gray, 
+  arba nuoroda turi priskirta spalva */
+  font-size: 16px;
+  /* ikelsim elipse i bacckground */
+  background: url() no-repeat 64px 412px / 100%;
+  /* 100% pagal tevini el. iki kito brakepointo */
+}
+
+/* :root arba html (dirbant su html'u), 
+jei dirbame su kita programa - tuomet naudojam :root */
+:root {
+  --bs-gray-dark: #111827;
+  -bs-gray: #374151;
+}
+
+img {
+  max-width: 100%;
+  /* foto nebelipa ant teksto ar kt el */
+}
+
+.header-wrapper {
+  height: 80px;
+}
+
+/* kazkas negerai su btn - pertikrinti */
+.btn {
+  --bs-btn-font-size: 14px;
+  --bs-btn-font-weight: 600;
+  --bs-btn-padding-y: 16px;
+  --bs-btn-padding-y: 9px;
+  /* per didelis gaunasi del eilutes aukscio */
+  --bs-btn-line-heith: 20px;
+}
+
+.btn-primary {
+  --bs-btn-bg: #0876dd;
+  --bs-btn-hover-color: #0876dd;
+  --bs-btn-hover-bg: #041a2f;
+  --bs-btn-hover-border-color: #041a2f;
+}
+
+.btn-lg {
+  --bs-btn-primary: 12px;
+  --bs-btn-font-size: 16px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--bs-gray-dark);
+
+  /* arba nuo root psriskirti variable */
+}
+
+.intro-section {
+  margin-top: 48px;
+}
+
+.intro-section h1 {
+  font-size: 36px;
+  line-height: 48px;
+  margin-bottom: 16px;
+}
+
+.intro-section .button-wrapper {
+  margin-top: 40px;
+}
+
+.image-wrapper {
+  padding-top: 88px;
+}
+
+/* plansetinis komp */
+@media screen and (min-width: 768px) {
+  .container-lg {
+    padding-left: 40px;
+    padding-right: 40px;
+    background-size: auto;
+    background-position: 130px 395px;
+    /* arba procentais -kai judinsime tuomet bus geriau */
+  }
+}
+body {
+  font-size: 18px;
+  /* lieka 700px */
+  background-size: auto;
+}
+
+.intro-section {
+  padding-top: 80px;
+}
+
+.intro-section h1 {
+  font-size: 64px;
+  line-height: 80px;
+}
+
+.image-wrapper {
+  padding-top: 0;
+}
+
+/* lg reiksme - per visa ekrana */
+@media screen and (min-width: 992px) {
+  .container-lg {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+body {
+  /* elipse */
+  background-position: 110% -100px;
+}
+
+.intro-section {
+  padding-top: 32px;
+}
+
+@media screen and (min-width: 1400px) {
+  .container-lg {
+    max-width: 1280px;
+    /* max plotis 1280px apskaiciuotas is 1440 atemus krastus */
+  }
+}
