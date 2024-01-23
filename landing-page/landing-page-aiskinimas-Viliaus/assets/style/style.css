@@ -1,0 +1,78 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  --nav-link-color: #101928;
+  --button-bg-color: #545be8;
+  --button-border-color: #545be8;
+  --empty-button-color: #545be8;
+}
+body {
+  margin: 0;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  width: 170px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Inter;
+  color: #fff;
+  background-color: var(--button-bg-color);
+  text-decoration: none;
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+  /* išcentruoti */
+  /* arba su padding: 14px 14px; */
+  /* arba heith ir display flex, align-items: center */
+  border-radius: 10px;
+}
+
+.empty-button {
+  background: none;
+  border: 1px solid var(--button-border-color);
+  color: var(--empty-button-color);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+header .right {
+  display: flex;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header nav a {
+  color: var(--nav-link-color);
+  text-decoration: none;
+  font-weight: 400;
+  display: block;
+  padding: 10px 20px;
+}
+
+header nav a.active {
+  font-weight: bold;
+}
+
+header .user-links {
+  display: flex;
+  gap: 25px;
+}
