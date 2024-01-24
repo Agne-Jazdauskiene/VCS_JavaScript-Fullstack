@@ -29,6 +29,12 @@ img {
 .btn {
   font-weight: 500;
 }
+
+header {
+  margin-top: 20px;
+  margin-bottom: 48px;
+}
+
 .section-1 {
   /* height: 820px; */
   margin-bottom: 160px;
@@ -36,19 +42,23 @@ img {
 
 .text-container-section-1 h1 {
   font-family: "General Sans";
-  font-size: 64px;
+  font-size: 36px;
   font-weight: 600;
-  line-height: 80px; /* 125% */
-  letter-spacing: -1.28px;
+  line-height: 48px;
+  letter-spacing: -0.36px;
   color: #111827;
 }
 
 .text-container-section-1 p {
   font-family: "General Sans";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 28px; /* 155.556% */
-  letter-spacing: 0.18px;
+  line-height: 24px;
+  letter-spacing: 0.16px;
+}
+
+.text-container-section-1 button {
+  margin-bottom: 88px;
 }
 
 /* SECTION-2 */
@@ -194,4 +204,36 @@ footer {
 
 .footer-text span {
   color: #e0f2fe;
+}
+
+/* Planšetė */
+@media screen and (min-width: 768px) {
+  .text-container-section-1 h1 {
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -1.28px;
+  }
+
+  .text-container-section-1 p {
+    font-family: "General Sans";
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px; /* 155.556% */
+    letter-spacing: 0.18px;
+  }
+
+  .text-container-section-1 {
+    padding-left: 40px;
+  }
+
+  header {
+    margin-bottom: 80px;
+  }
+}
+
+/* Desktopas */
+@media screen and (min-width: 992px) {
+  .text-container-section-1 {
+    padding-left: 12px;
+  }
 }
