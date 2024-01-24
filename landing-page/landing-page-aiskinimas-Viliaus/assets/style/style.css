@@ -76,3 +76,17 @@ header .user-links {
   display: flex;
   gap: 25px;
 }
+
+section.home {
+  background-color: #f5f5f5;
+  padding: 80px 0;
+}
+
+section.home .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.home .text {
+  width: 50%;
+}
