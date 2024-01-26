@@ -4,12 +4,15 @@ console.log("Veikia");
 // lOGINIAI OPERATORIAI
 console.log(`LOGINIAI OPERATORIAI`);
 
+// cia aprasyti parametrai
 function rand(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+// issaukiant funkcija gali buti perduodami argumentai (arguments)
+// skliausteliuose aprasyti argumentai
 let pirmasSkaicius = rand(0, 50);
 let antrasSkaicius = rand(0, 50);
 console.log(pirmasSkaicius, antrasSkaicius);
