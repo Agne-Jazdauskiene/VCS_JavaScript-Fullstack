@@ -25,7 +25,7 @@ if (pirmasSkaicius == antrasSkaicius) {
 }
 
 if (pirmasSkaicius === antrasSkaicius) {
-  console.log(`Skaiciai yra lygus tikrinant duomens tipo`);
+  console.log(`Skaiciai yra lygus tikrinant duomens tipa`);
 }
 
 if (pirmasSkaicius != antrasSkaicius) {
@@ -33,7 +33,7 @@ if (pirmasSkaicius != antrasSkaicius) {
 }
 
 if (pirmasSkaicius !== antrasSkaicius) {
-  console.log(`pirmas skaicius nellygus antram tikrinant duomens tipo`);
+  console.log(`pirmas skaicius nelygus antram netikrinant duomens tipo`);
 }
 
 if (pirmasSkaicius < antrasSkaicius) {
@@ -130,7 +130,7 @@ if (pirmasSkaicius > 10) {
 
 // dar kruva kodo
 // ...
-// ///
+// ...
 
 //  Norime atvaziduoti kintamaji
 console.log(rezultatas);

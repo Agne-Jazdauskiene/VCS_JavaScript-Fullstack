@@ -18,10 +18,38 @@ let two = rand(-10, 10);
 let three = rand(-10, 10);
 console.log(one, two, three);
 
-let green = < 0;
-let red = 0;
-let blue = >0;
-
 if (one < 0) {
-  
+  document.write(`<span style="color:green">${one}</span>`);
+}
+
+if (two < 0) {
+  document.write(`<span style="color:green">${two}</span>`);
+}
+
+if (three < 0) {
+  document.write(`<span style="color:green">${three}</span>`);
+}
+
+if (one === 0) {
+  document.write(`<span style="color:red">${one}</span>`);
+}
+
+if (two === 0) {
+  document.write(`<span style="color:red">${two}</span>`);
+}
+
+if (three === 0) {
+  document.write(`<span style="color:red">${three}</span>`);
+}
+
+if (one > 0) {
+  document.write(`<span style="color:blue">${one}</span>`);
+}
+
+if (two > 0) {
+  document.write(`<span style="color:blue">${two}</span>`);
+}
+
+if (three > 0) {
+  document.write(`<span style="color:blue">${three}</span>`);
 }
