@@ -1,5 +1,6 @@
 console.log("Veikia");
 
+// KONDICINE LOGIKA
 // lOGINIAI OPERATORIAI
 console.log(`LOGINIAI OPERATORIAI`);
 
