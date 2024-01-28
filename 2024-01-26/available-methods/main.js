@@ -33,7 +33,7 @@ console.log(
 );
 
 // REPLACE METODAS
-// pakeicia pirma reiksme - nurodytus zpdzius, frazes, simbolius norimais
+// pakeicia pirma surasta reiksme - nurodytus zpdzius, frazes, simbolius norimais
 
 string = "Naudokite funkcija rand().";
 
@@ -66,11 +66,13 @@ console.log(
 );
 skaicius = 3.999999999;
 rezultatas = Math.floor(skaicius);
-console.log(`Suapvalina skaicius floor metodu: ${rezultatas}`);
+console.log(
+  `Suapvalina skaicius floor metodu iki virsutinio sveikojo skaiciaus, bus 4: ${rezultatas}`
+);
 
 skaicius = 3.00000001;
 rezultatas = Math.ceil(skaicius);
-console.log(`Suapvalina skaicius ceil metodu: ${rezultatas}`);
+console.log(`Suapvalina skaicius ceil metodu, bus 3: ${rezultatas}`);
 
 // Suranda mažiausią skaičių
 let maziausias = Math.min(55, 15, 88, 105, 12, 65); // Skaiciu kiekis neribotas

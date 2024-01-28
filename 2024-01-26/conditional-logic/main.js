@@ -29,11 +29,11 @@ if (pirmasSkaicius === antrasSkaicius) {
 }
 
 if (pirmasSkaicius != antrasSkaicius) {
-  console.log(`pirmas skaicius nellygus antram netikrinant duomens tipo`);
+  console.log(`pirmas skaicius nelygus antram netikrinant duomens tipo`);
 }
 
 if (pirmasSkaicius !== antrasSkaicius) {
-  console.log(`pirmas skaicius nelygus antram netikrinant duomens tipo`);
+  console.log(`pirmas skaicius nelygus antram tikrinant duomens tipa`);
 }
 
 if (pirmasSkaicius < antrasSkaicius) {
@@ -59,10 +59,10 @@ let pirmojiRaide = "Alpes";
 let antrojiRaide = "Banglesntes";
 
 if (antrojiRaide > pirmojiRaide) {
-  console.log("B yraauksciau nei A");
+  console.log("B yra auksciau nei A");
 }
 
-// Kondicij7 sujungimas
+// Kondiciju sujungimas
 console.log("KONDICIJU SUJUNGIMAS");
 
 // tikrinti, ar pirmaSkaicius didesnis negu 25, ir mazesnis nei 40
@@ -80,7 +80,7 @@ if (pirmasSkaicius > 25) {
 // AND OPERATORIUS
 
 // && - and (ir) skirtas sujungti dviems kondicijoms.
-// Rezultatui gauti turi visos kondicijos turi buti teisingos
+// Rezultatui gauti visos kondicijos turi buti teisingos
 // t.y. abi situacijos turi grazinti -- true --
 // if(true && true);
 
@@ -132,7 +132,7 @@ if (pirmasSkaicius > 10) {
 // ...
 // ...
 
-//  Norime atvaziduoti kintamaji
+//  Norime atvaizduoti kintamaji
 console.log(rezultatas);
 
 // TERNARY OPERATORIUS

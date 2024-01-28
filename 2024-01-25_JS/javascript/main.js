@@ -54,7 +54,7 @@ if (x > y) {
 
 
 
-// vienas = zenklas nurodo reiksmes priskytima, o nen tikrinima
+// vienas = zenklas nurodo reiksmes priskytima, o ne tikrinima
 if(x = y) {
   console.log(x);
 }
@@ -64,12 +64,12 @@ x = true;
 // Boolean
 
 if(x) {
-  console.log(`x reiksme yra teigiamas`);
+  console.log(`x reiksme yra teigiama`);
 } else {
   console.log(`x reiksme yra neigiama`);
 }
 
-// !nor operatorius
+// !not operatorius
 if(!x) {
   console.log(`x reiksme yra neigiama`);
 } else {
@@ -88,8 +88,11 @@ if(x != 0) {
 document.write(`<h1>Labas Pasauli</h1>`);
 
 // funkcijos issaukimas kad sugeneruotu atsitiktinius skaicius
+// Atsitiktinio skaičiaus generavimo funkcija
 function rand(min, max) {
-
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 
