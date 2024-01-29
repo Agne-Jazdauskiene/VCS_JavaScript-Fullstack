@@ -18,6 +18,11 @@ let two = rand(-10, 10);
 let three = rand(-10, 10);
 console.log(one, two, three);
 
+// galima supaprastinti
+let digit;
+let color;
+
+
 if (one < 0) {
   document.write(`<span style="color:green">${one}</span>`);
 }

@@ -14,5 +14,4 @@ function rand(min, max) {
 
 let number = rand(1, 6);
 
-if (number =)
-document.write("<h3>number</h3>");
+document.write(`<h3>${number}</h3>`);
