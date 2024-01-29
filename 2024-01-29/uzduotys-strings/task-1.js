@@ -6,6 +6,12 @@ Rezultatas: Depp*/
 // 1 UZDUOTIS
 
 let firstName = "Gabija";
-let secondName = "Jaraminaitė";
+let lastName = "Jaraminaitė";
+console.log(firstName.length);
+console.log(lastName.length);
 
-document.write();
+if (firstName.length <= lastName.length) {
+  document.write(`<p>${firstName}</p>`);
+} else {
+  document.write(`<p>${lastName}`);
+}
