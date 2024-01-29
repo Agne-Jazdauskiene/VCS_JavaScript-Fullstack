@@ -9,16 +9,11 @@ function rand(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-let abc = "aąbcdeęėfghiįyjklmnoprsštuųūvzž";
-let abcLength = abc.length - 1;
+let abc = "abcdefghiyjklmnoprstuvz";
+console.log(abc.length);
 
-let random = rand(0, 31);
-console.log(abc[abc.length - 1]);
+let random1 = rand(0, 23);
+let random2 = rand(0, 23);
+let random3 = rand(0, 23);
 
-console.log(abc.length - 1);
-// string = abc.length - 1;
-console.log(( = random));
-
-// console.log(string.length - 1);
-
-// console.log(string.length rand(0, 3));
+console.log(abc.charAt(random1) + abc.charAt(random2) + abc.charAt(random3));
