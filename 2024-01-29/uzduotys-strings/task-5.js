@@ -3,8 +3,32 @@
 
 //  5 - UZDUOTIS
 
-let film = "An American in Paris";
+// let film = "An American in Paris";
 
-console.log(film.replaceAll("a", "*").replaceAll("A", "*"));
+// console.log(film.replaceAll("a", "*").replaceAll("A", "*"));
 
-document.write(`<p>${film.replaceAll("a", "*").replaceAll("A", "*")}</p>`);
+// document.write(`<p>${film.replaceAll("a", "*").replaceAll("A", "*")}</p>`);
+
+// REGEX paieskos irankis
+
+let string = "An American in Paris";
+
+// string = string.replaceAll("A", "*");
+// string = string.replaceAll("a", "*");
+// console.log(string);
+
+//arba
+// string = string.replaceAll("A", "*").replaceAll("a", "*");
+// console.log(string);
+
+//arba naudoti REGEX
+
+string = string.replaceAll(/[a]/gi, "*");
+// string = string.replaceAll(/[Aa]/g, "*");
+// string = string.replaceAll(/[a-z]/g, "*");
+// g - global, t.y. visam stringe
+// i - case insensitive, ignoruojamas skirtumas tarp didziuju ir mazuju raidziu
+// - bus range (nuo iki) pvz a-z ar nuo g-z
+//[] - nurodo nespecifine kombinacija
+
+console.log(string);
