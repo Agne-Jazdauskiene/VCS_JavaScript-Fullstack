@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
+    // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+    // (sprendimui masyvo nenaudoti).
+
+    document.write('<h2>Ketvirtoji užduotis</h2>');
+
+    let pirmas = rand(0, 2);
+    let antras = rand(0, 2);
+    let trecias = rand(0, 2);
+    let ketvirtas = rand(0, 2);
+    let nuliai = 0;
+    let vienetai = 0;
+    let dvejetai = 0;
+
+    document.write(`<p>Gautos reikšmės: ${pirmas} ${antras} ${trecias} ${ketvirtas}</p>`);
+
+    if (pirmas === 0)
+      nuliai++;
+
+    if (antras === 0)
+      nuliai++;
+
+    if (trecias === 0)
+      nuliai++;
+
+    if (ketvirtas === 0)
+      nuliai++;
+
+    if (pirmas === 1)
+      vienetai++;
+
+    if (antras === 1)
+      vienetai++;
+
+    if (trecias === 1)
+      vienetai++;
+
+    if (ketvirtas === 1)
+      vienetai++;
+
+    if (pirmas === 2)
+      dvejetai++;
+
+    if (antras === 2)
+      dvejetai++;
+
+    if (trecias === 2)
+      dvejetai++;
+
+    if (ketvirtas === 2)
+      dvejetai++;
+
+    document.write(`<p>Nuliai: ${nuliai} Vienetai: ${vienetai} Dvejetai: ${dvejetai}</p>`);
+  </script>
+</body>
+
+</html>

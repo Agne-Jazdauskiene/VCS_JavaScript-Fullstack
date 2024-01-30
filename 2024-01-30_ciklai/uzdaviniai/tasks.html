@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    document.write(`<h3>--------- 1 - UZDUOTIS -----------</h3>`);
+
+    // Naršyklėje nupieškite linija iš 400 “*”. 
+    // Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;
+    // Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; 
+
+    // Dviejų ciklų sprendimas
+    // for(let i = 0; i < 8; i++) {
+    //     for(let x = 0; x < 50; x++) {
+    //         document.write('*');
+    //     }
+    //     document.write('<br />');
+    // }
+
+    // Vieno ciklo sprendimas
+    let rezultatas = '';
+
+    for (let i = 1; i <= 400; i++) {
+      rezultatas += '*';
+
+      if (i % 50 === 0) {
+        rezultatas += '<br />';
+      }
+    }
+
+    document.write(rezultatas);
+
+
+
+    document.write(`<h3>--------- 2 - UZDUOTIS -----------</h3>`);
+    // Sugeneruokite 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.  Skaičiai didesni nei 275 turi būti raudonos spalvos.
+
+
+    i = 0;
+    let didesniSkc = 0;
+
+    while (i < 300) {
+      let skaicius = rand(0, 300);
+
+      if (skaicius > 275) {
+        document.write(`<span style="color: red;">${skaicius} </span>`);
+      }
+      else {
+        document.write(`<span style="color: black;">${skaicius} </span>`);
+      }
+
+      if (skaicius > 150) {
+        didesniSkc++;
+      }
+
+      i++;
+    }
+
+    document.write(`<p>Didesniu nei 150 skaiciu yra: ${didesniSkc} </p>`);
+
+
+    document.write(`<h3>--------- 3 - UZDUOTIS -----------</h3>`);
+    // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytusi ekrane.
+
+    i = 0;
+
+    while (i <= 3000) {
+      let skaicius;
+
+      if (skaicius % 77 === 0) {
+        document.write(`<span>${skaicius}, </span>`)
+      }
+
+      // document.write(resultat.slice(0, -1));
+      i++;
+    }
+
+
+    document.write(`<h3>--------- 4 - UZDUOTIS -----------</h3>`);
+    // Nupieškite kvadratą iš “*”, kurio kraštinės sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis. (Priskirkite reikiamą eilučių aukštį)
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+    // * * * * * * * * * * *
+
+    let result = '';
+
+    for (let i = 1; i <= 25 * 25; i++) {
+      result += '*';
+    }
+
+
+
+    document.write(`<h3>--------- 5 - UZDUOTIS -----------</h3>`);
+    // Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
+
+
+    document.write(`<h3>--------- 6 - UZDUOTIS -----------</h3>`);
+    //     Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+    // a. Iškritus herbui;
+    // b. Tris kartus iškritus herbui;
+    // c. Tris kartus iš eilės iškritus herbui;
+
+    let herbas = 0;
+    let skaicius = 0;
+    document.write(`<h3>--------- A var. -----------</h3>`);
+    while (true) {
+      let moneta = rand(0, 1);
+      console.log(moneta);
+      if (moneta === 0) {
+        document.write(`H`)
+        break;
+      } else {
+        document.write(`S`)
+      }
+
+      i++;
+    }
+    document.write(`<h3>--------- B var. -----------</h3>`);
+    while (true) {
+      let moneta = rand(0, 1);
+      console.log(moneta);
+      if (moneta === 0) {
+        herbas++;
+        document.write(`H`)
+      } else {
+        document.write(`S`)
+      }
+      if (herbas > 2) {
+        break;
+      }
+
+      i++;
+    }
+
+    document.write(`<h3>--------- C var. -----------</h3>`);
+
+    while (true) {
+      let moneta = rand(0, 1);
+      console.log(moneta);
+      if (moneta === 0) {
+        herbas++;
+        document.write(`H`)
+        // break;
+      }
+      if (moneta === 0) {
+        herbas++;
+        document.write(`H`)
+      }
+
+      if (moneta === 0) {
+        herbas++;
+        document.write(`H`)
+        break;
+      }
+
+      else {
+        document.write(`S`)
+      }
+
+
+      i++;
+    }
+
+
+    document.write(`<h3>--------- 7 - UZDUOTIS -----------</h3>`);
+    // Kazys ir Petras žaidžia šaškėmis. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+    let petras = rand(10, 20);
+    let kazys = rand(5, 25);
+    console.log(petras, kazys);
+
+
+
+    document.write(`<h3>--------- 8 - UZDUOTIS -----------</h3>`);
+    //     Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+    // a)  “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+    // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+    document.write(`<h3>--------- A var. -----------</h3>`);
+
+
+
+
+
+    document.write(`<h3>--------- B var. -----------</h3>`);
+
+
+
+
+
+    document.write(`<h3>--------- 9 - PAPILDOMA - UZDUOTIS -----------</h3>`);
+
+
+
+  </script>
+
+</body>
+
+</html>
