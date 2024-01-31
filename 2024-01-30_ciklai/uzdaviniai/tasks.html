@@ -87,17 +87,18 @@
     // Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki 3000, kurie dalijasi iš 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi rezultatai matytusi ekrane.
 
     i = 0;
+    let beKablelio = ''; // kaip ir kur ji priskirti?
 
     while (i <= 3000) {
-      let skaicius;
+      let skaicius = rand(1, 3000);
 
       if (skaicius % 77 === 0) {
-        document.write(`<span>${skaicius}, </span>`)
+        document.write(`<span>${skaicius}, </span>`);
       }
 
-      // document.write(resultat.slice(0, -1));
       i++;
     }
+    document.write(beKablelio.slice(0, -1));
 
 
     document.write(`<h3>--------- 4 - UZDUOTIS -----------</h3>`);
@@ -110,16 +111,80 @@
     // * * * * * * * * * * *
     // * * * * * * * * * * *
 
-    let result = '';
+    let size = 25;
+    let result = '<div style="line-height: 8px;">';
 
-    for (let i = 1; i <= 25 * 25; i++) {
+    for (let i = 1; i <= 625; i++) {
       result += '*';
+
+      if (i % 25 === 0) {
+        result += '<br />';
+      }
     }
+    document.write(result);
+
+    // PVZ
+    // Vieno ciklo sprendimas
+    //  let rezultatas = '';
+
+    // for (let i = 1; i <= 400; i++) {
+    //   rezultatas += '*';
+
+    //   if (i % 50 === 0) {
+    //     rezultatas += '<br />';
+    //   }
+    // }
+
+    // document.write(rezultatas);
+
+    // Dviejų ciklų sprendimas
+    // for(let i = 0; i < 8; i++) {
+    //     for(let x = 0; x < 50; x++) {
+    //         document.write('*');
+    //     }
+    //     document.write('<br />');
+    // }
 
 
 
     document.write(`<h3>--------- 5 - UZDUOTIS -----------</h3>`);
     // Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines.
+
+    for (let y = 0; y < size; y++) {
+      // console.log(`eilute`);
+      for (let x = 0; x < size; x++) {
+        if (x === y || x === size - y - 1) {
+          result += '<span style="color: red;">*</span>';
+        } else {
+          result += '*';
+        }
+      }
+      result += '<br>';
+    }
+
+    document.write(result);
+
+
+    // let size = 25;
+    // let result = '<div style="line-heith: 8px;">';
+    // // vienas ciklas paišys eilutes, kitas ciklas paišys - stulpelius
+
+    // for (let y = 0; y < size; y++) {
+    //   // console.log(`Eilute`);
+    //   for (let x = 0; x < size; x++) {
+    //     if (x === y || x === size - y - 1) {
+    //       rezultatas += `<span style="color: red;">*</span>`;
+    //     } else {
+
+    //       rezultatas += '*';
+    //     }
+    //   }
+    //   rezultatas += '<br>';
+    //   document.write(resultatas);
+
+    // }
+
+
 
 
     document.write(`<h3>--------- 6 - UZDUOTIS -----------</h3>`);
@@ -129,7 +194,7 @@
     // c. Tris kartus iš eilės iškritus herbui;
 
     let herbas = 0;
-    let skaicius = 0;
+    // let skaicius = 0;
     document.write(`<h3>--------- A var. -----------</h3>`);
     while (true) {
       let moneta = rand(0, 1);
@@ -191,11 +256,30 @@
 
 
     document.write(`<h3>--------- 7 - UZDUOTIS -----------</h3>`);
+
     // Kazys ir Petras žaidžia šaškėmis. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
 
     let petras = rand(10, 20);
     let kazys = rand(5, 25);
     console.log(petras, kazys);
+
+    let petrotaskai = 0;
+    let kaziotaskai = 0;
+
+    let rezultataS = 0;
+
+
+
+
+    if (petrotaskai > kaziotaskai) {
+      console.log(`Petras laimejo zaidima`);
+    } else {
+      console.log(`Kazys laimejo zaidima`);
+    }
+    document.write()
+
+
 
 
 
@@ -203,7 +287,42 @@
     //     Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
     // a)  “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
     // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+
     document.write(`<h3>--------- A var. -----------</h3>`);
+
+    let smugiai = 0;
+    let vinis = 85;
+    let gylis = 0;
+
+    // pvz. gylis = 77
+    // pvz. vinis = 85
+    while (gylis <= vinis) {
+      let ikalta = rand(5, 20);
+      console.log(ikalta);
+
+      gylis += ikalta;
+      smugiai++;
+      // gylis = 7
+      // 2. gylis = 12
+      // 3. gylis = 22
+
+      // while(true)
+      // if(gylis>= vinis) {
+      //   break;
+      // }
+    }
+
+    // padaryti su 5 vinimis :) galima 5*85 auksti padaryti
+
+
+
+
+
+
+
+
+
 
 
 
@@ -215,7 +334,20 @@
 
 
 
-    document.write(`<h3>--------- 9 - PAPILDOMA - UZDUOTIS -----------</h3>`);
+
+
+
+    document.write(`<h3>--------- 9 - PAPILDOMA UZDUOTIS (1) -----------</h3>`);
+    //     Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200, atskirtų tarpais. Skaičiai turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami jame tik pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys savęs). Skaičius stringe sudėliokite didėjimo tvarka, nuo mažiausio iki didžiausio.
+    // https://lt.wikipedia.org/wiki/Pirminis_skai%C4%8Dius
+
+
+
+    document.write(`<h3>--------- 10 - PAPILDOMA UZDUOTIS (2) -----------</h3>`);
+    // Sukurkite laikmatį (timer) kuris rodytų mažėjančias sekundes, minutes bei valandas. 
+    // Skaičiai generuojami rand() funkcija. Pasinaudokite setInterval() funkcija laiko atvaizdavimui.
+    // Pasibaigus laikui sustabdykite intervalą.
+    // https://www.google.com/search?q=set+timer+10min
 
 
 
