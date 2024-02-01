@@ -194,7 +194,7 @@
     // c. Tris kartus iš eilės iškritus herbui;
 
     let herbas = 0;
-    // let skaicius = 0;
+
     document.write(`<h3>--------- A var. -----------</h3>`);
     while (true) {
       let moneta = rand(0, 1);
@@ -206,12 +206,13 @@
         document.write(`S`)
       }
 
-      i++;
+      i++; // turbut nereikia, nes sustabdome su break
     }
     document.write(`<h3>--------- B var. -----------</h3>`);
     while (true) {
       let moneta = rand(0, 1);
       console.log(moneta);
+
       if (moneta === 0) {
         herbas++;
         document.write(`H`)
@@ -222,37 +223,43 @@
         break;
       }
 
-      i++;
+      i++; // turbut nereikia, nes sustabdeme su break
     }
 
     document.write(`<h3>--------- C var. -----------</h3>`);
 
-    while (true) {
+    while (herbas < 3) {
       let moneta = rand(0, 1);
       console.log(moneta);
-      if (moneta === 0) {
-        herbas++;
-        document.write(`H`)
-        // break;
-      }
-      if (moneta === 0) {
-        herbas++;
-        document.write(`H`)
-      }
 
       if (moneta === 0) {
         herbas++;
         document.write(`H`)
-        break;
       }
-
       else {
-        document.write(`S`)
+        herbas = 0;
+        document.write('S');
       }
+    } // dabar nebeveikia :)
+
+    // if (moneta === 0) {
+    //   herbas++;
+    //   document.write(`H`)
+    // }
+
+    // if (moneta === 0) {
+    //   herbas++;
+    //   document.write(`H`)
+    //   break;
+    // }
+
+    // else {
+    //   document.write(`S`)
+    // }
 
 
-      i++;
-    }
+
+
 
 
     document.write(`<h3>--------- 7 - UZDUOTIS -----------</h3>`);

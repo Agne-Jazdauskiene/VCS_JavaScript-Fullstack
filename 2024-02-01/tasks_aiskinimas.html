@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+    document.write(`<h3>--------- 6 - UZDUOTIS -----------</h3>`);
+    //     Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+    // a. Iškritus herbui;
+    // b. Tris kartus iškritus herbui;
+    // c. Tris kartus iš eilės iškritus herbui;
+
+
+
+
+
+    document.write(`<h3>--------- 7 - UZDUOTIS -----------</h3>`);
+
+    // Kazys ir Petras žaidžia šaškėmis. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
+
+    let petroRezultatas = 0;
+    let kazioRezultatas = 0;
+
+    while (true) {
+      let petras = rand(10, 20);
+      let kazys = rand(5, 25);
+
+      petroRezultatas += petras;
+      kazioRezultatas += kazys;
+
+
+      console.log(`<p>Partijos taskai: ${petras}, ${kazys}</p>`);
+
+
+      if (petras > kazys) {
+        document.write(`<p>Partija laimejo Petras</p>`);
+      } else if (petras === kazys) {
+        document.write(`<p>Ivyko lygiosios</p>`);
+      }
+
+      else {
+        document.write(`<p>Partija laimejo Kazys</p>`)
+      }
+
+      if (petroRezultatas >= 222 || kazioRezultatas >= 222)
+        break;
+    }
+
+
+    document.write(`<p>Petro taskai: ${petroRezultatas} Kazio taskai: ${kazioRezultatas}</p>`);
+
+    if (petroRezultatas > kazioRezultatas) {
+      document.write(`<p>Zaidima laimejo Petras</p>`);
+
+    } else if (petroRezultatas === kazioRezultatas) {
+      document.write(`<p>Ivyko lygiosios</p>`);
+    } else {
+      document.write(`<h4>Zaidima laimejo Kazys</h4>`);
+    }
+
+
+
+    document.write(`<h3>--------- 8 - UZDUOTIS -----------</h3>`);
+    // Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+    // a)  “Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+    // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+
+    document.write(`<h3>--------- A var. -----------</h3>`);
+
+    // let vinis = 85;
+    // let bendrasGylis = 0;
+    // let smugiai = 0;
+
+    // for(let i = 0; i < 5; i++) {
+
+    //   while (bendrasGylis <= vinis) {
+    //     let ikalimoGylis = rand(5, 20);
+
+    //     bendrasGylis += ikalimoGylis;
+
+
+    //     smugiai++;
+    //   }
+
+    // }
+
+
+
+    let vinis = 85 * 5;
+    let smugiai = 0;
+    let bendrasGylis = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+      while (bendrasGylis <= vinis) {
+        let ikalimoGylis = rand(5, 20);
+
+        bendrasGylis += ikalimoGylis;
+
+        smugiai++;
+      }
+
+    }
+
+    document.write(`Viniui ikalti prireike: ${smugiai} smugiu`);
+
+
+
+    document.write(`<h3>--------- B var. -----------</h3>`);
+    // b) “Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių.
+
+    vinis = 85 * 5;
+    smugiai = 0;
+    bendrasGylis = 0;
+
+    for (let i = 0; i < 5; i++) {
+
+      while (bendrasGylis <= vinis) {
+        smugiai++;
+
+        // 0 - Nepataikem i vini
+        if (rand(0, 1) === 0) {
+          console.log(`Nepataikem i vini`);
+          continue; // Perejimas i kita iteracija. Zemiau esancio kodo nebeskaito
+        }
+
+        let ikalimoGylis = rand(20, 30);
+
+        bendrasGylis += ikalimoGylis;
+
+
+      }
+    }
+
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
