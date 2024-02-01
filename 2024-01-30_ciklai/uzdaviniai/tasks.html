@@ -233,12 +233,12 @@
       console.log(moneta);
 
       if (moneta === 0) {
-        herbas++;
         document.write(`H`)
+        herbas++;
       }
       else {
-        herbas = 0;
         document.write('S');
+        herbas = 0;
       }
     } // dabar nebeveikia :)
 
@@ -267,25 +267,45 @@
     // Kazys ir Petras žaidžia šaškėmis. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25. Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​. Žaidimą laimi tas, kas greičiau surenka 222 taškus. Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų.
 
 
-    let petras = rand(10, 20);
-    let kazys = rand(5, 25);
-    console.log(petras, kazys);
 
     let petrotaskai = 0;
     let kaziotaskai = 0;
 
-    let rezultataS = 0;
+    while (true) {
+      let petras = rand(10, 20);
+      let kazys = rand(5, 25);
+      // console.log(petras, kazys);
 
+      petrotaskai += petras;
+      kaziotaskai += kazys;
 
+      console.log(`<p>Partijos taskai: ${petras}, ${kazys}</p>`);
 
+      if (petras > kazys) {
+        document.write(`<p>Partija laimejo Petras</p>`);
+      } else if (petras === kazys) {
+        document.write(`<p>Ivyko lygiosios</p>`);
+      } else {
+        document.write(`<p>Partija laimejo Kazys</p>`);
+      }
+
+      if (petrotaskai >= 222)
+        break;
+
+      if (kaziotaskai >= 222)
+        break;
+    }
+
+    document.write(`<p>Petro taskai: ${petrotaskai} Kazio taskai: ${kaziotaskai}</p>`);
 
     if (petrotaskai > kaziotaskai) {
-      console.log(`Petras laimejo zaidima`);
-    } else {
-      console.log(`Kazys laimejo zaidima`);
-    }
-    document.write()
+      document.write(`<h4>Zaidima laimejo Peras</h4>`);
 
+    } else if (petrotaskai === kaziotaskai) {
+      document.write(`h4>Ivyko lygiosios</h4>`);
+    } else {
+      document.write(`<h4>Zaidima laimejo Kazys</h4>`);
+    }
 
 
 

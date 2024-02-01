@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    document.write(`<h4>Uzduotis - 1 ----</h4>`)
+    // Naršyklėje atspausdinkite visus nelyginius skaičius nuo 7 iki 31.
+
+    let skaicius;
+
+    for (skaicius = 7; skaicius <= 31; skaicius = skaicius + 1) {
+      if (skaicius > 7) {
+        skaicius++;
+      }
+      document.write(`<span>${skaicius} </span>`);
+    }
+
+
+    document.write(`<h4>Uzduotis - 2 ----</h4>`)
+
+    // Aprašykite ciklą kuris naršyklėje atspausdintų skaičių didėjimo modelį iki dešimties. Rezultato pavyzdys:
+    // 1 
+    // 1 2 
+    // 1 2 3 
+    // 1 2 3 4 
+    // 1 2 3 4 5 
+    // 1 2 3 4 5 6 
+    // 1 2 3 4 5 6 7 
+    // 1 2 3 4 5 6 7 8 
+    // 1 2 3 4 5 6 7 8 9 
+    // 1 2 3 4 5 6 7 8 9 10
+
+
+    // let size = 10;
+    // let numb = 1;
+
+    let totalRows = 10;
+    let result = '';
+    for (let i = 1; i <= totalRows; i++) {
+      for (let j = 1; j <= i; j++) {
+        result += j + '';
+      }
+      console.log(result);
+      document.write(`<p style="line-height: 6px; letter-spacing: 2px">${result} </p>`);
+      result = '';
+    }
+
+
+
+    // let size = 25;
+    // let result = '<div style="line-height: 8px;">';
+
+    // for (let i = 1; i <= 625; i++) {
+    //   result += '*';
+
+    //   if (i % 25 === 0) {
+    //     result += '<br />';
+    //   }
+    // }
+    // document.write(result);
+
+
+
+
+
+
+
+
+
+
+
+    document.write(`<h4>Uzduotis - 3 ----</h4>`)
+    // Jums duotas stringas: “Žalgiris, Anadolu Efes, Barcelona BC”. Pasinaudodami ciklų pagalba iš stringo ištraukite vieną atsitiktinį komandos pavadinimą. Rezultate kablelių ir tarpų neturi būti. 
+
+
+
+
+    document.write(`<h4>Uzduotis - 4 ----</h4>`)
+    //     Jums duotas stringas: “54 77 2 59 17 19 108”. Paimkite jame esančius skaičius ir patikrinkite juos ar jie yra pirminiai. T.y. ar natūralusis skaičius yra didesnis nei 1 ir be liekanos dalinasi tik iš savęs ir iš vieneto. 
+    // https://en.wikipedia.org/wiki/Prime_number 
+
+
+  </script>
+
+</body>
+
+</html>
