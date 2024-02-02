@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Reference - Nuoroda iki reiksmes
+    let pavadinimas = 'UAB "Gera imone';
+
+    // let x1 = 54;
+    // let x1 = 2;
+    // let x1 = 19;
+    // let x1 = 77;
+    // let x1 = 104;
+
+    // tam turime duomenu grupavima - jis bus Array (masyvo) pavidalu
+    let masyvas = ['Pavadinimas', 15, false, null, undefined, 'Brandas'];
+    // 0          1    2     3       4          5     pozicijos masyve
+    //Norint pasiimti reiksme is masyvo
+    console.log(masyvas[0]);
+    console.log(masyvas[2]);
+
+    // viso masyvo atvazidavimas
+    console.log(masyvas);
+
+    //norint patikrinti masyvo ilgi. skaiciuoja nuo 0
+    console.log(masyvas.length);
+
+    // Masyvo duomenu tipas
+    console.log(typeof masyvas); // tipas - object
+
+    // norint prideti i masyva rieksme, turesime kelis budus
+    masyvas[6] = 'Naujai prideta reiksme'
+
+    //grazins ta skaiciu, kuris bus paskutineje pozicijoje
+    masyvas[masyvas.lenght] = 'Dar vienas elementas prideta  si pabaiga';
+
+    console.log(masyvas); // nors pridejimas buvo veliau, atvaizdavimas bus su paskutine prideta reiksme
+
+
+    let skaicius = 10;
+
+    skaicius = 10;
+
+    const stringas = 'Stringas';
+    // stringas = 'Stringas'; // negaliu priskirti naujos reiksmes const
+    // bet
+
+    // Konstanta negali tureti naujo reiksme s priskyrimo, taciau masyve esancios esancios reiksmes keistis gali
+    const naujasMasyvas = [10, 15, 25]; // masyvas yra kompleksinis duomens tipas
+
+    //sitaip galime prideti reiksme masyvo viduje i PABAIGA
+    naujasMasyvas[naujasMasyvas.length] = 35;
+    console.log(naujasMasyvas);
+
+
+    // Reiksmes salinimas is masyvo
+    // BLOGA praktika dirbant su masyvu:
+    // delete naujasMasyvas[2];
+
+
+    // trynimas splice metodo pagalba:
+    //Pirmas parametras nurodo pozicija nuo kurios trinami elementai
+    // Antras parametras nurodo trinamu elementu kieki
+    naujasMasyvas.splice(2, 1);
+
+    console.log(naujasMasyvas);
+
+
+    //Reiksmes pakeitimas naudojant splice metoda
+
+    naujasMasyvas.splice(2, 1, 85);
+
+    console.log(naujasMasyvas);
+
+
+    // Reiksmiu pridejimas i masyvo PABAIGA, naudojant push metoda
+
+    naujasMasyvas.push('Reiksme', 'patalpinta', 'naudojant', 'push', 'metoda');
+    console.log(naujasMasyvas);
+    document.write(`<p>${naujasMasyvas}</p>`);
+
+
+    // Patalpinimas i MASYVO PRIEKI
+
+    naujasMasyvas.unshift('REIKSME PATALPINTA MASYVO PRIEKYJE');
+    console.log(naujasMasyvas);
+
+    document.write(`<p>${naujasMasyvas}</p>`);
+
+
+
+
+  </script>
+
+
+
+
+
+</body>
+
+</html>
