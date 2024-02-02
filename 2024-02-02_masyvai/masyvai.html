@@ -9,6 +9,15 @@
 
 <body>
   <script>
+
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+
+
     // Reference - Nuoroda iki reiksmes
     let pavadinimas = 'UAB "Gera imone';
 
@@ -93,6 +102,82 @@
 
     document.write(`<p>${naujasMasyvas}</p>`);
 
+    ///
+
+    // Jums duotas stringas: “54 77 2 59 17 19 108”. Paimkite jame esančius skaičius ir patikrinkite juos ar jie yra pirminiai. T.y. ar natūralusis skaičius yra didesnis nei 1 ir be liekanos dalinasi tik iš savęs ir iš vieneto. 
+    // https://en.wikipedia.org/wiki/Prime_number 
+
+    // split metodo pagalba mes galime skaidyti masyva
+
+
+
+    const string = "54 77 2 59 17 19 108";
+    const numbers = string.split(' '); // nurodome tarpa- pagal ka noresime masyva skaidyti
+
+    console.log(numbers);
+    // Masyvo sukurimas
+    const filteredNumbers = []; //istrauktas reiksmes
+
+
+
+    for (let i = 0; i < numbers.length; i++) {
+      // console.log(numbers[i]);
+      const digit = numbers[i];
+      let isPrime = true;
+      for (let x = 2; x < digit; x++) {
+        if (digit % x === 0) {
+          isPrime = false;
+        }
+      }
+      if (isPrime) {
+        filteredNumbers.push(digit);
+      }
+    }
+
+    console.log(filteredNumbers);
+
+
+
+    // METODAS join - paima masyva ir ji sujungia i viena stringa
+
+    console.log(filteredNumbers.join(' - '));
+
+
+    // Masyvo sukurimas - dar viena galimybe
+
+    const darVienaMasyvas = new Array('Pirmoji reiksme', "antroji", 't.t.');
+    console.log(darVienaMasyvas);
+
+
+
+    // 1. Testine uzduotis
+    // Sukurkite 250-ies elementu masyva (array). Reiksmes - atsitiktiniai skaiciai nuo 20 iki 8000.
+
+    const testinisMasyvas = [];
+
+    // kursim cikla, kuris suktusi 250 kartu
+    for (let i = 0; i < 250; i++) {
+      const skaicius = rand(20, 8000);
+
+      testinisMasyvas.push(skaicius);
+      // testinisMasyvas[testinisMasyvas.length] = skaicius; Identiskas veikimas
+    }
+
+    console.log(testinisMasyvas);
+
+
+    // 2 Uzduotis - Patikrinkite masyva ir isvalykite visus skc, kurie yra didesni nei 7000
+
+    const rezultatoMasyvas = [];
+    for (let i = 0; i < testinisMasyvas.length; i++) {
+      // console.log(testinisMasyvas[i]); // susigrazinom po skaiciu is masyvo
+
+      if (testinisMasyvas[i] >= 7000) {
+        rezultatoMasyvas.push(testinisMasyvas[i]);
+      }
+    }
+
+    console.log(rezultatoMasyvas);
 
 
 

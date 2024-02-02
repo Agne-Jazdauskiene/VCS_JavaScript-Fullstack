@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let skaicius = '8125';
+
+    if (skaicius === 8215) {
+      console.log(`skaiciai nevienodi, nes nesutampa tipas`);
+    }
+
+    if (skaicius == 8125); {
+      console.log(`skaiciiia vienodi`);
+
+    }
+
+    // let rezultatas = skaicius + '15';
+    // console.log(rezultatas); // JS galvoja, jog cia stringai ir juos reikia sujungti
+
+    //konvertuoja sveika skaiciu
+    let rezultatas = parseInt(skaicius) + parseInt('15');
+    console.log(rezultatas);
+
+    let skaiciusPoKablelio = parseFloat(skaicius);
+    rezultatas = skaiciusPoKablelio + parseInt('15');
+
+
+    // + pridejimas norint konvertuoti  tipa
+    rezultatas = +skaicius + +'15';
+    console.log(skaicius);
+
+
+
+
+  </script>
+
+</body>
+
+</html>

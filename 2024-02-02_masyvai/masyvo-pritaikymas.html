@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Jums duotas stringas: “54 77 2 59 17 19 108”. Paimkite jame esančius skaičius ir patikrinkite juos ar jie yra pirminiai. T.y. ar natūralusis skaičius yra didesnis nei 1 ir be liekanos dalinasi tik iš savęs ir iš vieneto. 
+    // https://en.wikipedia.org/wiki/Prime_number 
+
+    // split metodo pagalba mes galime skaidyti masyva
+
+
+
+    const string = "54 77 2 59 17 19 108";
+    const numbers = string.split(' '); // nurodome tarpa- pagal ka noresime masyva skaidyti
+
+    console.log(numbers);
+
+    const filteredNumbers = []; //istrauktas reiksmes
+
+
+
+    for (let i = 0; i < numbers.length; i++) {
+      // console.log(numbers[i]);
+      const digit = numbers[i];
+      let isPrime = true;
+      for (let x = 2; x < digit; x++) {
+        if (digit % x === 0) {
+          isPrime = false;
+        }
+      }
+      if (isPrime) {
+        filteredNumbers.push(digit);
+      }
+    }
+
+    console.log(filteredNumbers);
+
+
+  </script>
+
+
+
+</body>
+
+</html>
