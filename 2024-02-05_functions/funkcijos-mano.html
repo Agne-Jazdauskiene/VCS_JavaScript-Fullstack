@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    console.log('-----4 pvz------')
+
+    function kintamojoTikrinimas(skaicius) {
+
+    }
+
+
+    // const masyvas = [];
+
+    // masyvas.push('Pirma reiksme', 0, 15, 15, 20, 156);
+    // console.log(masyvas);
+
+
+
+    console.log('-----5 pvz------')
+
+    // Jeigu norime funkcijos, kuri galetu priimti nelimituota kieki parametru
+    function push(...parametras) { //spread syntax - trys taskai nurodo  masyva
+      console.log(parametras);
+    }
+
+    // konvertuojame i masyva
+    push(10, 20, 30, 40, 50); // Neribotas kiekis argumentu
+
+    const masyvas = [10, 20, 30, 40, 50];
+
+    // 2. var. is masyvo konvertuojame, kad turetume reiksmes, perskirtas kableliais
+    push(...masyvas); // cia push yra funkcija
+
+
+    const antrasMasyvas = [89, 14, 22, 7, 1, 0];
+
+    masyvas.push(...antrasMasyvas); // cia push yra metodas. todel nesipyksta tarpusavyje
+    console.log(masyvas);
+
+
+    // Funkcijos duomens tipas yra funkcija
+    console.log(typeof function () { });
+
+
+    // Pagal nutylejima (default)
+
+    function defaultParams(pirmas = 12, antras = 12) { // pirmas, antras yra parametrai
+      // console.log(pirmas, antras);
+
+      return pirmas * antras;
+    }
+
+    // pagal nutylejima, jeigu reiksme nebus perduoda, jai automatiskai bus priskirta nurodyta reiksme pirmas = , antras =. Bet galiu nurodyti kazkuria reiksme, tuomet ims nurodyta reiksme ir kita reiksme pagal nutylejima
+    console.log(defaultParams(25));// cia nurodomasa argumentas
+
+
+    // Reiksmes patikrinimas
+
+    function skaiciausTikrinimas(skaicius) {
+      if (!skaicius)
+        return; // jeigu nieko nenurodome  prie return komandos, grazinama undefined
+      // bet komanda aktyvuojasi ir grazina kitos eilutes kompiliacija
+
+      return skaicius.toFixed(2);
+    }
+
+    console.log(skaiciausTikrinimas());
+
+  </script>
+
+</body>
+
+</html>
