@@ -135,7 +135,7 @@ const arrayOdd = [];
 const arrayEven = [];
 
 for (let i = 0; i < array1.length; i++) {
-  let valueF = array1[i];
+  // let valueF = array1[i];
 
   if (array1[i] % 2 != 0) {
     arrayOdd.push(array1[i]);
@@ -155,3 +155,121 @@ document.write(`<h3>--------- G var. -----------</h3>`);
 
 document.write(`<h3>--------- H var. -----------</h3>`);
 document.write(`<h3>--------- I var. -----------</h3>`);
+
+document.write(`<h3>--------- 7 - UZDUOTIS -----------</h3>`);
+// Sugeneruokite masyvą, kurio reikšmės atsitiktinės raidės A, B, C ir D, o ilgis 200. Suskaičiuokite kiek yra kiekvienos raidės.
+
+const randAbc = [];
+const raides = ["A", "B", "C", "D"];
+
+let kiekisA = 0;
+let kiekisB = 0;
+let kiekisC = 0;
+let kiekisD = 0;
+let kiekis = [0, 0, 0, 0];
+
+// Vienos raides paemimas
+console.log(raides[rand(0, raides.length - 1)]);
+
+for (let i = 0; i < 200; i++) {
+  randAbc.push(raides[rand(0, raides.length - 1)]);
+  if (randAbc[i] === "A") {
+    kiekisA++;
+  }
+  if (randAbc[i] === "B") {
+    kiekisB++;
+  }
+  if (randAbc[i] === "C") {
+    kiekisC++;
+  }
+  if (randAbc[i] === "D") {
+    kiekisD++;
+  }
+}
+
+console.log(`A: ${kiekisA}
+ , B: ${kiekisB}, C: ${kiekisC}, D: ${kiekisD}`);
+document.write(`A: ${kiekisA}
+ , B: ${kiekisB}, C: ${kiekisC}, D: ${kiekisD}`);
+
+// PVZ.
+// console.log(randAbc);
+// Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems
+// reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų.
+// (sprendimui masyvo nenaudoti).
+
+// i = 0;
+// let nuliai = 0;
+// let vienetai = 0;
+// let dvejetai = 0;
+
+// while (i < 4) {
+//   let skaicius = rand(0, 2);
+
+//   if (skaicius === 0) nuliai++;
+
+//   if (skaicius === 1) vienetai++;
+
+//   if (skaicius === 2) dvejetai++;
+
+//   i++;
+// }
+
+// console.log(`Nuliai: ${nuliai} Vienetai: ${vienetai} Dvejetai: ${dvejetai}`);
+
+document.write(`<h3>--------- 8 - UZDUOTIS -----------</h3>`);
+// Išrūšiuokite 7 uždavinio masyvą pagal abecėlę.
+
+const filtruotas = randAbc.sort();
+console.log(filtruotas);
+document.write(`${filtruotas}`);
+
+// arba issifiltruoti raides ir keturis kartus praeiti per cikla
+
+document.write(`<h3>--------- 9 - UZDUOTIS -----------</h3>`);
+// Sugeneruokite 3 masyvus pagal 7 uždavinio sąlygą. Sudėkite masyvus, sudėdami reikšmes pagal atitinkamus indeksus. Paskaičiuokite kiek unikalių (po vieną, nesikartojančių) reikšmių ir kiek unikalių kombinacijų gavote.
+// Pvz.
+// [‘AAA’, ‘BBB’, ‘CCC’, ‘ACC’] = Viena unikali reikšmė “ACC”
+// [‘ACA’, ‘ABA’, ‘ACA’, ‘ADA’] = Dvi unikalios kombinacijos “ABA” ir “ADA”
+// [‘A’, ‘D’, ‘B’]
+// [‘B’, ‘A’, ‘D’]
+// [‘A’, ‘C’, ‘B’]
+
+// ‘ABA’
+// ‘DAC’
+// ‘BDB
+
+const masyvas1 = ["A", "B", "C", "D"];
+const masyvas200 = [];
+const masyvas201 = [];
+const masyvas202 = [];
+
+for (let i = 0; i < 200; i++) {
+  masyvas200.push(masyvas1[rand(0, masyvas1.length - 1)]);
+  masyvas201.push(masyvas1[rand(0, masyvas1.length - 1)]);
+  masyvas202.push(masyvas1[rand(0, masyvas1.length - 1)]);
+}
+
+const raidziuMasyvas = [];
+for (let i = 0; i < 200; i++) {
+  raidziuMasyvas.push(masyvas200[i] + masyvas201[i] + masyvas202[i]);
+}
+
+console.log(raidziuMasyvas);
+
+//Apdorojimas
+
+const tikUnikaliosReiksmes = [];
+for (let i = 0; i < raidziuMasyvas.length; i++) {
+  if (
+    raidziuMasyvas[i] === "AAA" ||
+    raidziuMasyvas[i] === "BBB" ||
+    raidziuMasyvas[i] === "CCC" ||
+    raidziuMasyvas[i] === "DDD"
+  )
+    continue;
+
+  tikUnikaliosReiksmes[i] = raidziuMasyvas[i];
+}
+
+console.log(tikUnikaliosReiksmes);
