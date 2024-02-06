@@ -34,7 +34,7 @@ document.write(`<p>${sum}</p>`);
 document.write(`<h3>--------- B var. -----------</h3>`);
 // Raskite didžiausią masyvo reikšmę ir jos indeksą arba indeksus jeigu yra keli;
 
-let max1 = "";
+let max1 = 0;
 let maxIndex1 = [];
 
 for (let i = 0; i < array1.length; i++) {

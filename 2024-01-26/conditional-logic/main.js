@@ -56,7 +56,7 @@ if (pirmasSkaicius >= antrasSkaicius) {
 console.log(`STRINGU PALYGINIMAS`);
 
 let pirmojiRaide = "Alpes";
-let antrojiRaide = "Banglesntes";
+let antrojiRaide = "Banglentes";
 
 if (antrojiRaide > pirmojiRaide) {
   console.log("B yra auksciau nei A");
@@ -141,10 +141,12 @@ console.log(`TERNARY OPERATORIUS`);
 let ternaryOperatorius =
   pirmasSkaicius > 10 ? "Pirmas skaicius didesnis nei 10" : false;
 // butinai reikia nurodyti else - :
+// This operator is frequently used as an alternative to an if...else statement.
 console.log(ternaryOperatorius);
 
 // VIENOS EILUTES VEIKSMAS
 console.log("VIENOS EILUTES VEIKSMAS");
 // jei turime tik viena eilute - nenaudojame riestiniu skliaustu
 // jei reikia daugiau eiluciu - tuomet rasome riestinius ksliaustus
-if (antrasSkaicius > 25) console.log("Antras skaicius didesnis nei 25");
+if (antrasSkaicius > 25);
+console.log("Antras skaicius didesnis nei 25");

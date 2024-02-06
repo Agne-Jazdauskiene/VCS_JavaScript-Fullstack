@@ -67,7 +67,7 @@ console.log(
 skaicius = 3.999999999;
 rezultatas = Math.floor(skaicius);
 console.log(
-  `Suapvalina skaicius floor metodu iki virsutinio sveikojo skaiciaus, bus 4: ${rezultatas}`
+  `Suapvalina skaicius floor metodu iki apatinio sveikojo skaiciaus, bus 3: ${rezultatas}`
 );
 
 skaicius = 3.00000001;
