@@ -9,6 +9,169 @@
 
 <body>
   <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // Klasikinis funkcijos aprasymas
+    // function suma(a, b) { // a, b - parametrai
+    //   // Funkcija i save priima PARAMETRUS (parameters) a ir b
+    //   console.log(a + b);
+    // }
+    // Funkcijos esme, kad ja galime panaudoti daug kartu
+
+    // Funkcijos issaukimas
+    // Issaukiant funkcija perduodami ARGUMENTAI (arguments)
+    // suma(10, 30); // irasau argumentus
+    // suma(5, 20);
+    // suma(18, 16);
+    // suma(11, 10);
+    // console.log(suma(11, 10));
+
+
+    function suma(a, b) {
+      return a + b;
+    }
+
+    suma(15, 7);
+    console.log(suma(15, 7));
+
+    let padauginta = suma(9, 11) * 2;
+    let padalinta = suma(9, 11) / 2;
+
+    console.log(padauginta);
+    console.log(padalinta);
+
+    // Named function - pozicionavimas skripte neturi itakos, kuomet naudojamas function raktazodis
+    console.log(atimtis(50, 20)); // funkcijos pozicija nesvarbi
+
+    function atimtis(a, b) {
+      return a - b;
+    }
+
+    // Anonymous function - Neivardinta funkcija
+
+    const stringoGrazinimas = function () {
+      return `Funkcija grazino stringa`;
+    }
+    console.log(stringoGrazinimas()); // jei norime issaukti funkcija - butina nurodyti skliaustelius salia pavadinimo
+
+
+
+    let x = 10;
+    console.log(x);
+
+
+    // UZDAVINIU PAVYZDZIAI - Funkcijos pritaikymas su Monetos uzduotimi
+
+    // Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, 
+    // kur 0 yra herbas, o 1 - skaičius. Monetos metimo rezultatus išvedame 
+    // į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas. 
+    // Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+    // Iškritus herbui;
+    // Tris kartus iškritus herbui;
+    // Tris kartus iš eilės iškritus herbui;
+
+    document.write('<h2>Monetos a)</h2>');
+
+    // while (true) {
+    //   let moneta = rand(0, 1);
+
+    //   if (moneta === 0) {
+    //     //Herbas
+    //     document.write('H');
+    //     break;
+    //   } else {
+    //     //Skaičius
+    //     document.write('S');
+    //   }
+    // }
+
+    // document.write('<h2>Monetos b)</h2>');
+
+    // let kiekHerbu = 0;
+
+    // while (kiekHerbu < 3) {
+    //   let moneta = rand(0, 1);
+
+    //   if (moneta === 0) {
+    //     //Herbas
+    //     document.write('H');
+    //     kiekHerbu++;
+    //   } else {
+    //     //Skaičius
+    //     document.write('S');
+    //   }
+
+    //   // if(kiekKartu >= 3)
+    //   //     break;
+    // }
+
+    // // console.log(kiekKartu);
+
+    // document.write('<h2>Monetos c)</h2>');
+
+    // kiekHerbu = 0;
+
+    // while (kiekHerbu < 3) {
+    //   let moneta = rand(0, 1);
+
+    //   if (moneta === 0) {
+    //     //Herbas
+    //     document.write('H');
+    //     kiekHerbu++;
+    //   } else {
+    //     //Skaičius
+    //     document.write('S');
+    //     kiekHerbu = 0;
+    //   }
+
+    //   // if(kiekKartu >= 3)
+    //   //     break;
+    // }
+
+    // Funkcijos pritaikymas su Monetos uzduotimi
+    const monetosMetimas = function (scenarijus) {
+      // scenarijus = 0, 1, 2
+      let kiekKartu = 0;
+      let riba = scenarijus === 0 ? 1 : 3;
+
+      while (true) {
+        let moneta = rand(0, 1);
+
+        if (moneta === 0) {
+          //Herbas
+          document.write('H');
+          kiekKartu++;
+        } else {
+          //Skaičius
+          document.write('S');
+          if (scenarijus === 2)
+            kiekKartu = 0;
+        }
+        if (kiekKartu >= riba)
+          break;
+      }
+    }
+    document.write(`<h3>Pirmas scenarijus:</h3>`);
+    monetosMetimas(0);
+    document.write(`<h3>Antras scenarijus:</h3>`);
+    monetosMetimas(1);
+    document.write(`<h3>Trecias scenarijus:</h3>`);
+    monetosMetimas(2);
+
+    // per darbo pokalbi net klausia, arba galime pamineti, jog zinome.
+
+    // KISS principas - Keep it simple stupid. 
+    // Pirmiausia orientuotis, kad atliktume uzduoti, o koda galesime patobulinti veliau.
+
+    // DRY - Don't repeat yourself. 
+    // Supaprastinti koda, nekartoti dauybes eiluciu. Kaip optimizuoti. Tik tai daryti sensible - su pojuciu :)
+
+
+
     console.log('-----4 pvz------')
 
     function kintamojoTikrinimas(skaicius) {
