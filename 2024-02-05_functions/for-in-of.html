@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // masyvo duomens tipas yra objektas
+
+    const masyvas = [10, 12, 5, 80, 3, 92];
+
+    for (let i = 0; i < masyvas.length; i++) {
+      console.log(masyvas[i]);
+    }
+    console.log(`-----For Of Ciklas -------------`);
+
+    // Norint susigrazinti masyve esancias reiksmes
+    // Kintamojo reiksme pavadinima galime rinktis bet koki
+    for (const reiksme of masyvas) {
+      console.log(reiksme);
+    }
+
+    console.log(`-----For In Ciklas -------------`);
+
+    // Norint susigrazinti masyve esancius indeksus
+    for (const indeksas in masyvas) {
+      // console.log(indeksas);
+      console.log(`Elemento indeksas ${indeksas} ir reiksme ${masyvas[indeksas]}`);
+    }
+
+
+  </script>
+
+</body>
+
+</html>
