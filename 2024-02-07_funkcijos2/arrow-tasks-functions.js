@@ -56,6 +56,8 @@ for (let i = 0; i < array.length; i++) {
 console.log(maxValue);
 console.log(maxIndex);
 
+// su funkcijom
+
 //d. Sukurkite naują masyvą, kurio reikšmės yra 1 uždavinio masyvo reikšmes minus tos reikšmės indeksas;
 
 // const array2D = [];

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arrow Funkcijos</title>
 </head>
+
 <body>
     <script>
         function rand(min, max) {
@@ -22,12 +24,12 @@
         // const funkcijosPavadinimas = function(parametras, parametras2) {
 
         // }
-        
+
         // Arrow funkcijos priskyrimas prie kintamojo
 
         const sum = (pirma, antra) => {
             // Tikrinimas ar parametrai yra perduoti
-            if(!pirma || !antra)
+            if (!pirma || !antra)
                 return;
 
             return pirma + antra;
@@ -44,7 +46,7 @@
         // Į funkciją perduotų parametrų patikrinimas
 
         const formatNumbers = (number) => {
-            if(typeof number !== 'number')
+            if (typeof number !== 'number')
                 return;
 
             return number.toFixed(2);
@@ -63,7 +65,7 @@
         // }
 
         // const masyvas = [5, 18, 20, 25, 8, 6];
-        
+
         // formatavimas(masyvas, function(reiksme) {
         //     if(reiksme > 10) {
         //         document.write(`<p style="color: red;">${reiksme}</p>`);
@@ -74,12 +76,12 @@
 
         // forEach() metodas
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
-        
+
         const masyvas = [5, 18, 20, 25, 8, 6];
-        
+
         // forEach metodas nieko negrąžina
-        masyvas.forEach(function(reiksme, indeksas) {
-            if(reiksme > 10) {
+        masyvas.forEach(function (reiksme, indeksas) {
+            if (reiksme > 10) {
                 document.write(`<p style="color: red;">${reiksme}</p>`);
             } else {
                 document.write(`<p">${reiksme}</p>`);
@@ -101,15 +103,16 @@
         const naujasMasyvas = masyvas.map((reiksme, indeksas) => reiksme * indeksas);
 
         console.log(naujasMasyvas);
-        
+
         // Suformuokite naują masyvą pasinaudodami pirmuoju palikdami tik reikšmes kurios didesnės nei 10
         // Jeigu arrow funkcijoje priimame tik vieną parametrą skliausteliai nebūtini
         // filter() metodo callback funkcijoje nurodome true arba false atsakymą
         const filtruotasMasyvas = masyvas.filter(reiksme => reiksme > 10);
-        
+
         console.log(filtruotasMasyvas.length);
 
         console.log(`Reikšmės didesnės nei 10: ${filtruotasMasyvas}`);
+
 
         // Norint susirasti pirmą masyvo reikšmę kuri yra didesnė nei 10
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
@@ -120,12 +123,13 @@
 
         // Norint susirasti pirmą indeksą pagal kondiciją
         // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
-            
+
         const indeksas = masyvas.findIndex(reiksme => reiksme > 10);
 
         console.log(`Pirmo skaičiaus didesnio nei 10 indeksas ${indeksas}`);
 
-        
+
     </script>
 </body>
+
 </html>
