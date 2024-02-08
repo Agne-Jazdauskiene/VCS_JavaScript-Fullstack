@@ -9,11 +9,85 @@
 
 <body>
   <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
     // Daugiamaciai masyvai - Multidimensional Array
 
     // const array = [10, 'Stringas', false, undefined, null, function() {}, []]
-    const array = [[10]];
+
+    // Statinemis pozicijomis kuraiamas daugiamatis masyvas
+    // aray[0] = 0;
+    // array[0][0] = 10;
+
+    // console.log(array);
+
+
+    //Dvieju lygiu masyvas
+    // const array = [];
+
+    // for (let i = 0; i < 10, i++) {
+    //   array[i] = [];
+
+    //   for (let x = 0; x < 10; x++) {
+    //     array[i][x] = rand(10, 50);
+    //   }
+    // }
+    // console.log(array);
+
+    // Triju lygiu masyvas
+
+    const array = [];
+
+    for (let i = 0; i < 10, i++) {
+      array[i] = [];
+
+      for (let x = 0; x < 10; x++) {
+        array[i][x] = rand(10, 50);
+
+        for (let y = 0; y < 10; y++) {
+          array[i][x][y] = rand(10, 50);
+        }
+      }
+    }
     console.log(array);
+
+    // Reiksmes keitimas
+
+    array[0][1][2] = 'Pakeistas';
+
+    // console.log([...array]); // istraukiam reiksmes ir pasitalpinam i nauja masyva. ne be tas pats masyvas
+
+    // Visus skaicius, esancius masyve, padauginkite is dvieju
+
+    for (let i = 0; i < array.length; i++) {
+      for (let x = 0; x < array[i].length; x++) {
+        for (let y = 0; y < array[i][x].length; y++) {
+          array[i][x][y] *= 2;
+        }
+      }
+    }
+    console.log(array);
+
+
+    // UZDUOTIS
+    // sugeneruokite masyva is 10 el., kurio elementai butu masayvai is 5 elementu su reiksmemis nuo 5 iki 25
+    const newArray = [];
+
+    for (let pirmas = 0; pirmas < 10; y++) {
+      newArray[pirmas] = [];
+      for (let antras = 0; antras < 10; x++) {
+        newArray[pirmas][antras] = rand(5, 25);
+      }
+    }
+
+    console.log(newArray);
+
+
+
+
   </script>
 
 </body>
