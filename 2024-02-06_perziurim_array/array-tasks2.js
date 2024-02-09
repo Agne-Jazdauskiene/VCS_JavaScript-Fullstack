@@ -18,7 +18,9 @@ console.log(array);
 
 document.write(`<h3>--------- 2 - UZDUOTIS -----------</h3>`);
 document.write(`<h3>--------- A var. -----------</h3>`);
-console.log(`-------------- A -------------`); // 2. Naudodamiesi 1 uždavinio masyvu:
+console.log(`-------------- A -------------`); //
+//
+// 2. Naudodamiesi 1 uždavinio masyvu:
 // a. Suskaičiuokite kiek masyve yra reikšmių didesnių už 10;
 
 sum = 0;
