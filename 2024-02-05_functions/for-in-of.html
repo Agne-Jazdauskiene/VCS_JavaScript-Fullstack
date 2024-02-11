@@ -14,21 +14,23 @@
     const masyvas = [10, 12, 5, 80, 3, 92];
 
     for (let i = 0; i < masyvas.length; i++) {
-      console.log(masyvas[i]);
+      console.log(masyvas[i]); // inkrementas repprezentuoja pozicija
     }
     console.log(`-----For Of Ciklas -------------`);
 
     // Norint susigrazinti masyve esancias reiksmes
     // Kintamojo reiksme pavadinima galime rinktis bet koki
-    for (const reiksme of masyvas) {
-      console.log(reiksme);
+    for (const reiksme of masyvas) {// paprasta israiska reiksmes susigrazinimui
+      console.log(reiksme);//gauname ta pati rezultata- visas masyvo reiksmmes
     }
+
 
     console.log(`-----For In Ciklas -------------`);
 
     // Norint susigrazinti masyve esancius indeksus
     for (const indeksas in masyvas) {
       // console.log(indeksas);
+      console.log(masyvas[indeksas]);// reiksme
       console.log(`Elemento indeksas ${indeksas} ir reiksme ${masyvas[indeksas]}`);
     }
 

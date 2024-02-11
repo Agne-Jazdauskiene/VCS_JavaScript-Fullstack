@@ -16,24 +16,25 @@
     }
 
     // Klasikinis funkcijos aprasymas
-    // function suma(a, b) { // a, b - parametrai
-    //   // Funkcija i save priima PARAMETRUS (parameters) a ir b
-    //   console.log(a + b);
-    // }
+    function suma(a, b) { // a, b - parametrai
+      // Funkcija i save priima PARAMETRUS (parameters) a ir b
+      console.log(a + b);
+    }
     // Funkcijos esme, kad ja galime panaudoti daug kartu
 
     // Funkcijos issaukimas
     // Issaukiant funkcija perduodami ARGUMENTAI (arguments)
-    // suma(10, 30); // irasau argumentus
-    // suma(5, 20);
-    // suma(18, 16);
-    // suma(11, 10);
-    // console.log(suma(11, 10));
+    suma(10, 30); // irasau argumentus
+    suma(5, 20);
+    suma(18, 16);
+    suma(11, 10);
+    console.log(suma(11, 10));// gauname undefined, nes neturime rezultato
 
+    // funkcija gali atlikti veiksmus(pvz suma) arba grazinti rezultata (return)
 
     function suma(a, b) {
-      return a + b;
-    }
+      return a + b; // kai susigrazinome rieksme, toliau galime su ja daryti, ka norime
+    }//pvz  * 2 arba / 2 ir t.t. galime perduoti i kita funkcija
 
     suma(15, 7);
     console.log(suma(15, 7));
@@ -45,8 +46,7 @@
     console.log(padalinta);
 
     // Named function - pozicionavimas skripte neturi itakos, kuomet naudojamas function raktazodis
-    console.log(atimtis(50, 20)); // funkcijos pozicija nesvarbi
-
+    console.log(atimtis(50, 20)); // funkcijos pozicija nesvarbi, kai naudojame function raktazodi. t.y. jei console.log rasysime virs jos ar apacioj jos - gausim ta pati atsakyma.
     function atimtis(a, b) {
       return a - b;
     }
@@ -54,13 +54,16 @@
     // Anonymous function - Neivardinta funkcija
 
     const stringoGrazinimas = function () {
-      return `Funkcija grazino stringa`;
+      return `Funkcija grazino stringa`; // aprasant kintamaji, kuriam nurodom reiksme ir ta reiksme yra funkcija - pozicionavimas yra svarbus
     }
-    console.log(stringoGrazinimas()); // jei norime issaukti funkcija - butina nurodyti skliaustelius salia pavadinimo
+
+    // jei norime issaukti funkcija - butina nurodyti skliaustelius salia pavadinimo. Kol skliausteliu neturesime, tol issaukimo nebus.
+    console.log(stringoGrazinimas());
+    //jeigu skliausteliu neturime - mums Consolej bus atvaizduojama pati funkcija (kaip parasyta)
 
 
 
-    let x = 10;
+    let x = 10;// aprasant kintamaji, kuriam nurodom reiksme ir ta reiksme yra funkcija - pozicionavimas yra svarbus
     console.log(x);
 
 
