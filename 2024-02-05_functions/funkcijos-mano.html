@@ -15,6 +15,7 @@
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+
     // Klasikinis funkcijos aprasymas
     function suma(a, b) { // a, b - parametrai
       // Funkcija i save priima PARAMETRUS (parameters) a ir b
@@ -32,6 +33,9 @@
 
     // funkcija gali atlikti veiksmus(pvz suma) arba grazinti rezultata (return)
 
+
+    //PIRMAS PAVYZDYS
+
     function suma(a, b) {
       return a + b; // kai susigrazinome rieksme, toliau galime su ja daryti, ka norime
     }//pvz  * 2 arba / 2 ir t.t. galime perduoti i kita funkcija
@@ -45,11 +49,15 @@
     console.log(padauginta);
     console.log(padalinta);
 
+    //ANTRAS PAVYZDYS (POZICIONAVIMAS)
+
     // Named function - pozicionavimas skripte neturi itakos, kuomet naudojamas function raktazodis
     console.log(atimtis(50, 20)); // funkcijos pozicija nesvarbi, kai naudojame function raktazodi. t.y. jei console.log rasysime virs jos ar apacioj jos - gausim ta pati atsakyma.
     function atimtis(a, b) {
       return a - b;
     }
+
+    //TRACIAS PAVYZDYS
 
     // Anonymous function - Neivardinta funkcija
 
@@ -171,16 +179,32 @@
     // Pirmiausia orientuotis, kad atliktume uzduoti, o koda galesime patobulinti veliau.
 
     // DRY - Don't repeat yourself. 
-    // Supaprastinti koda, nekartoti dauybes eiluciu. Kaip optimizuoti. Tik tai daryti sensible - su pojuciu :)
+    // Supaprastinti koda, nekartoti dauybes eiluciu. Kaip optimizuoti. Tik tai daryti sensible - su pojuciu :)Darbas komandoje - kaip galime supaprastinti/ optimizuoti, kad ir kitiems butu lengviau skaityti
 
 
-
+    //KETVIRTAS PAVYZDYS
     console.log('-----4 pvz------')
 
-    function kintamojoTikrinimas(skaicius) {
+    // Funkcija rezultata grazina tik viena karta
+    //Del to aktyvavus return komanda, viso kito kodo skaitymas yra nutraukiamas
 
+    function kintamojoTikrinimas(skaicius) {
+      // console.log(typeof kintamasis);
+      return 'Funkcija baigesi'; // jei issaukiama return komanda - visu kitu veiksmu nebedaro - funkcija rezultata grazinti tik viena karta, ir viso kito kodo kompiliacija nutruksta
+      if (typeof skaicius === 'number') {
+        return skaicius.toFixed(2);
+        // } else { // jei aktyvavome return, tuomet else nebereikia
+        return 'Perduotas argumentas nera skaicius';
+      }
     }
 
+    // sutrumpintas variantas be else
+    if (typeof skaicius === 'number')
+      return skaicius.toFixed(2);
+
+    return 'Perduotas argumentas nera skaicius';
+
+    console.log(kintamojoTikrinimas(10, 21651656));
 
     // const masyvas = [];
 
@@ -189,33 +213,45 @@
 
 
 
+    // PENKTAS PAVYZDYS
     console.log('-----5 pvz------')
 
     // Jeigu norime funkcijos, kuri galetu priimti nelimituota kieki parametru
-    function push(...parametras) { //spread syntax - trys taskai nurodo  masyva
+    function push(...parametras) { //spread syntakse - trys taskai nurodo  masyva  // Priimamas masyvas
+
       console.log(parametras);
     }
 
-    // konvertuojame i masyva
+    // Reiksmiu konvertavimas funkcijoje I MASYVA
     push(10, 20, 30, 40, 50); // Neribotas kiekis argumentu
+
+
+    // SESTAS PAVYZDYS
+    // 2. var. is masyvo konvertuojame, kad turetume reiksmes, perskirtas kableliais
 
     const masyvas = [10, 20, 30, 40, 50];
 
-    // 2. var. is masyvo konvertuojame, kad turetume reiksmes, perskirtas kableliais
+    // Reiksmiu konvertavimas IS MASYVO
     push(...masyvas); // cia push yra funkcija
 
 
+    // SEPTINTAS PAVYZDYS
+    // Sujungiant du masyvus i viena
+    // Alternatyva - array concat - masyvu sujungimas
     const antrasMasyvas = [89, 14, 22, 7, 1, 0];
 
     masyvas.push(...antrasMasyvas); // cia push yra metodas. todel nesipyksta tarpusavyje
     console.log(masyvas);
 
 
-    // Funkcijos duomens tipas yra funkcija
+
+
+    // Funkcijos duomens tipas yra function
     console.log(typeof function () { });
 
 
     // Pagal nutylejima (default)
+    // Jeigu reiksme neperduota argumente, tuomet parametras igauna reiksme pagal nutylejima
 
     function defaultParams(pirmas = 12, antras = 12) { // pirmas, antras yra parametrai
       // console.log(pirmas, antras);
@@ -224,13 +260,15 @@
     }
 
     // pagal nutylejima, jeigu reiksme nebus perduoda, jai automatiskai bus priskirta nurodyta reiksme pirmas = , antras =. Bet galiu nurodyti kazkuria reiksme, tuomet ims nurodyta reiksme ir kita reiksme pagal nutylejima
-    console.log(defaultParams(25));// cia nurodomasa argumentas
+    console.log(defaultParams(25));// cia nurodomas argumentas
+
+
 
 
     // Reiksmes patikrinimas
 
     function skaiciausTikrinimas(skaicius) {
-      if (!skaicius)
+      if (!skaicius) // ar undefined - galime patikrinti su !
         return; // jeigu nieko nenurodome  prie return komandos, grazinama undefined
       // bet komanda aktyvuojasi ir grazina kitos eilutes kompiliacija
 
