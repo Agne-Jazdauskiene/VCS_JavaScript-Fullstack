@@ -33,8 +33,8 @@
         // objekte indeksas vadinsis key
         const objektas = {
             // Objekte esanti reikšmė, kuri nėra funkcija, vadinasi SAVYBĖMIS (properties) 
-            raktazodis: 'Reikšmė',
-            skaicius: 10,
+            raktazodis: 'Reikšmė',// pirmas key
+            skaicius: 10, // kitas key. Key g.b. ir masyvas, ir boolean
             // Objekte patalpinta funkcija vadinasi metodas (method)
             funkcija: function () {
                 return 'Labas pasauli';
@@ -45,9 +45,9 @@
         console.log(objektas);
 
         // REIKŠMĖS PAĖMIMAS IŠ OBJEKTO
-        console.log(objektas.skaicius);
+        console.log(objektas.skaicius); // kreipiames i savybe, o kai i funkcija-sakome, kad kreipiames i metoda
 
-        // NAUJOS REIKŠMĖS PRISKYRIMAS OBJEKTE
+        // NAUJOS REIKŠMĖS PRISKYRIMAS OBJEKTE / PAKEITIMAS
         objektas.skaicius = 25;
         console.log(objektas.skaicius);
 
@@ -57,7 +57,7 @@
         console.log(objektas);
 
         // METODO IŠŠAUKIMAS IŠ OBJEKTO:
-        console.log(objektas.funkcija());
+        console.log(objektas.funkcija());//kai kreipiames i funkcija-sakome, kad kreipiames i metoda
 
         // KREIKIPĄSIS Į NEEGZISTUOJANČIĄ SAVYBĘ
         console.log(objektas.boolean);
