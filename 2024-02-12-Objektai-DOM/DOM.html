@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+  <style>
+    ul {
+      background-color: tomato;
+      color: white;
+    }
+
+    ul.special {
+      background-color: aqua;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    <div id="tekstas">An American in Paris.</div>
+    <header>
+      <div class="container">
+        <ul>
+          <li>Pirmas</li>
+          <li>ANtras</li>
+          <li>Trecias</li>
+        </ul>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+      </div>
+
+    </header>
+    <script>
+      //DOM - Document Object Model
+
+      // document yra globalus kintamasis su DOM objekto informacija
+      console.log(document);
+
+      //Medis
+      //Bazinis DOM pavyzdys
+      // const dom = {
+      //   html: {
+      //     lang: "en",
+      //     head: {
+      //       meta: {
+      //         charse,
+      //         title: {
+      //           value: "DOM"
+      //         }
+      //       },
+      //       body: {
+      //         value: ""
+      //       }
+      //     }
+      //   }
+
+
+      // DOKUMENTO PAVADINIMO PRISKYRIMAS
+
+      // console.log(document.title);
+      document.title = 'Document Object Model';
+
+      // console.log(document.getElementById('tekstas').);
+
+      //TEKSTO, ESANCIO ELEMENTE, PAEMIMAS NAUDOJANT getElementBbyId() metoda
+
+      // console.log(getElementById('tekstas').textContent);
+
+
+      // SURASTO ELEMENTO MODELIO PRISKYRIMAS PRIE KINTAMOJO
+      const tekstas = document.getElementById('tekstas');
+      // document.getElementById('tekstas').textContent = getElementById('tekstas').textContent.replaceAll(/a/gi, '*');
+      tekstas.textContent = tekstas.textContent.replaceAll(/a/gi, '*');
+
+
+      //QUERY SELEKTOR PANAUDOJIMAS NAUDOJANT CSS SELECTOR
+      //querySelector() metodas grazina viena pati pirma rasta elementa pagal selektoriu
+      const ul = document.querySelector('header div.container ul:nth-child(2)');
+
+      // KLASES PRISKYRIMAS PRIE SURASTO ELEMENTO
+      ul.classList.add('special');
+
+      //KLASES PATIKRINIMAS, AR JI PRISKIRTA PRIE ELEMENTO. rodys true, false
+      ul.classList.contains('special');
+
+      //KLASES PASALINIMAS
+
+      ul.classList.remove('special');
+
+      //VISU ELEMENTU SUSIGRAZINIMAS NAUDOJANT querySelectorAll() metoda
+      const ulList = document.querySelectorAll('header div.container ul');
+      ulList.forEach((el) => el.classList.add('special'));
+
+      // TEXTCONTENT SAVYBE ATSPAUSDINA TIK TEKSTA, HTML TURINIO NEGENERUOJA
+      // document.querySelector('div container').textContent = '<h1>Hello World</h1>';
+
+      //HTML TURINIO ATVAIZDAVIMAS - NAUJO TURINIO PRISKYRIMAS PRIE ELEMENTO
+      // document.querySelector('div.container').innerHTML = '<h1>Hello World</h1>';
+
+
+      // JEI RASAU += TAI PRIDEDU, TURIO PAPILDYMAS
+      document.querySelector('div.container').innerHTML += '<h1>Hello World</h1>';
+
+      const words = ['Titulinis', 'Apie mus', 'Kontaktai', 'Istorija', 'Nuorodos']
+      let html = '<ul>';
+
+      words.forEach(value => html += `<li>${value}</li>`);
+
+      html += '</ul>';
+
+      console.log(html);
+
+      document.querySelector('div.container').innerHTML += html;
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="task-card.js" defer></script>
+  <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0 auto;
+      font-family: 'Poppins', sans-serif;
+      font-family: 'Source Code Pro', monospace;
+    }
+
+    h1,
+    p {
+      color: white;
+    }
+
+    img {
+      height: 180px;
+      padding: 0px 50px 0px 20px;
+      filter: invert(1);
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      /* gap: 20px; */
+      width: 550px;
+      margin: 0 auto;
+      border-radius: 0.75rem;
+      box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+      background-color: black;
+      /* padding: 0 10px 0 10px; */
+      padding-left: 20px;
+    }
+
+    .specifications {
+      display: flex;
+      justify-content: space-between;
+      margin-right: 60px;
+    }
+
+    .name h1 {
+      font-size: 20px;
+      margin-bottom: 0;
+      font-weight: 200;
+    }
+
+    .name h3 {
+      color: deeppink;
+      margin-top: 0;
+    }
+
+    .specifications h1 {
+      font-size: 18px;
+      margin-bottom: 0;
+      font-weight: 200;
+
+    }
+
+    .specifications h3 {
+      font-size: 15px;
+      margin-top: 0;
+      color: deeppink;
+    }
+
+    .paragraph {
+      padding: 30px 20px;
+      line-height: 1.5rem;
+      font-size: 0.75rem;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 32px 80px 14px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(0, 0, 0, 0.3);
+      transition: ease-in-out 0.5s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="profile">
+
+
+    </div>
+
+    <div class="paragraph">
+      <div class="name">
+        <h1></h1>
+        <h3>Hero</h3>
+      </div>
+
+      <div class="specifications">
+        <div class="age">
+          <h1></h1>
+          <h3>Age</h3>
+        </div>
+        <div class="weight">
+          <h1></h1>
+          <h3>weight</h3>
+        </div>
+        <div class="height">
+          <h1></h1>
+          <h3>height</h3>
+        </div>
+
+      </div>
+
+      <div class="description">
+        <p></p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
