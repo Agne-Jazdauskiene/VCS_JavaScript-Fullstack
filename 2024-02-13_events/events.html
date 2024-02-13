@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- // ivykiai bus registruojami trimis budais -->
+  <div class="text-center my-5">
+
+    <div class="first-result"></div>
+    <button class="btn btn-primary btn-large first-example">Paspausk mane</button>
+  </div>
+  <div class="text-center my-5">
+
+    <div class="second-result"></div>
+    <button class="btn btn-primary btn-large second-example">Paspausk mane</button>
+  </div>
+
+  <div class="text-center my-5">
+
+    <div class="third-result"></div>
+    <button class="btn btn-primary btn-large third-example">Paspausk mane</button>
+  </div>
+  <script>
+
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    // EVENTO PRISKYRIMAS NAUDOJANT addEventListener metoda
+
+    //Evento registravimas su perduodama deklaruota funkcija
+    // function handleClick() {
+    //   console.log('Paspaudimas registruotas');
+    // }
+
+    // document.querySelector('button').addEventListener('click', handleClick);// nededame prie funkcijos handleClick skliausteliu, nes norime, kad funkcija butu issaukta tik, kai paspausime mygtuka
+
+
+    let kiekis = 0;
+
+    document.querySelector('button').addEventListener('click', (event) => {
+      // console.log(event);
+      //Ivykdom pakeitima
+      kiekis++;
+
+
+      // atvaizduojame pakeitima
+      document.querySelector('.result').innerHTML = 'Mygtukas paspaustas ${kiekis} kartu';
+    });
+
+
+
+  </script>
+
+</body>
+
+</html>
