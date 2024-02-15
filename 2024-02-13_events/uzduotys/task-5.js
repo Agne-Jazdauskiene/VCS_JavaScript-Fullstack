@@ -11,6 +11,11 @@ function rand(min, max) {
 // Nuo 60 iki 79 - mėlynus.
 // Nuo 79 iki 100 - -žalius.
 
+// 6 uzd.
+// Teleloto (trečia dalis):
+// Iškritus laimingam kamuoliukui atvaizduokite tekstą "SKAMBUTIS!" ir nebeleiskite ridenti kamuoliukų.
+// Laimingo kamuoliuko numerį nustatykite vieną kartą žaidimo pradžioje kaip atsitiktinį skaičių.
+
 const auksinis = rand(0, 99);
 console.log(auksinis);
 
@@ -48,8 +53,3 @@ document.querySelector("#lotto").onclick = (number) => {
     return alert("SKAMBUTIS!");
   }
 };
-
-// 6 uzd.
-// Teleloto (trečia dalis):
-// Iškritus laimingam kamuoliukui atvaizduokite tekstą "SKAMBUTIS!" ir nebeleiskite ridenti kamuoliukų.
-// Laimingo kamuoliuko numerį nustatykite vieną kartą žaidimo pradžioje kaip atsitiktinį skaičių.

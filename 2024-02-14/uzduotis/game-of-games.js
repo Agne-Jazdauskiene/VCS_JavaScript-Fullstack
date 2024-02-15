@@ -25,32 +25,33 @@ function rand(min, max) {
 // const skaicius = rand(0, 99);
 
 const box = document.querySelector(".box");
-// let posTop = 0;
-// let posLeft = 0;
-
-// setInterval(() => {
-//   posTop = rand(50, 550);
-//   posLeft = rand(50, 550);
-//   box.style.top = `${posTop}px`;
-//   box.style.left = `${posLeft}px`;
-// }, 1000);
 
 let posTop = 0;
 let posLeft = 0;
 let time = 0;
 let kiekis = 0;
 let raundas = 0;
-let zaidejas = 0;
+let player = 0;
+let computer = 0;
+
+function getRandom(min, max) {
+  return Math.ceil(Math.random() * (max - min) + min); // keisti box'o spalvoms
+}
 
 setInterval(() => {
   if (time === 30) {
-    time = 0; // jei jau turim 30, tai musu raundas baigiasi
+    time = 0; // jei jau turim 30, tai musu raundas baigiasi, rasomm = 0.
     console.log("Raundas baigiasi");
   }
   posTop = rand(50, 550);
   posLeft = rand(50, 550);
   box.style.top = `${posTop}px`;
   box.style.left = `${posLeft}px`;
+
+  box.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(
+    0,
+    255
+  )},${getRandom(0, 255)})`; // keisti box'o spalvoms
 
   time++;
   console.log(time);
@@ -62,11 +63,10 @@ document.querySelector(".box").addEventListener("click", (event) => {
   //Ivykdom pakeitima
   kiekis++;
 
-  // document.querySelector(
-  //   ".result"
-  // ).innerHTML = `Mygtukas paspaustas ${kiekis} kartu`;
   document.querySelector(
     ".result"
   ).innerHTML = `Mygtukas paspaustas ${kiekis} kartus`;
   // ).innerHTML = `${raundas} Raundą laimėjo: ${zaidejas}, surinkęs ${kiekis} taškus`;
+
+  //kai raundas baigiasi
 });
