@@ -31,18 +31,82 @@ let posLeft = 0;
 let time = 0;
 let kiekis = 0;
 let raundas = 0;
-let player = 0;
-let computer = 0;
+let limit = 10;
+let gameWinner = "";
 
 function getRandom(min, max) {
   return Math.ceil(Math.random() * (max - min) + min); // keisti box'o spalvoms
 }
 
-setInterval(() => {
-  if (time === 30) {
+let playerScore = 0;
+document.querySelector(".box").addEventListener("click", (event) => {
+  // console.log(event);
+  //Ivykdom pakeitima
+  // kiekis++;
+  playerScore++;
+});
+
+let intervaloId = setInterval(() => {
+  if (time === limit) {
     time = 0; // jei jau turim 30, tai musu raundas baigiasi, rasomm = 0.
-    console.log("Raundas baigiasi");
+    console.log("Raundas baigesi");
+    raundas++; // prideta
+
+    console.log(playerScore);
+
+    // let roundResult = playerScore; //Issaugome kieki, paspaudimu skaiciu siame raunde
+    // kiekis = 0; //Nustatome paspaudimu kieki naujam raundui
+
+    let computerScore = limit - playerScore;
+
+    if (playerScore > computerScore) {
+      document.querySelector(
+        ".result"
+      ).innerHTML += `<p>Žaidimą laimejo žaidejas, surinkes ${playerScore}tasku(us) </p>`;
+    } else if (computerScore > playerScore) {
+      document.querySelector(
+        ".result"
+      ).innerHTML += `<p>Žaidimą laimejo kompiuteris, surinkes ${computerScore}tasku(us) </p>`;
+    } else {
+      document.querySelector(".result").innerHTML += `<p>Lygiosios</p>`;
+    }
+    playerScore = 0; // raundu sustabdymas
+
+    // document.querySelector(
+    //   ".result"
+    // ).innerHTML += `<div>${raundas} raundą laimėjo: ${winner}, surinkęs ${roundResult} taškų</div>`;
+    // console.log("baig");
+    if (raundas === 3) {
+      clearInterval(intervaloId);
+
+      // // zaidimo pabaiga
+      //       if (computerScore > playerScore) {
+      //         gameWinner === "Kompiuteris";
+      //       } else if (computerScore < playerScore) {
+      //         gameWinner === "Žaidėjas";
+      //       } else {
+      //         document.querySelector(
+      //           ".container"
+      //         ).innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+      //         <h1>Žaidimas baigėsi lygiosiomis</h1>
+      //         <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+      //     </div>`;
+      //       }
+      //       document.querySelector(
+      //         ".container"
+      //       ).innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+      //     <h1>Žaidimą laimėjo ${gameWinner}, laimėjęs ${intervaloId} roundus</h1>
+      //     <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+      // </div>`;
+
+      document.querySelector(".box").addEventListener("click", (event) => {
+        // console.log(event);
+        //Ivykdom pakeitima
+        kiekis++;
+      });
+    }
   }
+
   posTop = rand(50, 550);
   posLeft = rand(50, 550);
   box.style.top = `${posTop}px`;
@@ -58,15 +122,32 @@ setInterval(() => {
   document.querySelector(`.time`).innerHTML = time;
 }, 1000);
 
-document.querySelector(".box").addEventListener("click", (event) => {
-  // console.log(event);
-  //Ivykdom pakeitima
-  kiekis++;
+// // zaidimo pabaiga
+// if (computerScore > playerScore) {
+//   gameWinner = "Kompiuteris";
+// } else if (computerScore < playerScore) {
+//   gameWinner = "Žaidėjas";
+// } else {
+//   document.querySelector(
+//     ".container"
+//   ).innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+//         <h1>Žaidimas baigėsi lygiosiomis</h1>
+//         <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+//     </div>`;
+// }
+// document.querySelector(
+//   ".container"
+// ).innerHTML = `<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 300px">
+//     <h1>Žaidimą laimėjo ${gameWinner}, laimėjęs ${intervaloId} roundus</h1>
+//     <button class="reset" onClick="window.location.reload()">Bandykite dar kartą</button>
+// </div>`;
 
-  document.querySelector(
-    ".result"
-  ).innerHTML = `Mygtukas paspaustas ${kiekis} kartus`;
-  // ).innerHTML = `${raundas} Raundą laimėjo: ${zaidejas}, surinkęs ${kiekis} taškus`;
+// document.querySelector(".box").addEventListener("click", (event) => {
+//   // console.log(event);
+//   //Ivykdom pakeitima
+//   kiekis++;
+// });
 
-  //kai raundas baigiasi, turi suskaicuoti taskus
-});
+// document.querySelector(
+//   ".result"
+// ).innerHTML = `Mygtukas paspaustas ${kiekis} kartus`;
