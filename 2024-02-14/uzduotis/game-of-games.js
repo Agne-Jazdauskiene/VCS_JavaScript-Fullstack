@@ -68,5 +68,5 @@ document.querySelector(".box").addEventListener("click", (event) => {
   ).innerHTML = `Mygtukas paspaustas ${kiekis} kartus`;
   // ).innerHTML = `${raundas} Raundą laimėjo: ${zaidejas}, surinkęs ${kiekis} taškus`;
 
-  //kai raundas baigiasi
+  //kai raundas baigiasi, turi suskaicuoti taskus
 });
