@@ -6,9 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="timer-mano.js" defer></script>
+  <style>
+    .google-timer {
+
+      width: 500px;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="google-timer">
+    <div class="tabs">
+      <div class="timer-tab">TIMER</div>
+      <div class="stopwatch-tab">STOPWATCH</div>
+    </div>
+    <div class="timer">
+      <span class="minutes"></span>
+      <span class="seconds"></span>
+    </div>
+
+    <div class="stopwatch">
+      <span class="minutes">0</span>
+      <span class="seconds">0</span>
+      <span class="milliseconds">0</span>
+    </div>
+
+    <div class="buttons">
+      <button class="start">START</button>
+      <button class="reset">RESET</button>
+    </div>
+
+  </div>
 
 </body>
 
