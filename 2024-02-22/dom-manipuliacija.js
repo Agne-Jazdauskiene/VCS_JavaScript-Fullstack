@@ -32,13 +32,13 @@ const result = data.products.map((value) => {
         </div>
 
         <div class="yellow-stars" 
-        style:"width: ${calculateWidth(value.rating, 80, 5)}px">
+        style="width: ${calculateWidth(value.rating, 80, 5)}px">
               <div class="stars-container">
                 ${`<i class="bi bi-star-fill"></i>`.repeat(5)}
               </div>
       </div>
 
-      div class="description pt-5">${value.description}</div>
+      <div class="description pt-5">${value.description}</div>
    </div>
    <div class="col-auto checkout">
       <div class="price mb-3">
