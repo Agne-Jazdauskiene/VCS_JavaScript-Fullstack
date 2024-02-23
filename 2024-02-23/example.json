@@ -1,0 +1,16 @@
+// cia turim stringa, ne masyva, jei ikelsime i js
+[
+  {
+    "id": 1,
+    "title": "Labai gera preke",
+    "active": false, //buleon reiksme
+    "price": 12.59 // po paskutines reiksmes nereikia kablelio
+  },
+
+  {
+    "id": 1,
+    "title": "Nauja preke",
+    "active": true, //buleon reiksme
+    "price": 13.59 // po paskutines reiksmes nereikia kablelio
+  }
+]
