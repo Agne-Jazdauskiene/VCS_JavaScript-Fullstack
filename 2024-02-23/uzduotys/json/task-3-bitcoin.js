@@ -19,7 +19,9 @@ const bitToEur = () => {
       (data) =>
         (document.querySelector(
           ".bitToEur"
-        ).innerHTML = `1bitcoin = ${data.bpi.EUR.rate} Eur`).innerHTML = `1bitcoin = ${data.bpi.USD.rate} Eur`)
+        )
+        
+        .innerHTML = `1bitcoin = ${data.bpi.EUR.rate} Eur`).innerHTML = `1bitcoin = ${data.bpi.USD.rate} Eur`)
     );
    
 };
