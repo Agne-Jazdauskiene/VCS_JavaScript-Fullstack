@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="tekstas">An American in Paris.</div>
     <header>
@@ -55,24 +57,24 @@
         // }
 
         // DOKUMENTO PAVADINIMO PRISKYRIMAS
-        
+
         document.title = 'Dokumento objekto modelis';
 
-        // TEKSTO ESANČIO ELEMENTE PAĖMIMAS NAUDOJANT getElementById() netodą
+        // TEKSTO, ESANČIO ELEMENTE, PAĖMIMAS NAUDOJANT getElementById() metodą
         // console.log(document.getElementById('tekstas').textContent);
 
         // const tekstas = document.getElementById('tekstas').textContent;
         // console.log(tekstas);
         // document.getElementById('tekstas').textContent = tekstas.replaceAll(/a/gi, '*');
-        
+
         // SURASTO ELEMENTO MODELIO PRISKYRIMAS PRIE KINTAMOJO 
         const tekstas = document.getElementById('tekstas');
         tekstas.textContent = tekstas.textContent.replaceAll(/a/gi, '*');
-        
+
         // QUERY SELECTOR PANAUDOJIMAS NAUDOJANT CSS SELEKTORIUS
         // querySelector() metodas grąžina vieną patį pirmą rastą elementą pagal selektorių
         const ul = document.querySelector('header div.container ul:nth-child(2)');
-        
+
         // KLASĖS PRISKYRIMAS PRIE SURASTO ELEMENTO
         ul.classList.add('special');
 
@@ -97,11 +99,11 @@
         document.querySelector('div.container').innerHTML += '<h1>Hello World</h1>';
 
         const words = ['Titulinis', 'Apie Mus', 'Kontaktai', 'Istorija', 'Nuorodos'];
-        
+
         let html = '<ul class="special">';
-        
+
         words.forEach(value => html += `<li>${value}</li>`);
-        
+
         html += '</ul>';
 
         console.log(html);
@@ -109,4 +111,5 @@
         document.querySelector('div.container').innerHTML += html;
     </script>
 </body>
+
 </html>
