@@ -14,16 +14,16 @@
 
         // console.log(typeof objektas); objekto duomens tipas yra objektas
 
-        // INDEKSO PRISKYRIMAS MASYVE
+        // INDEKSO PRISKYRIMAS MASYVE. palyginimas su masyvu
 
         // const masyvas = [];
 
         // masyvas[0] = 'Reikšmė';
 
-        // masyvas['indeksas'] = 'reikšmė';
+        // masyvas['indeksas'] = 'reikšmė'; objekte issitraukinesim reiksmes pagal raktini zodi - pvz.'indeksas'
 
         // MASYVO ILGIO NEATITIKIMAS
-        // console.log(masyvas.length);
+        // console.log(masyvas.length); nepaskaiciuojamas teisingai ilgis, nes stringas
 
         // NEPAVYKĘS CIKLAS
         // masyvas.map(value => console.log(value));
@@ -34,10 +34,11 @@
         const objektas = {
             // Objekte esanti reikšmė, kuri nėra funkcija, vadinasi SAVYBĖMIS (properties) 
             raktazodis: 'Reikšmė',// pirmas key
-            skaicius: 10, // kitas key. Key g.b. ir masyvas, ir boolean
+            skaicius: 10, // kitas key. Key g.b. ir masyvas, ir boolean, kita objekta
             // Objekte patalpinta funkcija vadinasi metodas (method)
             funkcija: function () {
-                return 'Labas pasauli';
+                return true;
+                // return 'Labas pasauli';
             }
         };
 
@@ -62,7 +63,7 @@
         // KREIKIPĄSIS Į NEEGZISTUOJANČIĄ SAVYBĘ
         console.log(objektas.boolean);
 
-        // TRYNIMAS IŠ OBJEKTO
+        // TRYNIMAS IŠ OBJEKTO galimas. iš masyvo negalime trinti reiksmiu
         delete objektas.skaicius;
 
         console.log(objektas);
