@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    const objekct = {
+      pirmas: 10,
+      antras: false,
+      trecias: []
+    }
+
+    // const newObject = { ...object };
+    // console.log(newObject);
+
+    // nebereikia kreiptis i jey'ju per taska object.pirmas....
+    // const { pirmas, antras, trecias } = object;
+
+    // console.log(pirmas);
+    // console.log(antras);
+    // console.log(trecias);
+
+    // arba noriu tik antras paimti is objekto
+    const { antras } = object;
+
+    console.log(antras);
+
+
+    //2 pvz. MASYVU PAVYZDYS
+    const array = [15, 245, 18];
+    console.log(array[0]);
+    console.log(array[1]);
+    console.log(array[2]);
+
+    // ta pacia sintakse, galime pritaikytir masyvui:
+    // const pirmasElementas = array[0];
+    // const antrasElementas = array[1];
+    // const treciasElementas = array[2];
+
+    const [pirmasElementas, antrasElementas, treciasElementas] = array;
+
+    console.log(pirmasElementas);
+    cosole.log(antrasElementas);
+    console.log(treciasElementas);
+  </script>
+
+</body>
+
+</html>

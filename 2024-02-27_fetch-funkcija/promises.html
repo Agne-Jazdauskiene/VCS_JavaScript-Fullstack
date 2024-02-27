@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .loader {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      font-size: 200px;
+      color: black;
+      font-weight: bold;
+      font-family: Arial;
+      display: flex;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loader">KRAUNASI...</div>
+  <script>
+    function rand(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    // HTML fetchinimas
+    // fetch('https//www.google.com/')
+    //   .then(resp => resp.text())
+    //   .tnen(resp => console.log(resp));
+
+    // kad suprastume bazini veikima:
+    // const pazadas = new Promise((sekmingas, nesekmingas) => {
+    //   setTimeout(() => {
+    //     sekmingas('Pazadas ispildytas');// g.b. stringas, objektas
+    //   }, 2000)
+    // });
+
+    // pazadas grazinamas yra objektas
+    // console.log(pazadas);
+
+    // pazadas.then(atsakymas => console.log(atsakymas));
+
+
+    const pazadas = new Promise((sekmingas, nesekmingas) => {
+      setTimeout(() => {
+        if (rand(0, 1) === 0) {
+          sekmingas('Pazadas ispildytas');// g.b. stringas, objektas
+        } else {
+          nesekmingas('Serverio klaida');
+        }
+      }, 2000)
+    });
+
+    pazadas
+      .then(atsakymas => {
+        document.querySelector('result').textContent = atsakymas;
+      })
+    // .then(atsakymas => console.log(atsakymas));
+    //   .catch (klaida => console.log(klaida));
+    //   .finally(() => console.log('Krovimas baigesi')); //bet kokiu atveju
+  </script>
+
+</body>
+
+</html>
