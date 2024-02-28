@@ -1,16 +1,12 @@
 import logo from "./assets/logo.svg";
 import "./Logo.css";
 
-
-
 const Logo = () => {
   return (
-   
-      <a class="logo-button" href="#">
-        <img src={logo} alt="vite logo">
-          Vite
-      </a>
-
+    <a className="logo-button" href="#">
+      <img src={logo} alt="vite logo" />
+      Vite
+    </a>
   );
 };
 

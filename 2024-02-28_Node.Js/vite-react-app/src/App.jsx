@@ -1,7 +1,9 @@
 import "./App.css";
-import Logo from "./components/logo/Logo";
-import Search from "./components/search/Search";
-import Navigation from "./components/navigation/Navigation";
+import Logo from "./components/logo/Logo.jsx";
+import Search from "./components/search/Search.jsx";
+import Navigation from "./components/navigation/Navigation.jsx";
+import Intro from "./components/intro/Intro.jsx";
+import Cards from "./components/cards/Cards.jsx";
 
 const App = () => {
   return (
@@ -11,9 +13,9 @@ const App = () => {
         <Search />
         <Navigation />
       </header>
-      <main>
-        {/* Intro */}
-        {/* Cards */}
+      <main className="container">
+        <Intro />
+        <Cards />
       </main>
     </>
   );
