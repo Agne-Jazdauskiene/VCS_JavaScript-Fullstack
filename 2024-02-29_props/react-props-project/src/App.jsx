@@ -46,7 +46,7 @@ function App() {
       </div>
       <div className="cards">
         {data.map((value, index) => (
-          <Card hey={index} value={value} />
+          <Card key={index} value={value} />
           /* // masyve propsas = key t.b. unikalus */
         ))}
       </div>
