@@ -1,5 +1,6 @@
 import "./Intro.css";
 import logo from "../../assets/logo.svg";
+import Button from "../button/Button";
 
 const Intro = () => {
   return (
@@ -14,10 +15,10 @@ const Intro = () => {
           </p>
         </div>
         <div className="btns">
-          {/* <Button />
           <Button />
           <Button />
-          <Button /> */}
+          <Button />
+          <Button />
         </div>
       </div>
       <div className="image">

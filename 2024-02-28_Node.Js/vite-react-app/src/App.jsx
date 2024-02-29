@@ -8,12 +8,13 @@ import Cards from "./components/cards/Cards.jsx";
 const App = () => {
   return (
     <>
-      <header>
-        <Logo />
-        <Search />
-        <Navigation />
-      </header>
       <main className="container">
+        <header>
+          <Logo />
+          <Search />
+          <Navigation />
+        </header>
+
         <Intro />
         <Cards />
       </main>
