@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// React States
+
+// Pirma užduotis
+// Sukurkite komponentą pavadinimu "Quantity" ir priskirkite state'ą qty. Komponente atvaizduokite tris elementus:
+// Minuso ikoną,
+// Elementą kuriame atvaizduojama qty reikšmė.
+// Pliuso ikoną
+// Užregistruokite paspaudimo įvykius ikonoms pagal atitinkamą simbolį. Paspaudus ant elemento padidinkite arba pamažinkite qty reikšmę. T.y. +1 arba -1.
+
+// Antra užduotis
+// Sukurkite pirmos užduoties event’o funkcijų validaciją
+// qty reikšmė negali būti mažesnė nei 0 ir didesnė nei 100.
+
+import "./App.css";
+import Quantity from "./components/quantity/Quantity";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Quantity />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+// import Quantity from './components/quantity/Quantity'
+// import './App.css'
+
+// function App() {
+
+//   return (
+//     <>
+//      <Quantity/>
+//     </>
+//   )
+// }
+
+// export default App
