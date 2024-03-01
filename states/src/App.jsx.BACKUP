@@ -1,0 +1,53 @@
+import { useState } from "react";
+import "./App.css";
+
+const App = () => {
+  const [count, setCount] = useState(0); // grazins masyva, turinti dvi reiksmes
+  const [fieldValue, setFieldValue] = useState();
+  console.log("Komponentas uzregistruotas");
+  // let x = 0;
+
+  const handleClick = () => {
+    //Naujos count reiksmes priskyrimas
+    //Pirmas budas
+    // setCount(count + 1);//galima sitaip
+    //Antras budas
+    // setCount((preveousCountValue) => preveousCountValue + 1);
+    setCount((prev) => prev + 1); //arba su funkcija
+    // console.log("veikia");
+    // x++;
+    // console.log(x);
+  };
+
+  const handleChange = (e) => {
+    setFieldValue(e.target.value);
+  };
+
+  const handleClickID = (e, id) => {
+    console.log(id);
+  };
+  return (
+    <>
+      <h2>Mygtuko paspaudimai</h2>
+      <div>Rezultatas: {count}</div>
+      <button onClick={handleClick}>Paspausk mane</button>
+
+      <h2>Laukelio reikšmė</h2>
+
+      <input type="text" onChange={handleChange} />
+      <div>{fieldValue}</div>
+
+      <h2>Mygtuko paspaudimas kitaip</h2>
+      <div>Rezultatas: {count}</div>
+      <button onClick={() => setCount(count + 1)}>Paspausk mane</button>
+      {/* //reikia setinti state'a funkcijoje */}
+
+      <h2>ID perdavimas</h2>
+      <button onClick={(e) => handleClickID(e, 1)}>Pirmas</button>
+      <button onClick={(e) => handleClickID(e, 2)}>Antras</button>
+      <button onClick={(e) => handleClickID(e, 3)}>Trečias</button>
+    </>
+  );
+};
+
+export default App;
