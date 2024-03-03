@@ -51,10 +51,10 @@
         <a href="2024-01-15_contact-form_practice/uzduotys/figma_contact-form/figma_coontact-form.html"
           target="_blank">Contact Form</a>
       </li>
-      <li>
+      <!-- <li>
         <a href="2024-01-15_contact-form_practice/uzduotys/figma_sign-up-form/figma_sign-up-form.html"
           target="_blank">Sign Up Form</a>
-      </li>
+      </li> -->
     </ul>
     <h4>2024-01-16</h4>
     <ul>
