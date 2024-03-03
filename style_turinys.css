@@ -22,7 +22,7 @@ body {
   box-shadow: box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); */
 }
 ul {
-  list-style: none;
+  /* list-style: none; */
 }
 
 li {
