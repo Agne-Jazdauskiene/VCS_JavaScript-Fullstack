@@ -2,7 +2,7 @@
 
 Completed tasks: https://agne-jazdauskiene.github.io/VCS_JavaScript-Fullstack/
 
-  <h1>Turinys</h1>
+  <h1>Completed Tasks</h1>
     <h4>2024-01-02</h4>
     <ul>
       <li><a href="2024-01-02_styles_text-formatting/uzduotys/wikipedia.html" target="_blank">Wikipedia</a></li>
