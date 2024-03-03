@@ -1,4 +1,4 @@
-# JavaScript Fullstack paskaitų medžiaga
+# JavaScript Fullstack
 
   <h1>Turinys</h1>
     <h4>2024-01-02</h4>
