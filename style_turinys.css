@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+margin: 30px 50px;
+}
+  
 
 body {
   /* font-family: "Rubik", sans-serif; */
