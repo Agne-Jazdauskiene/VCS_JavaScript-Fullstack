@@ -31,7 +31,7 @@ let posLeft = 0;
 let time = 0;
 let kiekis = 0;
 let raundas = 0;
-let limit = 10;
+let limit = 30;
 let gameWinner = "";
 
 function getRandom(min, max) {
@@ -76,7 +76,7 @@ let intervaloId = setInterval(() => {
     //   ".result"
     // ).innerHTML += `<div>${raundas} raundą laimėjo: ${winner}, surinkęs ${roundResult} taškų</div>`;
     // console.log("baig");
-    if (raundas === 3) {
+    if (raundas === 5) {
       clearInterval(intervaloId);
 
       // // zaidimo pabaiga
