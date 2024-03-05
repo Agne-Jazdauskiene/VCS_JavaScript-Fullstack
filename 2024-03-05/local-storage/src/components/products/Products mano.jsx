@@ -5,10 +5,10 @@ const Products = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Duomenų iš localStorage paėmimas
-    // Patikrinimas ar negautas null rezultatas
-    // Konvertuojami duomenys iš JSON stringo
-    // Duomenų priskyrimas prie state'o
+    // Duomenu paemimas is localStorage
+    //Patikrinsime, ar yra reiksme, t.y. ar negautas null rezultatas
+    // Konvertuojame duomenis is JSON stringo
+    // Konvertuotus duomenis priskirsime prie state'o
 
     let data = localStorage.getItem("data");
 
@@ -19,7 +19,7 @@ const Products = () => {
   }, [loading]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //sustabdome refresha, kad automatiskai jis neivyktu. Visada irassyti
 
     const formData = new FormData(e.target);
     const data = {};
@@ -28,27 +28,28 @@ const Products = () => {
       data[input[0]] = input[1];
     }
 
-    // Tikrinam ar duomenys jau buvo išsaugoti
-    // Jeigu taip, tuomet žinome jog ten patalpinome masyvą
-    // Į masyvą galime dėti papildomą produktą
-    // Jeigu duomenys nebuvo išssaugoti
-    // Kuriame naują masyvą su vienu produktu
+    // console.log(JSON.stringify[data]); //konvertuoja i jsono stringa
+
+    // Tirkirname, ar duomenys jau buvo issaugoti
+    // Jeigu taip, tuomet zinome, kad ten patalpinome masyva
+    //I masyva galime deti papildomu produktu
+    // Jeigu duomenys nebuvo issaugoti
+    //Kuriame nauja masyva su vienu produktu
 
     const localData = localStorage.getItem("data");
 
     if (localData) {
-      // Papildymas
-      // Veiksmų seka:
-      // 1. Konveruojame stringą iš JSON formato
-      // 2. Papildome masyvą
-      // 3. Konvertuojame masyvą atgal į JSON stringą
-      // 4. Išssaugojame stringą localStorage
+      //Papildymas
+      //Veiksmu seka:
+      //1. Konvertuojame stringa is JSON formato
+      //2. Papildome masyva
+      //3. Konvertuojame masyva atgal i JSON stringa
+      //4.Issaugome stringa localStorage
       let convertedData = JSON.parse(localData);
       convertedData.push(data);
       convertedData = JSON.stringify(convertedData);
       localStorage.setItem("data", convertedData);
     } else {
-      // Sukūrimas
       localStorage.setItem("data", JSON.stringify([data]));
     }
 
@@ -68,37 +69,37 @@ const Products = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((data, index) => (
-            <tr key={index}>
-              <td>{data.title}</td>
+          {products.map((data) => (
+            <tr>
+              <td>{data.tiitle} </td>
               <td>
-                <img
-                  src={data.photo}
-                  style={{
-                    maxWidth: 100,
-                  }}
-                />
+                {data.photo} style=
+                {{
+                  maxWidth: 100,
+                }}
               </td>
-              <td>{data.price}</td>
-              <td>{data.qty}</td>
+              <td>{data.price} </td>
+              <td>{data.qty} </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <h2>New Product</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label>Produkto pavadinimas</label>
           <input type="text" className="form-control" name="title" />
         </div>
+
         <div className="mb-3">
           <label>Produkto nuotrauka</label>
           <input type="text" className="form-control" name="photo" />
         </div>
+
         <div className="mb-3">
           <label>Produkto kaina</label>
           <input type="number" className="form-control" name="price" />
         </div>
+
         <div className="mb-3">
           <label>Kiekis sandėlyje</label>
           <input type="number" className="form-control" name="qty" />

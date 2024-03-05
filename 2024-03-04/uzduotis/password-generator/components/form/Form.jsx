@@ -3,10 +3,20 @@ function rand(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Form = () => {
   const [password, setPassword] = useState("");
+
+  const [PasswordList, setPasswordList] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    let data = localStorage.getItem("data");
+    if (!data) return;
+    data = JSON.parse(data);
+    setPasswordList(data);
+  }, [loading]);
 
   const handleSubmit = (e) => {
     //CREATE
@@ -50,6 +60,24 @@ const Form = () => {
     }
     console.log(finalPassword);
     setPassword(finalPassword.join(""));
+
+    const localData = localStorage.getItem("data");
+
+    if (localData) {
+      //Papildymas
+      let convertedData = JSON.parse(localData);
+      convertedData.push(finalPassword.join(""));
+      convertedData = JSON.stringify(convertedData);
+      localStorage.setItem("data", convertedData);
+    } else {
+      // Sukūrimas
+      localStorage.setItem(
+        "(finalPassword.join(''))",
+        JSON.stringify([finalPassword.join("")])
+      );
+    }
+
+    setLoading(!loading);
   };
 
   return (

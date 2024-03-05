@@ -6,6 +6,12 @@
 // Ilgis, skaičiai ir simboliai.
 // Pagal pasirinktus parametrus sugeneruokite atsitiktinį slaptažodį.
 
+// Slaptažodžių generatoriaus papildymas
+
+// Po slaptažodžio generavimo, formą atvaizduokite 10 naujausių stringų. Juos talpinkite localStorage podėlyje.
+// Atnaujinus puslapį (refresh) slaptažodžių sąrašas turi išlikti.
+// Jeigu nebuvo sugeneruotas nei vienas slaptažodis atvaizduokite žinutę: "Kol kas neturime duomenų."
+
 import { useState } from "react";
 import Form from "../components/form/Form";
 import "./App.css";
