@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./App.css";
 
 const App = () => {
-  const [first, setFirst] = useState();
-  const [second, setSecond] = useState();
+  const [first, setFirst] = useState("");
+  const [second, setSecond] = useState("");
   const [action, setAction] = useState();
   const [result, setResult] = useState();
 
@@ -30,24 +30,25 @@ const App = () => {
     if (
       typeof first !== "string" ||
       typeof second !== "string" ||
-      typeof action !== "undefined"
+      typeof action === "undefined"
     )
       return;
 
+    // console.log(typeof parseInt(first));
     if (action === "+") {
-      setResult(first + second); //priskiriam seteri
+      setResult(parseInt(first) + parseInt(second)); //priskiriam seteri
     }
 
     if (action === "-") {
-      setResult(first - second);
+      setResult(+first - +second);
     }
 
     if (action === "*") {
-      setResult(first * second);
+      setResult(+first * +second);
     }
 
     if (action === "/") {
-      setResult(first / second);
+      setResult(+first / +second);
     }
   };
 
