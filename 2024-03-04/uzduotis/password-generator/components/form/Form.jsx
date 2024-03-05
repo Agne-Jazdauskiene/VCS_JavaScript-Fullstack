@@ -1,19 +1,21 @@
+import { useState, useEffect } from "react";
+
 function rand(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
-import { useState, useEffect } from "react";
 
 const Form = () => {
   const [password, setPassword] = useState("");
 
-  const [PasswordList, setPasswordList] = useState([]);
+  const [passwordList, setPasswordList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     let data = localStorage.getItem("data");
     if (!data) return;
+
     data = JSON.parse(data);
     setPasswordList(data);
   }, [loading]);
@@ -66,57 +68,75 @@ const Form = () => {
     if (localData) {
       //Papildymas
       let convertedData = JSON.parse(localData);
-      convertedData.push(finalPassword.join(""));
+      if (convertedData.length === 10) convertedData.pop(); //jei pasiekia 10 slaptazodiu, tuomet paskutini nuima/istrina
+      convertedData.unshift(finalPassword.join("")); //vis nauja slaptazodi ikelia i prieki -unshift
       convertedData = JSON.stringify(convertedData);
       localStorage.setItem("data", convertedData);
     } else {
       // Sukūrimas
-      localStorage.setItem(
-        "(finalPassword.join(''))",
-        JSON.stringify([finalPassword.join("")])
-      );
+      localStorage.setItem("data", JSON.stringify([finalPassword.join("")]));
     }
 
     setLoading(!loading);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div className="container">
-        <h3 className="mb-3">
-          Need a password? Try the 1Password Strong Password Generator.
-        </h3>
-        <p>Generate secure, random passwords to stay safe online</p>
-        <p>Generated password</p>
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="password"
-            placeholder="Password"
-            value={password}
-            disabled={true}
-          />
-        </div>
-
-        <div className="options d-flex align-items-center justify-content-center gap-5">
-          <div className="mb-3 col-sm">
-            <span>Length</span>
-            <input type="number" name="length" defaultValue={8} />
-          </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <div className="container">
+          <h3 className="mb-3">
+            Need a password? Try the 1Password Strong Password Generator.
+          </h3>
+          <p>Generate secure, random passwords to stay safe online</p>
+          <p>Generated password</p>
           <div className="mb-3">
-            <input type="checkbox" name="numbers" />
-            <p>Numbers</p>
-          </div>
-          <div className="mb-3">
-            <input type="checkbox" name="symbols" />
-            <p>Symbols</p>
+            <input
+              type="text"
+              className="form-control"
+              name="password"
+              placeholder="Password"
+              value={password}
+              disabled={true}
+            />
           </div>
 
-          <button className="btn btn-primary">Generate</button>
+          <div className="options d-flex align-items-center justify-content-center gap-5">
+            <div className="mb-3 col-sm">
+              <span>Length</span>
+              <input type="number" name="length" defaultValue={8} />
+            </div>
+            <div className="mb-3">
+              <input type="checkbox" name="numbers" />
+              <p>Numbers</p>
+            </div>
+            <div className="mb-3">
+              <input type="checkbox" name="symbols" />
+              <p>Symbols</p>
+            </div>
+
+            <button className="btn btn-primary">Generate</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+
+      <table>
+        <tbody>
+          {passwordList.length === 0 && (
+            <tr>
+              <td>Nėra įvestų duomenų</td>
+            </tr>
+          )}
+          {passwordList.map((data, index) => {
+            return (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{data}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </>
   );
 };
 

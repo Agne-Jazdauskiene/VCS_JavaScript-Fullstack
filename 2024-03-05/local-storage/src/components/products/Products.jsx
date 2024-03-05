@@ -1,3 +1,10 @@
+// Produktų ištrynimas (2024-03-05)
+// Pasinaudodami šiandienos medžiaga prie kiekvieno produkto priskirkite mygtuką pavadinimu "Ištrinti".
+// Prie jo priregistruokite paspaudimo įvykį.
+// Paspaudus ant mygtuko ištrinkite iš produktų sąrašo pasirinktą eilutę.
+// Atnaujinus naršyklę duomenys turi išlikti tokie patys kaip ir matomi ekrane.
+// Nebelikus produktų sąraše atvaizduokite žinutę: "Kol kas nėra sukurtų produktų."
+
 import { useState, useEffect } from "react";
 
 const Products = () => {
@@ -55,6 +62,13 @@ const Products = () => {
     setLoading(!loading);
   };
 
+  const handleClick = (e) => {};
+
+  // const remove = (e) => {
+  //   let convertedData = JSON.parse(localData); //konvertuojam i objekta
+  //   convertedData.splice();
+  // };
+
   return (
     <>
       <h1>Products</h1>
@@ -65,6 +79,7 @@ const Products = () => {
             <th>Photo</th>
             <th>Price</th>
             <th>Quantity</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -75,12 +90,17 @@ const Products = () => {
                 <img
                   src={data.photo}
                   style={{
-                    maxWidth: 100,
+                    maxWidth: 150,
                   }}
                 />
               </td>
               <td>{data.price}</td>
               <td>{data.qty}</td>
+              <td>
+                <button className="btn btn-primary" onClick={remove}>
+                  x
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -93,6 +113,7 @@ const Products = () => {
         </div>
         <div className="mb-3">
           <label>Produkto nuotrauka</label>
+
           <input type="text" className="form-control" name="photo" />
         </div>
         <div className="mb-3">
