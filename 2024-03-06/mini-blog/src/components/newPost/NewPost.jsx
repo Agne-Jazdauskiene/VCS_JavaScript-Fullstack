@@ -53,7 +53,7 @@ const NewPost = ({ setReload }) => {
             <input
               type="text"
               className="form-control rounded-pill mb-3"
-              name="image"
+              name="photo"
               // State'o task reikšmės pakeitimas
               // onChange={(e) => setTask(e.target.value)}
             />
@@ -83,7 +83,7 @@ const NewPost = ({ setReload }) => {
             <input
               type="text"
               className="form-control rounded-pill mb-3"
-              name="author-role"
+              name="authorRole"
               // State'o task reikšmės pakeitimas
               // onChange={(e) => setTask(e.target.value)}
             />
@@ -93,7 +93,7 @@ const NewPost = ({ setReload }) => {
             <input
               type="text"
               className="form-control rounded-pill mb-3"
-              name="author-image"
+              name="authorPhoto"
               // State'o task reikšmės pakeitimas
               // onChange={(e) => setTask(e.target.value)}
             />
