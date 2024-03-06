@@ -24,7 +24,6 @@ const NewPost = ({ setReload }) => {
 
   return (
     <>
-      {/* input-group */}
       <h3>New Post</h3>
       <form className=" mb-5 col-8" onSubmit={handleSubmit}>
         <div>

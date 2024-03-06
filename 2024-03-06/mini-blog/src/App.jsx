@@ -13,14 +13,15 @@
 
 // Kuriant naują įrašą naudojama NewPost komponento forma.
 // Paspaudus mygtuką submit patalpintas įrašas atvaizduojamas sąraše.
-
+import { useState, useEffect } from "react";
 import Header from "./components/header/Header";
 import NewPost from "./components/newPost/NewPost";
 import Posts from "./components/posts/Posts";
-
 import "./App.css";
 
 function App() {
+  const [value, setValue] = useState();
+
   return (
     <>
       <Header />

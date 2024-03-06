@@ -1,23 +1,7 @@
-import { useState, useEffect } from "react";
+import Post from "../post/Post";
 
-const Posts = ({ reload }) => {
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    let data = localStorage.getItem("posts");
-
-    if (!data) return;
-
-    setData(JSON.parse(data));
-  }, [reload]);
-
-  return (
-    <>
-      {data.map((value, index) => (
-        <li key={index}>{value}</li>
-      ))}
-    </>
-  );
+const Posts = () => {
+  return <></>;
 };
 
 export default Posts;
