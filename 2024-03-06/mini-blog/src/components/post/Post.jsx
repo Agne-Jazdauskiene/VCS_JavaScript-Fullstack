@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-
-const Post = () => {
+const Post = (props) => {
   return <></>;
 };
 

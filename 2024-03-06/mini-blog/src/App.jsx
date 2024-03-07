@@ -20,13 +20,13 @@ import Posts from "./components/posts/Posts";
 import "./App.css";
 
 function App() {
-  const [value, setValue] = useState();
+  const [reload, setReload] = useState(false);
 
   return (
     <>
       <Header />
-      <Posts />
-      <NewPost />
+      <Posts reload={reload} />
+      <NewPost setReload={setReload} />
     </>
   );
 }
