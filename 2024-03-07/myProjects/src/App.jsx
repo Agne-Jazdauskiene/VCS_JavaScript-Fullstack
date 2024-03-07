@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import First from "./pages/First.jsx";
 import SecondShoppList from "./pages/SecondShoppList.jsx";
+import ThirdCalculator from "./pages/ThirdCalculator.jsx";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<First />} />
-            <Route path="/Second-Shopp-List" element={<SecondShoppList />} />
-            {/* <Route path="/contact" element={<Contact />} /> */}
+            <Route path="/second-shopp-List" element={<SecondShoppList />} />
+            <Route path="/third-calculator" element={<ThirdCalculator />} />
           </Routes>
         </div>
       </BrowserRouter>
