@@ -29,14 +29,31 @@
 // PAPILDOMAI:
 // Viešoje srityje sukurkite filtrą leidžiantį ieškoti kirpėjo pagal jo vardą.
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../../treatwell-project/src/pages/user/Home";
+import Admin from "./pages/admin/Admin";
+import NewKirpejas from "../../treatwell-project/src/pages/admin/NewKirpejas";
+import EditKirpejas from "./pages/admin/EditKirpejas";
+import Kirpejas from "./pages/user/Kirpejas";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1>Treatwell</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/new-kirpejas" element={<NewKirpejas />} />
+          <Route
+            path="/admin/edit-kirpejas/:indentifikatorius"
+            element={<EditKirpejas />}
+          />
+          <Route path="/user/kirpejas" element={<Kirpejas />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
-}
+};
 
 export default App;

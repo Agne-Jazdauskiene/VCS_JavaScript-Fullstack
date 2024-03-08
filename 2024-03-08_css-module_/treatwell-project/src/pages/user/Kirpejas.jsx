@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
-const Home = () => {
+const Kirpejas = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,10 +19,11 @@ const Home = () => {
               <img src={product.photo} style={{ maxWidth: "100%" }} />
             </div>
             <h4>{product.name}</h4>
-            <div className="phone"> Tel. Nr. {product.phone}</div>
-            <Link to="/user/kirpejas" className="btn btn-success">
-              Išsamiau
-            </Link>
+            <div className="phone">Tel. Nr. {product.phone}</div>
+            <div className="email"> El. p. {product.email}</div>
+            <div className="price">Kaina {product.price} €</div>
+            <div className="rating">Įvertinimas {product.rating}/10</div>
+            <div className="description"> {product.description}</div>
           </div>
         ))}
       </div>
@@ -31,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Kirpejas;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const EditProduct = () => {
+const EditKirpejas = () => {
   const [form, setForm] = useState({});
 
   // Peradresavimo (redirect) kūrimas
@@ -49,46 +49,69 @@ const EditProduct = () => {
 
   return (
     <>
-      <h1>Produkto redagavimas</h1>
+      <h1>Naujas Kirpėjas</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label>Produkto pavadinimas</label>
-          <input
-            type="text"
-            className="form-control"
-            name="title"
-            // Reikšmės atvaizdavimas laukelyje
-            defaultValue={form.title}
-          />
-        </div>
-        <div className="mb-3">
-          <label>Produkto nuotrauka</label>
+          <label>Kirpėjo nuotrauka</label>
           <input
             type="text"
             className="form-control"
             name="photo"
-            // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.photo}
           />
         </div>
         <div className="mb-3">
-          <label>Produkto kaina</label>
+          <label>Kirpėjo vardas</label>
+          <input
+            type="text"
+            className="form-control"
+            name="name"
+            defaultValue={form.name}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Telefono numeris</label>
+          <input
+            type="number"
+            className="form-control"
+            name="phone"
+            defaultValue={form.phone}
+          />
+        </div>
+        <div className="mb-3">
+          <label>El. paštas</label>
+          <input
+            type="text"
+            className="form-control"
+            name="email"
+            defaultValue={form.email}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Valandinis įkainis</label>
           <input
             type="number"
             className="form-control"
             name="price"
-            // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.price}
           />
         </div>
         <div className="mb-3">
-          <label>Kiekis sandėlyje</label>
+          <label>Įvertinimas</label>
           <input
             type="number"
             className="form-control"
-            name="qty"
-            // Reikšmės atvaizdavimas laukelyje
-            defaultValue={form.qty}
+            name="rating"
+            defaultValue={form.rating}
+          />
+        </div>
+        <div className="mb-3">
+          <label>Aprašymas</label>
+          <input
+            type="text"
+            className="form-control"
+            name="description"
+            defaultValue={form.description}
           />
         </div>
         <button className="btn btn-primary">Pridėti</button>
@@ -97,4 +120,4 @@ const EditProduct = () => {
   );
 };
 
-export default EditProduct;
+export default EditKirpejas;
