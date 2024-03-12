@@ -2,3 +2,7 @@ ul {
   display: flex;
   gap: 1.1rem;
 }
+
+li {
+  text-decoration: none;
+}
