@@ -9,14 +9,25 @@
 // created_at (Date)
 
 // Sukurkite API funkcionalumą leidžiantį:
-// Sukurti naują įrašą
-// Peržiūrėti pasirinktą įrašą
-// Atnaujinti pasirinktą įrašą,
-// Ištrinti norimą įrašą,
-// Peržiūrėti visus įrašus
-// Susigrąžinti visų įrašų kiekį kolekcijoje.
+// 1. Sukurti naują įrašą
+// 2. Peržiūrėti pasirinktą įrašą
+// 3. Atnaujinti pasirinktą įrašą,
+// 4. Ištrinti norimą įrašą,
+// 5. Peržiūrėti visus įrašus
+// 6. Susigrąžinti visų įrašų kiekį kolekcijoje.
+// Po naujo įrašo sukūrimo ir atnaujinimo, grąžinamas įrašo turinys.
 
-// Po naujo įrašo sukūrimo ir atnaujinimo grąžinamas įrašo turinys.
+// CRUD API V2:
+
+//  Papildykite Vakarykštę aplikaciją integruodami šiuos funkcionalumus.
+// 1. Kiekvieną kartą peržiūrint pasirinktą įrašą, padidinkite jo peržiūrų skaičių (view_count) + 1;
+// 2. Keliant naują įrašą integruokite nuotraukos pridėjimo galimybę.
+// 3. Redaguojant įrašą integruokite nuotraukos pridėjimo galimybę.
+// 4. Modifikuokite failų validatorių taip, jog nuotraukos kurios yra didesnės nei 2 megabaitai nebūtų praleidžiamos. https://www.bbc.co.uk/bitesize/guides/z8qymsg/revision/6
+
+// PAPILDOMAI:
+// Ištrinant įrašą pašalinkite ir nuotraukos failą (reikės NodeJS filesystem modulio)
+// Redaguojant įrašą, jeigu keliama nauja nuotrauka pašalinkite senąją.
 
 import { Router } from "express";
 import Post from "../model/posts.js";
@@ -74,4 +85,9 @@ router.delete("/:id", async (req, res) => {
   res.send("Įrašas sėkmingai ištrintas");
 });
 
+// CRUD API V2:
+// Papildykite Vakarykštę aplikaciją integruodami šiuos funkcionalumus.
+// 1. Kiekvieną kartą peržiūrint pasirinktą įrašą, padidinkite jo peržiūrų skaičių (view_count) + 1;
+
+// 2. Keliant naują įrašą integruokite nuotraukos pridėjimo galimybę.
 export default router;
