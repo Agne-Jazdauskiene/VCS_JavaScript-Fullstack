@@ -32,6 +32,7 @@
 import { Router } from "express";
 import Post from "../model/posts.js";
 import upload from "../middleware/multer.js";
+import { rm } from "node:fs/promises";
 
 const router = Router();
 
@@ -85,7 +86,15 @@ router.post("/", upload.single("image"), async (req, res) => {
 // VAR2 - 3. Redaguojant įrašą integruokite nuotraukos pridėjimo galimybę.
 // Įrašo atnaujinimas
 router.put("/:id", upload.single("image"), async (req, res) => {
-  req.body.photo = req.file?.filename;
+  // Ištrinant įrašą pašalinkite ir nuotraukos failą (reikės NodeJS filesystem modulio)
+  // istrina sena nuotrauka, kai ikeliame nauja
+  if (req.file) {
+    const oldPost = await Post.findById(req.params.id);
+    if (oldPost.photo) {
+      await rm("./uploads/" + oldPost.photo);
+    }
+    req.body.photo = req.file?.filename;
+  }
 
   await Post.findByIdAndUpdate(req.params.id, req.body);
 
