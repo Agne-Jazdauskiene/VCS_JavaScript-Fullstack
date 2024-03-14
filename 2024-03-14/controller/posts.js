@@ -1,22 +1,3 @@
-// CRUD API:
-
-// Pasinaudodami šiandienos paskaitos medžiaga praplėskite funkcionalumą.
-// Sukurkite naują kolekciją pavadinimu "posts". Kiekvienas įrašas turės šiuos duomenis:
-// title (String)
-// content (String)
-// author (String)
-// view_count (Number)
-// created_at (Date)
-
-// Sukurkite API funkcionalumą leidžiantį:
-// 1. Sukurti naują įrašą
-// 2. Peržiūrėti pasirinktą įrašą
-// 3. Atnaujinti pasirinktą įrašą,
-// 4. Ištrinti norimą įrašą,
-// 5. Peržiūrėti visus įrašus
-// 6. Susigrąžinti visų įrašų kiekį kolekcijoje.
-// Po naujo įrašo sukūrimo ir atnaujinimo, grąžinamas įrašo turinys.
-
 // CRUD API V2:
 
 //  Papildykite Vakarykštę aplikaciją integruodami šiuos funkcionalumus.
@@ -24,6 +5,7 @@
 // 2. Keliant naują įrašą integruokite nuotraukos pridėjimo galimybę.
 // 3. Redaguojant įrašą integruokite nuotraukos pridėjimo galimybę.
 // 4. Modifikuokite failų validatorių taip, jog nuotraukos, kurios yra didesnės nei 2 megabaitai, nebūtų praleidžiamos. https://www.bbc.co.uk/bitesize/guides/z8qymsg/revision/6
+//stackoverflow.com/questions/34697502/how-to-limit-the-file-size-when-uploading-with-multer
 
 // PAPILDOMAI:
 // Ištrinant įrašą pašalinkite ir nuotraukos failą (reikės NodeJS filesystem modulio)
