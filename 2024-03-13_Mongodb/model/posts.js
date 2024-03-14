@@ -6,7 +6,6 @@ const Post = mongoose.model("Post", {
   author: String,
   view_count: Number,
   created_at: Date,
-  photo: String,
 });
 
 export default Post;

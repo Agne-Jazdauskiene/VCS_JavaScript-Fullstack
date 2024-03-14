@@ -1,6 +1,5 @@
 import { Router } from "express";
 import User from "../model/user.js";
-import upload from "../middleware/multer.js";
 
 const router = Router();
 
@@ -16,11 +15,8 @@ router.get("/:id", async (req, res) => {
   res.send(await User.findById(req.params.id));
 });
 
-router.post("/", upload.single("nuotrauka"), async (req, res) => {
-  // Naujo vartotojo sukūrimas + nuotraukos įkėlimas
-
-  //   console.log(req.file);
-  req.body.photo = req.file?.filename;
+router.post("/", async (req, res) => {
+  // Naujo vartotojo sukūrimas
 
   await User.create(req.body);
 

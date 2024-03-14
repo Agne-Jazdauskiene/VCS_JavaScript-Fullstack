@@ -5,7 +5,6 @@ const User = mongoose.model("User", {
   last_name: String,
   email: String,
   password: String,
-  photo: String,
 });
 
 export default User;
