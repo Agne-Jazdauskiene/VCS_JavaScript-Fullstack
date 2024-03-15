@@ -18,7 +18,6 @@ router.get("/:id", async (req, res) => {
 
 router.post("/", upload.single("nuotrauka"), async (req, res) => {
   // Naujo vartotojo sukūrimas + nuotraukos įkėlimas
-
   //   console.log(req.file);
   req.body.photo = req.file?.filename;
 
@@ -28,7 +27,7 @@ router.post("/", upload.single("nuotrauka"), async (req, res) => {
 });
 
 // Įrašo atnaujinimas
-router.put("/:id", async (req, res) => {
+router.put("/:id", upload.single("nuotrauka"), async (req, res) => {
   await User.findByIdAndUpdate(req.params.id, req.body);
 
   res.send("Įrašas sėkmingai atnaujintas");

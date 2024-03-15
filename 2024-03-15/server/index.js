@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import user from "./controller/user.js";
 import posts from "./controller/posts.js";
 import cors from "cors";
+import upload from "./middleware/multer.js";
 
 // MVC:
 // Model - Atsakingas už informacijos paėmimą iš duomenų bazės
@@ -14,6 +15,8 @@ await mongoose.connect("mongodb://localhost:27017/pirma_duombaze");
 
 // Aplikacijos iniciavimas
 const app = express();
+
+// app.use(upload.array());
 
 // Perduodamų reikšmių urlencoded formatu paėmimo nustatymas
 app.use(

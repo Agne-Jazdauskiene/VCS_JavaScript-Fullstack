@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const EditProduct = () => {
   const [form, setForm] = useState({});
+  const [loader, setLoader] = useState(false);
 
   // Peradresavimo (redirect) kūrimas
   const navigate = useNavigate();
@@ -11,28 +12,33 @@ const EditProduct = () => {
 
   useEffect(() => {
     // Vartotojo duomenų paėmimas
-    fetch('http://localhost:3000/users')
-       .then(resp => resp.json())
-        // Duomenų priskyrimas prie state'o    
-       .then(resp => setData(resp));
+    fetch("http://localhost:3000/users/" + indentifikatorius)
+      .then((resp) => resp.json())
+      // Duomenu priskyrimas prie state`o
+      .then((resp) => {
+        console.log(resp);
+        setForm(resp);
+      });
   }, [loader]);
 
   // Formos duomenų įrašymas
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:3000/users/' + id, {
-        method: 'PUT',
-        // body: new FormData(e.target)
-    })
-    .then(resp => resp.text())
-    .then(resp => {
-        console.log(resp);
 
     //Vartotojo iššsaugojimas
+    fetch("http://localhost:3000/users/" + indentifikatorius, {
+      method: "PUT",
+      body: new FormData(e.target),
+    })
+      .then((resp) => resp.text())
+      .then((resp) => {
+        console.log(resp);
 
-    // Peradresavimo iniciavimas
-    navigate("/admin");
-  }
+        // Peradresavimo iniciavimas
+        navigate("/admin");
+        setLoader(!loader);
+      });
+  };
 
   return (
     <>
@@ -43,7 +49,7 @@ const EditProduct = () => {
           <input
             type="text"
             className="form-control"
-            name="title"
+            name="name"
             // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.name}
           />
@@ -53,7 +59,7 @@ const EditProduct = () => {
           <input
             type="text"
             className="form-control"
-            name="photo"
+            name="last_name"
             // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.last_name}
           />
@@ -61,9 +67,9 @@ const EditProduct = () => {
         <div className="mb-3">
           <label>El. pašto adresas</label>
           <input
-            type="number"
+            type="email"
             className="form-control"
-            name="price"
+            name="email"
             // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.email}
           />
@@ -71,9 +77,9 @@ const EditProduct = () => {
         <div className="mb-3">
           <label>Slaptažodis</label>
           <input
-            type="number"
+            type="password"
             className="form-control"
-            name="qty"
+            name="password"
             // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.password}
           />
