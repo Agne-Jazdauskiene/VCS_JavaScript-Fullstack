@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import user from "./controller/user.js";
 import posts from "./controller/posts.js";
+import cors from "cors";
 
 // MVC:
 // Model - Atsakingas už informacijos paėmimą iš duomenų bazės
@@ -20,6 +21,9 @@ app.use(
     extended: true,
   })
 );
+
+// Leidimo kreiptis i serveri is kito adreso priskyrimas
+app.use(cors());
 
 //Failu pasiekiamumo priskyrimas nurodant:
 //Pirmu parametru - url kelia
