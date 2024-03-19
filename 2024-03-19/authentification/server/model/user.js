@@ -1,4 +1,3 @@
-// import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
 
 //norint apsisaugoti nuo potencialiu hacker ataku, validuotjame duomenis, nurodome kokie tiktais
@@ -6,6 +5,7 @@ const user = model(
   "User",
   new Schema({
     user_name: {
+      // Tipo priskyrimas
       type: String,
       //Nurodome, jog vartotojo vardas turi buti nesikartojantis visoje kolekcijoje
       unique: true,

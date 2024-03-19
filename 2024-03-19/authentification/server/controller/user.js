@@ -5,19 +5,25 @@ import bcrypt from "bcrypt";
 
 const router = Router();
 
-router.get('/:id', (req, res)=> {
+router.get("/:id", async (req, res) => {
   try {
-res.json(await User.findById(req.params.id).select(['user_name', 'photo', 'bio', 'email']));
-  }catch(e) {
-    console.log(e)
-    res.status(500).json('Ivyko klaida');
+    res.json(
+      await User.findById(req.params.id).select([
+        "user_name",
+        "photo",
+        "bio",
+        "email",
+      ])
+    );
+  } catch (e) {
+    console.log(e);
+    res.status(500).json("Įvyko klaida");
   }
 });
 
-
 router.post("/login", async (req, res) => {
   //Prisijungimui tikimes:
-  // emailo ri passwordo
+  // emailo ir passwordo
   // console.log(req.body)
 
   try {
@@ -25,11 +31,11 @@ router.post("/login", async (req, res) => {
     const data = await User.findOne({ email: req.body.email });
 
     //Jei vartotojas nerastas, nutraukiame funkcija ir graziname zinute
-    if (!data) return res.status(401).json("Neteisiingas el.pasto adresas");
+    if (!data) return res.status(401).json("Neteisingas el. pašto adresas");
 
     // Jei vartotojo slaptazodis nesutampa su ivestu- graziname klaidos koda ir zinute
     if (!(await bcrypt.compare(req.body.password, data.password)))
-      return res.status(401).json("Neteisingas slaptazodis");
+      return res.status(401).json("Neteisingas slaptažodis");
 
     //priskiriame vartotojo informacija prie sesijos
     req.session.user = {
@@ -40,11 +46,11 @@ router.post("/login", async (req, res) => {
       email: data.email,
     };
 
+    // Išsiunčiame vartotojo duomenis
     res.json(req.session.user);
-
-    // console.log(data);
   } catch {
-    res.status(500).json("Ivyko klaida prisijungiant");
+    // Grąžinamas atsakymas įvykus klaidai
+    res.status(500).json("Įvyko klaida prisijungiant");
   }
 });
 
@@ -66,7 +72,7 @@ router.post("/register", upload.single("photo"), async (req, res) => {
     res.json("Vartotojas sekmingai sukurtas");
   } catch (e) {
     //ivykus klaidai graziname klaidos koda ir zinute
-    res.status(500).json("Registruojant vartotoja ivyko klaida");
+    res.status(500).json("Registruojant vartotoją įvyko klaida");
   }
 });
 

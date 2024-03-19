@@ -1,9 +1,7 @@
-// import mongoose from "mongoose";
 import { Schema, model } from "mongoose";
 
-//norint apsisaugoti nuo potencialiu hacker ataku, validuotjame duomenis, nurodome kokie tiktais
-const user = model(
-  "User",
+const like = model(
+  "Like",
   new Schema({
     author: {
       type: Schema.Types.ObjectId,
@@ -15,10 +13,9 @@ const user = model(
     },
     created_at: {
       type: Date,
-      //Reiksmes pagal nutyylejima priskyrimas, jei si nera siunciama
-      default: new Date(), // turesime grazinama timestamp'a
+      default: new Date(),
     },
   })
 );
 
-export default user;
+export default like;

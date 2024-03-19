@@ -1,9 +1,9 @@
 import { Router } from "express";
 import Comment from "../model/comment.js";
 
-const router = { Router };
+const router = Router();
 
-//Komentaru, kurie priklauso postui, susigrazinimas
+// Komentarų kurie priklauso postui susigrąžinimas
 router.get("/:post_id", async (req, res) => {
   try {
     const data = await Comment.find({ post: req.params.post_id }).populate(
@@ -13,27 +13,28 @@ router.get("/:post_id", async (req, res) => {
 
     res.json(data);
   } catch {
-    res.status(500).json("Ivyko klaida");
+    res.status(500).json("Įvyko klaida");
   }
 });
 
-// naujo komentaro sukurimas
+// Naujo įrašo/komentaro sukūrimas
 router.post("/", async (req, res) => {
   try {
     await Comment.create(req.body);
-    res.json("irasas sekmingai issaugotas");
+    res.json("Įrašas sėkmingai išssaugotas");
   } catch {
-    res.status(500).json("ivyko klaida");
+    // Įvykus klaidai grąžiname klaidos kodą ir žinutę
+    res.status(500).json("Įvyko klaida");
   }
 });
 
-//Komentaro istrynimas
+// Komentaro ištrynimas
 router.delete("/:id", async (req, res) => {
   try {
     await Comment.deleteOne({ _id: req.params.id });
-    res.json("Komentaras sekmingai pasalintas");
+    res.json("Komentaras sėkmingai pašalintas");
   } catch {
-    res.status(500).json("Ivyko klaida");
+    res.status(500).json("Įvyko klaida");
   }
 });
 
