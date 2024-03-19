@@ -5,6 +5,16 @@ import bcrypt from "bcrypt";
 
 const router = Router();
 
+router.get('/:id', (req, res)=> {
+  try {
+res.json(await User.findById(req.params.id).select(['user_name', 'photo', 'bio', 'email']));
+  }catch(e) {
+    console.log(e)
+    res.status(500).json('Ivyko klaida');
+  }
+});
+
+
 router.post("/login", async (req, res) => {
   //Prisijungimui tikimes:
   // emailo ri passwordo

@@ -1,29 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/user/Home";
-import Admin from "./pages/admin/Admin";
-import NewUser from "./pages/admin/NewUser";
-import EditUser from "./pages/admin/EditUser";
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
 import "./App.css";
 
 const App = () => {
-  // CRUD:
-  // CREATE
-  // READ
-  // UPDATE
-  // DELETE
-
   return (
     <>
+      <h1>Instagram</h1>
       <BrowserRouter>
         <Routes>
-          {/* Route'ų (kelių) registravimas */}
           <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<Admin />} />
-          <Route path="/admin/new-user" element={<NewUser />} />
-          <Route
-            path="/admin/edit-user/:indentifikatorius"
-            element={<EditUser />}
-          />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>

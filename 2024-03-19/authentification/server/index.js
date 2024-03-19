@@ -1,12 +1,16 @@
 import express from "express";
 import session from "express-session";
 import mongoose from "mongoose";
+import cors from "cors";
 import users from "./controller/user.js";
 import posts from "./controller/post.js";
 
 const app = express();
 
 app.set("trust proxy", true);
+
+//CORS apsaugos nuemimas
+app.use(cors());
 
 // Prisijungimas prie mongodb duomenų bazės pavadinimu: pirma_duombaze
 await mongoose.connect("mongodb://localhost:27017/instagram");
@@ -45,5 +49,9 @@ app.get("/", (req, res) => {
 //konkretus suradimas su password'u
 app.use("/users", users);
 app.use("/posts", posts);
+app.use("/comments", comments);
+
+//Failu atvaizdavimui, kreipiantis i route'a
+app.use("/uploads", express.static("./uploads"));
 
 app.listen(3000);
