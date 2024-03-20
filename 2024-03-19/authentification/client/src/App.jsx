@@ -13,10 +13,10 @@ const App = () => {
     <>
       <BrowserRouter>
         {/* Tikriname, ar showNewPost reiksme yra teigiama, jei taip - atvaizduojame NewPost komponento modalini langa */}
-        {showNewPost && <NewPost />}
+        {showNewPost && <NewPost setShowNewPost={setShowNewPost} />}
         <Sidebar setShowNewPost={setShowNewPost} />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home showNewPost={showNewPost} />} />
           <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
