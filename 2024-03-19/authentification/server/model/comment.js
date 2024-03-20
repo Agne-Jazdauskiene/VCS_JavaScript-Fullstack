@@ -5,7 +5,7 @@ const comment = model(
   new Schema({
     text: {
       type: String,
-      max: 160,
+      maxLength: 160,
       required: true,
     },
     author: {

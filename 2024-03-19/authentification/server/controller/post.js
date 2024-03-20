@@ -17,7 +17,11 @@ router.get("/", async (req, res) => {
     // res.json(dataWithUser);
 
     // Populate metodas užildo schemoje pažymėtą raktažodį modelio informacija
-    res.json(await Post.find().populate("author", ["user_name", "photo"]));
+    res.json(
+      await Post.find()
+        .populate("author", ["user_name", "photo"])
+        .populate("likes")
+    );
   } catch (e) {
     console.log(e);
     res.status(500).json("Įvyko klaida");

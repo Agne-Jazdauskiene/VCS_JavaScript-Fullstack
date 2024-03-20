@@ -5,6 +5,7 @@ import cors from "cors";
 import users from "./controller/user.js";
 import posts from "./controller/post.js";
 import comments from "./controller/comment.js";
+import likes from "./controller/like.js";
 
 // Prisijungimas prie mongodb duomenų bazės pavadinimu: instagram
 await mongoose.connect("mongodb://localhost:27017/instagram");
@@ -51,6 +52,7 @@ app.get("/", (req, res) => {
 app.use("/users", users);
 app.use("/posts", posts);
 app.use("/comments", comments);
+app.use("/likes", likes);
 
 //Failu atvaizdavimui, kreipiantis i route'a uploads
 app.use("/uploads", express.static("./uploads"));

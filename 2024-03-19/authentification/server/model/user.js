@@ -10,31 +10,31 @@ const user = model(
       //Nurodome, jog vartotojo vardas turi buti nesikartojantis visoje kolekcijoje
       unique: true,
       //Vartotojo vardas minimum triju simboliu ilgio
-      min: 3,
+      minLength: 3,
       // Maximum 50 simboliu
-      max: 50,
+      maxLength: 50,
       //Nurodymas, jog reiksme bus reikalaujama
       required: true,
     },
     photo: {
       type: String,
-      max: 80,
+      maxLength: 80,
     },
     bio: {
       type: String,
-      max: 180,
+      maxLength: 180,
     },
     email: {
       type: String,
-      min: 5,
-      max: 100,
+      minLength: 5,
+      maxLength: 50,
       unique: true,
       required: true,
     },
     password: {
       type: String,
-      min: 6,
-      max: 100,
+      minLength: 6,
+      maxLength: 18,
       required: true,
     },
     created_at: {

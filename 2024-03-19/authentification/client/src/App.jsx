@@ -1,13 +1,20 @@
+import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
+import Sidebar from "./components/sidebar/Sidebar.jsx";
+import NewPost from "./components/new-post/NewPost.jsx";
 import "./App.css";
 
 const App = () => {
+  const [showNewPost, setShowNewPost] = useState(false);
+
   return (
     <>
-      <h1>Instagram</h1>
       <BrowserRouter>
+        {/* Tikriname, ar showNewPost reiksme yra teigiama, jei taip - atvaizduojame NewPost komponento modalini langa */}
+        {showNewPost && <NewPost />}
+        <Sidebar setShowNewPost={setShowNewPost} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
