@@ -1,9 +1,9 @@
 import { useState } from "react";
-import style from "./NewPost.module.css";
+import { Link } from "react-router-dom";
+import style from "./Comments.module.css";
 import axios from "axios";
 
-//ismeta zinute del error'o
-const NewPost = ({ setShowNewPost }) => {
+const Comments = ({ setViewComments }) => {
   const [message, setMessage] = useState();
 
   const handleSubmit = (e) => {
@@ -16,18 +16,18 @@ const NewPost = ({ setShowNewPost }) => {
 
     axios
       .post("http://localhost:3000/posts/", formData)
-      .then((resp) => setShowNewPost(false))
+      .then((resp) => setViewComments(false))
       .catch((err) => setMessage(err.message));
   };
 
   return (
-    <div className={style.newPost}>
-      {/* priskiriam onclick eventa */}
-      <div className={style.close} onClick={() => setShowNewPost(false)}>
+    <div className={style.comments}>
+      {/* <div className={style.module}></div> */}
+      <div className={style.close} onClick={() => setViewComments(false)}>
         <i className="bi bi-x"></i>
       </div>
       <div className={style.modal}>
-        <h2>Create new post</h2>
+        <h2>View all Comments</h2>
 
         <form onSubmit={handleSubmit}>
           {message && <div className="alert alert-danger">{message}</div>}
@@ -37,11 +37,11 @@ const NewPost = ({ setShowNewPost }) => {
           <div className="mb-3">
             <textarea className="form-control" name="description"></textarea>
           </div>
-          <button className="btn btn-primary">Submit</button>
+          {/* <button className="btn btn-primary">Submit</button> */}
         </form>
       </div>
     </div>
   );
 };
 
-export default NewPost;
+export default Comments;

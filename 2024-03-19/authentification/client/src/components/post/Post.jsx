@@ -1,6 +1,10 @@
+import { useState } from "react";
 import "./Post.css";
+import Comments from "../comments/Comments.jsx";
 
 const Post = ({ data }) => {
+  const [viewComments, setViewComments] = useState(false);
+
   return (
     <div className="post">
       <div className="user">
@@ -16,8 +20,19 @@ const Post = ({ data }) => {
         <div className="user-name">{data.author.user_name}</div>
         <div className="description-text">{data.description}</div>
       </div>
+      {/* Rodyti komentarus */}
+      {/* cia keiciam steita      */}
+
+      <div onClick={() => setViewComments(true)}>
+        <span>View all Comments</span>
+        {viewComments && <Comments setViewComments={setViewComments} />}
+      </div>
     </div>
   );
 };
 
+{
+  /* {stateas && } 
+ <Comments />; */
+}
 export default Post;
