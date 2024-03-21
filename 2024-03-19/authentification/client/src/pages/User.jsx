@@ -2,26 +2,55 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import UserProfile from "../components/user-profile/UserProfile.jsx";
+// komponentas userprofile
 
-const User = ({ showProfile }) => {
-  const [data, setData] = useState([]);
-  const [id] = useParams();
+const User = () => {
+  const [data, setData] = useState({});
+  const [message, setMessage] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
     axios
       .get("http://localhost:3000/users/" + id)
-      .then((resp) => setData(resp.data));
+      .then((resp) => {
+        console.log(resp);
+        setData(resp.data);
+      })
+      .catch((err) => setMessage(err.message));
   }, []);
-
   return (
     <>
-      <h1>User Puslapis</h1>
       <UserProfile data={data} />
     </>
   );
 };
 
 export default User;
+
+// import { useEffect, useState } from "react";
+// import { useParams } from "react-router-dom";
+// import axios from "axios";
+// import UserProfile from "../components/user-profile/UserProfile.jsx";
+
+// const User = ({ showProfile }) => {
+//   const [data, setData] = useState([]);
+//   const [id] = useParams();
+
+//   useEffect(() => {
+//     axios
+//       .get("http://localhost:3000/users/" + id)
+//       .then((resp) => setData(resp.data));
+//   }, []);
+
+//   return (
+//     <>
+//       <h1>User Puslapis</h1>
+//       <UserProfile data={data} />
+//     </>
+//   );
+// };
+
+// export default User;
 
 // const User = ({ showProfile }) => {
 //   const [data, setUserData] = useState([]);
