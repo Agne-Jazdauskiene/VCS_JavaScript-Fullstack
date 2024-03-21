@@ -1,44 +1,54 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import SingleComment from "../single-comment/SingleComment.jsx";
+import NewComment from "../new-comment/NewComment.jsx";
 import style from "./Comments.module.css";
-// import axios from "axios";
+import axios from "axios";
 
-const Comments = ({ setViewComments }) => {
-  const [message, setMessage] = useState();
+const Comments = ({ data, setShowComments }) => {
+  const [commentsData, setCommentsData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    // Sustabdymas
+    if (loading) return;
 
-    const formData = new FormData(e.target);
+    console.log("Vyksta krovimas");
 
-    //LAIKINAS SPRENDIMAS
-    formData.append("author", "65f95dc7b6f7f14efe7fe9d9");
-
-    // axios
-    //   .post("http://localhost:3000/posts/", formData)
-    //   .then((resp) => setViewComments(false))
-    //   .catch((err) => setMessage(err.message));
-  };
+    axios
+      .get("http://localhost:3000/comments/" + data._id)
+      .then((resp) => setCommentsData(resp.data));
+  }, [loading]);
 
   return (
     <div className={style.comments}>
-      {/* <div className={style.module}></div> */}
-      <div className={style.close} onClick={() => setViewComments(false)}>
+      <div className={style.close} onClick={() => setShowComments(false)}>
         <i className="bi bi-x"></i>
       </div>
       <div className={style.modal}>
-        <h2>View all Comments</h2>
-
-        <form onSubmit={handleSubmit}>
-          {/* {message && <div className="alert alert-danger">{message}</div>} */}
-          {/* <div className="mb-3">
-            <input type="file" name="photo" className="form-control" />
+        <div className={style.leftSide}>
+          <img
+            src={"http://localhost:3000/uploads/" + data.photo}
+            className={style.mainPhoto}
+          />
+        </div>
+        <div className={style.rightSide}>
+          <div className={style.userInfo}>
+            <img
+              src={"http://localhost:3000/uploads/" + data.author.photo}
+              className={style.userPhoto}
+            />
+            <strong className={style.userName}>{data.author.user_name}</strong>
           </div>
-          <div className="mb-3">
-            <textarea className="form-control" name="description"></textarea>
-          </div> */}
-          {/* <button className="btn btn-primary">Submit</button> */}
-        </form>
+          <div className={style.commentsList}>
+            {commentsData.map((comment) => (
+              <SingleComment data={comment} key={comment._id} />
+            ))}
+          </div>
+          <div className={style.newComment}>
+            {loading && <div className={style.loader}>Kraunasi...</div>}
+            <NewComment post_id={data._id} setLoading={setLoading} />
+          </div>
+        </div>
       </div>
     </div>
   );

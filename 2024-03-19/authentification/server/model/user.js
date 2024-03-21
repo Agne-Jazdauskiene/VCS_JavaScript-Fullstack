@@ -34,7 +34,7 @@ const user = model(
     password: {
       type: String,
       minLength: 6,
-      maxLength: 18,
+      maxLength: 100,
       required: true,
     },
     created_at: {
