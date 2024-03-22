@@ -1,9 +1,26 @@
-import { useState } from "react";
-import style from "./Post.module.css";
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import Comments from "../comments/Comments.jsx";
+import MainContext from "../../context/Main.jsx";
+import style from "./Post.module.css";
+import axios from "axios";
 
-const Post = ({ data }) => {
+const Post = ({ data, setLoading }) => {
   const [showComments, setShowComments] = useState(false);
+  const { user } = useContext(MainContext);
+
+  const handleLike = () => {
+    setLoading(true);
+
+    axios
+      .post("http://localhost:3000/likes/", {
+        post: data._id,
+        author: user._id,
+      })
+      .then((resp) => console.log(resp))
+      .catch((resp) => console.log(err))
+      .finally(() => setLoading(false));
+  };
 
   return (
     <div className={style.post}>

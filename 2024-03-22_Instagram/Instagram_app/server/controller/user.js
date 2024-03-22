@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 
 const router = Router();
 
+//Vartotojo informacijos paėmimas
 router.get("/:id", async (req, res) => {
   try {
     res.json(

@@ -40,6 +40,13 @@ const Comments = ({ data, setShowComments }) => {
             <strong className={style.userName}>{data.author.user_name}</strong>
           </div>
           <div className={style.commentsList}>
+            {/* Originalus aprašymas */}
+            <SingleComment
+              data={{
+                ...data,
+                text: data.description,
+              }}
+            />
             {commentsData.map((comment) => (
               <SingleComment data={comment} key={comment._id} />
             ))}

@@ -1,7 +1,11 @@
+import { useContext } from "react";
+import MainContext from "../../context/Main.jsx";
 import style from "./NewComment.module.css";
 import axios from "axios";
 
 const NewComment = ({ post_id, setLoading }) => {
+  const { user } = useContext(MainContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -11,7 +15,7 @@ const NewComment = ({ post_id, setLoading }) => {
 
     const data = {
       // LAIKINAS SPRENDIMAS
-      author: "65f95dc7b6f7f14efe7fe9d9",
+      author: user._id,
       post: post_id,
     };
 

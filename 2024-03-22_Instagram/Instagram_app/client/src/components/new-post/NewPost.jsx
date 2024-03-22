@@ -1,10 +1,12 @@
 import { useState } from "react";
+import MainContext from "../../context/Main.jsx";
 import style from "./NewPost.module.css";
 import axios from "axios";
 
 //ismeta zinute del error'o
-const NewPost = ({ setShowNewPost }) => {
+const NewPost = () => {
   const [message, setMessage] = useState();
+  const { setShowNewPost, user } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,7 +14,7 @@ const NewPost = ({ setShowNewPost }) => {
     const formData = new FormData(e.target);
 
     //LAIKINAS SPRENDIMAS
-    formData.append("author", "65f95dc7b6f7f14efe7fe9d9");
+    formData.append("author", user._id);
 
     axios
       .post("http://localhost:3000/posts/", formData)

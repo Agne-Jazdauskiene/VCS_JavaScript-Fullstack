@@ -25,8 +25,10 @@
   width: 50%;
 }
 
-.modal img {
-  max-width: 100%;
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .close {
@@ -55,13 +57,14 @@
 
 .commentsList {
   padding: 1.2rem;
-  max-height: 460px;
+  max-height: 500px;
   overflow: auto;
 }
 
 .mainPhoto {
   height: 625px;
   object-fit: cover;
+  max-width: 100%;
 }
 
 .newComment {

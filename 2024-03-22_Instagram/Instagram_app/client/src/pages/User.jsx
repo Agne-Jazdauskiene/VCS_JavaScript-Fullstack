@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import UserProfile from "../components/user-profile/UserProfile.jsx";
+import UserPosts from "../components/user-posts/UserPosts.jsx";
 // komponentas userprofile
 
 const User = () => {
@@ -20,7 +21,12 @@ const User = () => {
   }, []);
   return (
     <>
-      <UserProfile data={data} />
+      {data && (
+        <>
+          <UserProfile data={data} />
+          <UserPosts data={data.posts} />
+        </>
+      )}
     </>
   );
 };

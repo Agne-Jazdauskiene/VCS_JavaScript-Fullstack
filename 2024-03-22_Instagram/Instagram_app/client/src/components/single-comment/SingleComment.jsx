@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import style from "./SingleComment.module.css";
 
 const SingleComment = ({ data }) => {
@@ -8,6 +9,7 @@ const SingleComment = ({ data }) => {
       </div>
       <div>
         <div className={style.content}>
+          <Link />
           <strong>{data.author.user_name}</strong>
           <span>{data.text}</span>
         </div>
