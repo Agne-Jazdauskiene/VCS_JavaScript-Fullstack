@@ -28,35 +28,41 @@ const Post = ({ data, setLoading }) => {
         <div className={style.userPhoto}>
           <img src={"http://localhost:3000/uploads/" + data.author.photo} />
         </div>
-        <div className={style.userName}>{data.author.user_name}</div>
+        <div className={style.userName}>
+          <Link to={"/user/" + data.author._id}>{data.author.user_name}</Link>
+        </div>
       </div>
       <div className={style.photo}>
         <img src={"http://localhost:3000/uploads/" + data.photo} />
       </div>
+      <div className={style.actions}>
+        <ul>
+          <li onClick={handleLike}>
+            <i className="bi bi-heart"></i>
+          </li>
+          <li onClick={() => setShowComments(true)}>
+            <i className="bi bi-chat-square-dots"></i>
+          </li>
+        </ul>
+      </div>
+      <div className={style.likeCount}>
+        <strong>{data.likes}</strong>
+        <span>likes</span>
+      </div>
       <div className={style.description}>
-        <strong className={style.userName}>{data.author.user_name}</strong>
+        <Link to={"/user/" + data.author._id}>
+          <strong className={style.userName}>{data.author.user_name}</strong>
+        </Link>
         {data.description}
       </div>
-      {/* Rodyti komentarus */}
-      {/* cia keiciam steita      */}
-
       <div className={style.commentsLink} onClick={() => setShowComments(true)}>
         <span>View All Comments</span>
       </div>
       {showComments && (
         <Comments data={data} setShowComments={setShowComments} />
       )}
-
-      {/* <div onClick={() => setViewComments(true)}>
-        <span>View all Comments</span>
-        {viewComments && <Comments setViewComments={setViewComments} />}
-      </div> */}
     </div>
   );
 };
 
-// {
-//   /* {stateas && }
-//  <Comments />; */
-// }
 export default Post;

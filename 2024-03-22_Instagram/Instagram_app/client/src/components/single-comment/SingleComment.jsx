@@ -9,8 +9,9 @@ const SingleComment = ({ data }) => {
       </div>
       <div>
         <div className={style.content}>
-          <Link />
-          <strong>{data.author.user_name}</strong>
+          <Link to={"/user/" + data.author._id}>
+            <strong>{data.author.user_name}</strong>
+          </Link>
           <span>{data.text}</span>
         </div>
         <div className={style.commentDate}>

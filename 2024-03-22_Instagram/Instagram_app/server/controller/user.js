@@ -2,43 +2,49 @@ import { Router } from "express";
 import User from "../model/user.js";
 import upload from "../middleware/multer.js";
 import bcrypt from "bcrypt";
+import auth from "../middleware/auth.js";
 
 const router = Router();
 
-//Vartotojo informacijos paėmimas
-router.get("/:id", async (req, res) => {
+router.get("/check-auth", auth, (req, res) => {
+  res.status(200).json(req.session.user);
+});
+
+router.get("/logout", auth, (req, res) => {
+  req.session.destroy();
+  res.json("Sveikiname sėkmingai atsijungus");
+});
+
+// Vartotojo informacijos paėmimas
+router.get("/:id", auth, async (req, res) => {
   try {
     res.json(
-      await User.findById(req.params.id).select([
-        "user_name",
-        "photo",
-        "bio",
-        "email",
-      ])
+      await User.findById(req.params.id)
+        .select(["user_name", "photo", "bio", "email"])
+        .populate("posts")
+        .populate("postCount")
     );
-  } catch (e) {
-    console.log(e);
+  } catch {
     res.status(500).json("Įvyko klaida");
   }
 });
 
 router.post("/login", async (req, res) => {
-  //Prisijungimui tikimes:
-  // emailo ir passwordo
-  // console.log(req.body)
-
+  console.log(req.body);
+  // Prisijungimui tikimės:
+  // Emailo ir slaptažodžio
   try {
-    //findOne metodas grazina tik vieno iraso/vartotojo informacija
+    // findOne metodas grąžina tik vieno įrašo informaciją
     const data = await User.findOne({ email: req.body.email });
 
-    //Jei vartotojas nerastas, nutraukiame funkcija ir graziname zinute
+    // Jei vartotojas nerastas nuotraukiame funkciją ir grąžiname žinutę
     if (!data) return res.status(401).json("Neteisingas el. pašto adresas");
 
-    // Jei vartotojo slaptazodis nesutampa su ivestu- graziname klaidos koda ir zinute
+    // Jei vartotojo slaptažodis nesutampa su įvestu grąžiname klaidos kodą ir žinutę
     if (!(await bcrypt.compare(req.body.password, data.password)))
       return res.status(401).json("Neteisingas slaptažodis");
 
-    //priskiriame vartotojo informacija prie sesijos
+    // Priskiriame vartotojo informaciją prie sesijos
     req.session.user = {
       _id: data._id,
       user_name: data.user_name,
@@ -56,23 +62,21 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/register", upload.single("photo"), async (req, res) => {
-  // res.send("veikia");
-  // Tikrinsime, ar ivyks klaida
   try {
-    //Jeigu turime persiunciama nuotrauka
-    if (req.file) req.body.photo = req.file.filename; // Priskiriame failo pavadinima prie i mongodb irasomu duomenu
+    // Jeigu turime persiunčiamą nuotrauką
+    if (req.file) req.body.photo = req.file.filename; //Priskiriame failo pavadinimą prie į mongodb įrašomų duomenų
 
-    //Slaptazodzio sifravimas
-    // hash - yra sifruotas stringas
+    // Slaptažodžio šifravimas
+    // hash - yra šifruotas stringas
     req.body.password = await bcrypt.hash(req.body.password, 10);
 
-    // sukuriame vartotoja
+    // Sukuriame vartotoją
     await User.create(req.body);
-
-    //grazinamae zinute
-    res.json("Vartotojas sekmingai sukurtas");
+    // Grąžiname žinutę
+    res.json("Vartotojas sėkmingai sukurtas");
   } catch (e) {
-    //ivykus klaidai graziname klaidos koda ir zinute
+    console.log(e);
+    // Įvykus klaidai grąžiname klaidos kodą ir žinutę
     res.status(500).json("Registruojant vartotoją įvyko klaida");
   }
 });

@@ -7,7 +7,7 @@
 }
 
 .post .photo {
-  margin: 0 0 1rem;
+  margin: 0 0 0.6rem;
 }
 
 .post .photo img {
@@ -45,4 +45,27 @@
   font-weight: bold;
   font-size: 14px;
   margin-right: 5px;
+}
+
+.actions {
+  font-size: 24px;
+}
+
+.actions ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.actions ul li {
+  cursor: pointer;
+}
+
+.likeCount {
+  display: flex;
+  gap: 5px;
+  padding: 0 0 0.3rem;
 }

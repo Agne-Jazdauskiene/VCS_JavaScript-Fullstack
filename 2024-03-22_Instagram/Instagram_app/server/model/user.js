@@ -1,9 +1,8 @@
 import { Schema, model } from "mongoose";
 
 //norint apsisaugoti nuo potencialiu hacker ataku, validuotjame duomenis, nurodome kokie tiktais
-const user = model(
-  "User",
-  new Schema({
+const userSchema = new Schema(
+  {
     user_name: {
       // Tipo priskyrimas
       type: String,
@@ -39,10 +38,28 @@ const user = model(
     },
     created_at: {
       type: Date,
-      //Reiksmes pagal nutyylejima priskyrimas, jei si nera siunciama
-      default: new Date(), // turesime grazinama timestamp'a
+      // Reikšmės pagal nutylėjimą priskyrimas, jei ši nėra siunčiama
+      default: new Date(),
     },
-  })
+  },
+  {
+    toJSON: {
+      virtuals: true,
+    },
+  }
 );
 
-export default user;
+userSchema.virtual("posts", {
+  ref: "Post",
+  localField: "_id",
+  foreignField: "author",
+});
+
+userSchema.virtual("postCount", {
+  ref: "Post",
+  localField: "_id",
+  foreignField: "author",
+  count: true,
+});
+
+export default model("User", userSchema);

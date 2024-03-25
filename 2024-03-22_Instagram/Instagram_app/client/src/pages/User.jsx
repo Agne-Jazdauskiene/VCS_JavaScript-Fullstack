@@ -7,7 +7,7 @@ import UserPosts from "../components/user-posts/UserPosts.jsx";
 
 const User = () => {
   const [data, setData] = useState({});
-  const [message, setMessage] = useState();
+  // const [message, setMessage] = useState();
   const { id } = useParams();
 
   useEffect(() => {

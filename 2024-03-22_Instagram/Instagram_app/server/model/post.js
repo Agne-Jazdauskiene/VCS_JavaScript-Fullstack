@@ -8,7 +8,7 @@ const postSchema = new Schema(
   {
     photo: {
       type: String,
-      maxLegth: 80,
+      maxLength: 80,
       required: true,
     },
     description: {
@@ -40,6 +40,4 @@ postSchema.virtual("likes", {
   count: true,
 });
 
-const post = model("Post", postSchema);
-
-export default post;
+export default model("Post", postSchema);

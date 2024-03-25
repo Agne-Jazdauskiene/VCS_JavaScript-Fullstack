@@ -1,12 +1,12 @@
 import { Router } from "express";
 import Post from "../model/post.js";
-import User from "../model/user.js";
-import upload from "../middleware/multer.js"; //nuotraukoms importuoti
+import upload from "../middleware/multer.js";
+import auth from "../middleware/auth.js";
 
 const router = Router();
 
 // Grąžinamas visų post'ų sąrašas
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     // const data = await Post.find();
     // const dataWithUser = [];
@@ -28,16 +28,17 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Naujo iraso sukurimas
-router.post("/", upload.single("photo"), async (req, res) => {
-  // console.log(req.body);
+// Naujo įrašo sukūrimas
+router.post("/", auth, upload.single("photo"), async (req, res) => {
   if (req.file) req.body.photo = req.file.filename;
 
   try {
     await Post.create(req.body);
     res.json("Įrašas sėkmingai išssaugotas");
-  } catch {
-    res.status(500).json("Ivyko klaida");
+  } catch (e) {
+    // Įvykus klaidai grąžiname klaidos kodą ir žinutę
+    console.log(e);
+    res.status(500).json("Įvyko klaida");
   }
 });
 
