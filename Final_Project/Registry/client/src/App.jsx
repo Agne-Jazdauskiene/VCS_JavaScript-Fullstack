@@ -1,34 +1,24 @@
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 const App = () => {
+  // CRUD:
+  // CREATE
+  // READ
+  // UPDATE
+  // DELETE
 
-const
-
-
-  return <>
-  
-  // <MainContext.Provider value={contextValues}>
-  //       <BrowserRouter>
-  //         {/* TIKRINAME AR VARTOTOJAS YRA PRISIJUNGES */}
-  //         {user && (
-  //           <>
-  //             {/* Tikriname ar showNewPost reikšmė teigiama, jei taip atvaizduojame NewPost komponento modalinį langą */}
-  //             {showNewPost && <NewPost />}
-  //             <Sidebar />
-  //           </>
-  //         )}
-  //         <Routes>
-  //           {/* TIKRINAME AR VARTOTOJAS YRA PRISIJUNGES */}
-  //           {user && (
-  //             <>
-  //               <Route path="/" element={<Home />} />
-  //               <Route path="/user/:id" element={<User />} />
-  //             </>
-  //           )}
-  //           <Route path="/login" element={<Login />} />
-  //           <Route path="*" element={<Login />} />
-  //         </Routes>
-  //       </BrowserRouter>
-  //     </MainContext.Provider></>;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/user/:id" element={<User />} /> */}
+        <Route path="/login" element={<Login />} />
+        {/* <Route path="*" element={<Login />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 };
 export default App;
