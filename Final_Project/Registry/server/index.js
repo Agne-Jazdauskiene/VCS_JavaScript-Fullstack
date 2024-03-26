@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import users from "./controller/user.js";
 
-// Prisijungimas prie mongodb duomenų bazės pavadinimu: instagram
+// Prisijungimas prie mongodb duomenų bazės:
 await mongoose.connect("mongodb://localhost:27017/registry");
 
 const app = express();
@@ -41,9 +41,8 @@ app.use(express.json());
 
 // Kontrolerių registracija
 app.use("/users", users);
-// app.use("/posts", posts);
-// app.use("/comments", comments);
-// app.use("/likes", likes);
+app.use("/projects", projects);
+// app.use("/status", status);
 
 // Failų atvaizdavimui kreipiantis į route'ą uploads
 app.use("/uploads", express.static("./uploads"));
