@@ -43,6 +43,7 @@ const userSchema = new Schema(
       maxLength: 150,
       unique: true,
     },
+    // .limit(141) KAIP PADAROMA????
   }
   // {
   //   toJSON: {
