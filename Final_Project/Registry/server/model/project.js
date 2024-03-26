@@ -26,9 +26,13 @@ const projectSchema = new Schema(
       type: Date,
       required: true,
     },
+    author: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     project_status: {
-      type: String,
-      default: "Pateiktas",
+      type: Schema.Types.ObjectId,
+      ref: "Status",
     },
   }
   // {
@@ -38,4 +42,4 @@ const projectSchema = new Schema(
   // }
 );
 
-export default model("Project", postSchema);
+export default model("Project", projectSchema);

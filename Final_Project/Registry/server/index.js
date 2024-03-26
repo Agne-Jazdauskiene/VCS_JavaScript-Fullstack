@@ -3,6 +3,8 @@ import session from "express-session";
 import mongoose from "mongoose";
 import cors from "cors";
 import users from "./controller/user.js";
+import projects from "./controller/project.js";
+import status from "./controller/status.js";
 
 // Prisijungimas prie mongodb duomenų bazės:
 await mongoose.connect("mongodb://localhost:27017/registry");
@@ -42,7 +44,7 @@ app.use(express.json());
 // Kontrolerių registracija
 app.use("/users", users);
 app.use("/projects", projects);
-// app.use("/status", status);
+app.use("/status", status);
 
 // Failų atvaizdavimui kreipiantis į route'ą uploads
 app.use("/uploads", express.static("./uploads"));
