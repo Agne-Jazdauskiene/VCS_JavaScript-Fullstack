@@ -43,7 +43,12 @@ const Login = () => {
         </div>
         <div className="mb-3">
           <label>Prašome įvesti slaptažodį:</label>
-          <input type="password" className="form-control" name="password" />
+          <input
+            type="password"
+            placeholder="įveskite slaptažodį"
+            className="form-control"
+            name="password"
+          />
         </div>
         <button className="btn btn-primary">Prisijungti</button>
       </form>

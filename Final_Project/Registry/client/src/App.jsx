@@ -16,7 +16,6 @@ const App = () => {
 
   return (
     <>
-      {/* <h1>Seimo narių darbotvarkės registras</h1> */}
       <MainContext.Provider value>
         <BrowserRouter>
           <Routes>
