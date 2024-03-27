@@ -29,7 +29,7 @@ const Login = () => {
 
   return (
     <>
-      <h1>Prašome prisijungti</h1>
+      <h2>Prašome prisijungti</h2>
       {message && <div className="alert alert-danger">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">

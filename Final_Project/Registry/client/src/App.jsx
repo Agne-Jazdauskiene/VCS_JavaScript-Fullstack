@@ -2,6 +2,9 @@ import Home from "./pages/Home.jsx";
 import Login from "./pages/Login.jsx";
 import User from "./pages/User.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import Main from "./context/Main.jsx";
+import MainContext from "./context/Main.jsx";
 import "./App.css";
 
 const App = () => {
@@ -12,14 +15,19 @@ const App = () => {
   // DELETE
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/user/:id" element={<User />} />
-        <Route path="/login" element={<Login />} />
-        {/* <Route path="*" element={<Login />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <>
+      {/* <h1>Seimo narių darbotvarkės registras</h1> */}
+      <MainContext.Provider value>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            {/* <Route path="/user/:id" element={<User />} /> */}
+          </Routes>
+        </BrowserRouter>
+      </MainContext.Provider>
+    </>
   );
 };
+
 export default App;
