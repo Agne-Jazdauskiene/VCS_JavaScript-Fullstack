@@ -36,7 +36,7 @@ const Login = () => {
           <label>Prašome įvesti el. pašto adresą:</label>
           <input
             type="email"
-            placeholder="name@gmail.com"
+            placeholder="El. pašto adresas"
             className="form-control"
             name="email"
           />
@@ -45,7 +45,7 @@ const Login = () => {
           <label>Prašome įvesti slaptažodį:</label>
           <input
             type="password"
-            placeholder="įveskite slaptažodį"
+            placeholder="Slaptažodis"
             className="form-control"
             name="password"
           />
