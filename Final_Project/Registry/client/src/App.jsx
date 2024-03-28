@@ -1,35 +1,45 @@
 // import Home from "./pages/Home.nereikaligas.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import MainContext from "./context/Main.jsx";
 import Login from "./pages/Login.jsx";
 import Manager from "./pages/Manager.jsx";
 import Projects from "./pages/Projects.jsx";
 import NewProject from "./components/newProject/NewProject.jsx";
 import EditProject from "./components/edit-project/Edit.project.jsx";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import Main from "./context/Main.jsx";
-import MainContext from "./context/Main.jsx";
 import "./App.css";
 
 const App = () => {
-  // CRUD:
-  // CREATE
-  // READ
-  // UPDATE
-  // DELETE
+  const [showProjects, setShowProjects] = useState(false);
+  const [user, setUser] = useState();
+
+  //PAČIOJ PABAIGOJ DARYTI
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:3000/users/check-auth")
+  //     .then((resp) => setUser(resp.data))
+  //     .catch((err) => console.log(err));
+  // }, []);
+
+  const contextValues = {
+    // showProjects,
+    // setShowProjects,
+    user,
+    setUser,
+  };
 
   return (
     <>
-      <MainContext.Provider value>
+      <MainContext.Provider value={contextValues}>
         <BrowserRouter>
           <Routes>
+            {/* USERIO reik žiūrėt į Instagram pvz. */}
             {/* <Route path="/" element={<Home />} /> */}
             <Route path="/login" element={<Login />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/projects/new-project" element={<NewProject />} />
-            <Route
-              path="/projects/edit-project/:id"
-              element={<EditProject />}
-            />
+            <Route path="/" element={<Projects />} />
+            <Route path="/new-project" element={<NewProject />} />
+            <Route path="/edit-project/:id" element={<EditProject />} />
             {/* <Route path="/user" element={<User />} /> */}
             {/* <Route path="/manager" element={<Manager />} /> */}
             {/* <Route

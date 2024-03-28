@@ -33,7 +33,7 @@ const NewProject = () => {
     }
 
     // Peradresavimo iniciavimas
-    navigate("/projects");
+    navigate("/");
   };
 
   return (

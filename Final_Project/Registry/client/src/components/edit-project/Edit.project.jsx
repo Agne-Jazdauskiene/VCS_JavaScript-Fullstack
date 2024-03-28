@@ -44,7 +44,7 @@ const EditProject = () => {
     localStorage.setItem("data", JSON.stringify(localData));
 
     // Peradresavimo iniciavimas
-    navigate("/projects");
+    navigate("/");
   };
 
   return (
