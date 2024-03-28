@@ -66,7 +66,10 @@ const Projects = () => {
               </td>
               <td>{project.project_description}</td>
               <td>{project.consideration_day}</td>
-              <td>{project.author.user_name}</td>
+              <td>
+                {project.author.user_name} {project.author.last_name}{" "}
+                {project.author.party_name}
+              </td>
               <td>{project.created_at}</td>
               <td>{project.project_status.project_status}</td>
 

@@ -1,39 +1,33 @@
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import MainContext from "../../context/Main.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import style from "./NewProject.module.css";
 
 const NewProject = () => {
-  // Peradresavimo (redirect) kūrimas
+  const [message, setMessage] = useState();
+  // const [loader, setLoader] = useState(false);
+  // Pasiimam is konteksto user reiksme
+  // Patikrinam ar ji yra
+  // Jeigu nera tuomet prijungiam useNavigate()
+  // Ir padarom peradresavima navigate('/login');
+  const { setNewProjects, User } = useContext(MainContext);
   const navigate = useNavigate();
 
-  // Produkto formos submitas
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Duomenų iš formos paėmimo pradžia
     const formData = new FormData(e.target);
-    const data = {};
 
-    for (const input of formData.entries()) {
-      data[input[0]] = input[1];
-    }
-    // Duomenų iš formos paėmimos pabaiga
+    // formData.append('author', user._id);
 
-    // Duomenų iš localStorage paėmimas
-    const localData = localStorage.getItem("data");
-
-    // Patikrinimas ar jie egzistuoja
-    if (localData) {
-      // Produkto pridėjimas jau esančiame masyve
-      let convertedData = JSON.parse(localData);
-      convertedData.push(data);
-      convertedData = JSON.stringify(convertedData);
-      localStorage.setItem("data", convertedData);
-    } else {
-      // Produkto pridėjimas naujame masyve
-      localStorage.setItem("data", JSON.stringify([data]));
-    }
-
-    // Peradresavimo iniciavimas
-    navigate("/");
+    axios
+      .post("http://localhost:3000/projects/", formData)
+      .then((resp) => {
+        // setNewProject(formData);
+        navigate("/");
+      })
+      .catch((err) => setMessage(err.message));
   };
 
   return (
