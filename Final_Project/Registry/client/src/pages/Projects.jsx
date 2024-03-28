@@ -14,9 +14,9 @@ const Projects = () => {
   }, [loader]);
 
   // Ištrynimo funkcija
-  const handleDelete = (index) => {
+  const handleDelete = (id) => {
     // Ištrynimas iš masyvo
-    data.splice(index, 1);
+    data.splice(id, 1);
     // Duomenų priskyrimas į localStorage
     localStorage.setItem("data", JSON.stringify(data));
 
@@ -26,14 +26,15 @@ const Projects = () => {
 
   return (
     <>
+      {true && <button>awdawd</button>}
       <div className="d-flex justify-content-between align-items-center">
-        <h2>VISI Projektai svarstymui - MATO VISI</h2>
+        <h2 className="mb-5">VISI Projektai svarstymui - MATO VISI</h2>
         {/* <Link to="/users/new-user" className="btn btn-success">
           Kurti naują/ koreguoti vartotoją
         </Link> */}
-        {/* <Link to="/projects/new-project" className="btn btn-success">
+        <Link to="/projects/new-project" className="btn btn-success">
           Naujas projektas
-        </Link> */}
+        </Link>
       </div>
       <table className="table">
         <thead>
@@ -44,12 +45,13 @@ const Projects = () => {
             <th>Projekto aprašymas</th>
             <th>Siūloma svarstymo data</th>
             <th>Autorius</th>
+            <th>Statusas</th>
           </tr>
         </thead>
         <tbody>
-          {data.map((project, index) => (
-            <tr key={index}>
-              <td>{index}</td>
+          {data.map((project, id) => (
+            <tr key={id}>
+              <td>{id}</td>
               <td>{project.project_name}</td>
               <td>
                 <img src={project.project_photo} style={{ maxWidth: 50 }} />
@@ -57,16 +59,17 @@ const Projects = () => {
               <td>{project.project_description}</td>
               <td>{project.consideration_day}</td>
               <td>{project.author}</td>
+              <td>{project.status}</td>
 
               <td>
                 <button
                   className="btn btn-danger"
-                  onClick={() => handleDelete(index)}
+                  onClick={() => handleDelete(id)}
                 >
                   Ištrinti
                 </button>
                 <Link
-                  to={"/user/edit-project/" + index}
+                  to={"/projects/edit-project/" + id}
                   className="btn btn-warning"
                 >
                   Redaguoti

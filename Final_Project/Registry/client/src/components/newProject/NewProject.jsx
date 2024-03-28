@@ -33,25 +33,37 @@ const NewProject = () => {
     }
 
     // Peradresavimo iniciavimas
-    navigate("/user");
+    navigate("/projects");
   };
 
   return (
     <>
-      <h1>Naujas projektas</h1>
+      <h1 className="mb-5">Naujas projektas</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label>Projekto pavadinimas</label>
-          <input type="text" className="form-control" name="project_name" />
-        </div>
-        <div className="mb-3">
-          <label>Nuotrauka</label>
-          <input type="text" className="form-control" name="project_photo" />
-        </div>
-        <div className="mb-3">
-          <label>Projekto aprašymas</label>
+          {/* <label>Projekto pavadinimas</label> */}
           <input
             type="text"
+            placeholder="Projekto pavadinimas"
+            className="form-control"
+            name="project_name"
+          />
+        </div>
+        <div className="mb-3">
+          {/* <label>Nuotrauka</label> */}
+          {/* kaip pridėti failą??? */}
+          <input
+            type="text"
+            placeholder="Nuotrauka"
+            className="form-control"
+            name="project_photo"
+          />
+        </div>
+        <div className="mb-3">
+          {/* <label>Projekto aprašymas</label> */}
+          <input
+            type="text"
+            placeholder="Projekto aprašymas"
             className="form-control"
             name="project_description"
           />
@@ -59,15 +71,30 @@ const NewProject = () => {
         <div className="mb-3">
           <label>Siūloma svarstymo data</label>
           <input
-            type="text"
+            type="date"
+            placeholder="Siūloma svarstymo data"
             className="form-control"
             name="consideration_day"
           />
         </div>
-        <div className="mb-3">
-          <label>Autorius</label>
-          <input type="text" className="form-control" name="author" />
-        </div>
+        {/* <label>Autorius</label> */}
+        {/* kažkaip pridėti pagal id autorius */}
+        {/* <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Autorius"
+            className="form-control"
+            name="author"
+          />
+        </div> */}
+        {/* <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Projekto statusas"
+            className="form-control"
+            name="status"
+          />
+        </div> */}
 
         <button className="btn btn-primary">Pridėti</button>
       </form>
