@@ -27,7 +27,7 @@ const User = () => {
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h2>Vartotojo puslapis</h2>
+        <h2>VISI Projektai svarstymui</h2>
         <Link to="/user/new-project" className="btn btn-success">
           Naujas projektas
         </Link>

@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import MainContext from "../context/Main.jsx";
 import axios from "axios";
-import Project from "../components/project/Project.jsx";
+import Project from "../components/projects/Projects.jsx";
 import { Link } from "react-router-dom";
 
 const Home = () => {

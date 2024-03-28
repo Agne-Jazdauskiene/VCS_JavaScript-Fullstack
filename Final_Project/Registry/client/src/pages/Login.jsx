@@ -29,11 +29,12 @@ const Login = () => {
 
   return (
     <>
-      <h2>Prašome prisijungti</h2>
+      <h1 className="mb-5">Seimo narių darbotvarkės registras</h1>
+      {/* <h2>Prašome prisijungti</h2> */}
       {message && <div className="alert alert-danger">{message}</div>}
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label>Prašome įvesti el. pašto adresą:</label>
+          {/* <label>Prašome įvesti el. pašto adresą:</label> */}
           <input
             type="email"
             placeholder="El. pašto adresas"
@@ -42,7 +43,7 @@ const Login = () => {
           />
         </div>
         <div className="mb-3">
-          <label>Prašome įvesti slaptažodį:</label>
+          {/* <label>Prašome įvesti slaptažodį:</label> */}
           <input
             type="password"
             placeholder="Slaptažodis"

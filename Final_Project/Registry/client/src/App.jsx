@@ -1,7 +1,7 @@
-import Home from "./pages/Home.jsx";
+// import Home from "./pages/Home.nereikaligas.jsx";
 import Login from "./pages/Login.jsx";
 import Manager from "./pages/Manager.jsx";
-import User from "./pages/User.jsx";
+import Projects from "./pages/Projects.jsx";
 import NewProject from "./components/newProject/NewProject.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
@@ -21,10 +21,11 @@ const App = () => {
       <MainContext.Provider value>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<Home />} /> */}
             <Route path="/login" element={<Login />} />
-            <Route path="/user" element={<User />} />
-            <Route path="/user/new-project" element={<NewProject />} />
+            <Route path="/projects" element={<Projects />} />
+            {/* <Route path="/user" element={<User />} /> */}
+            {/* <Route path="/user/new-project" element={<NewProject />} /> */}
             {/* <Route path="/manager" element={<Manager />} /> */}
             {/* <Route
               path="/manager/new-user/:identifikatorius"
