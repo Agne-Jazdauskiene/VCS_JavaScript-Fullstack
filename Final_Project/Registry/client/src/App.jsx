@@ -7,7 +7,7 @@ import Login from "./pages/Login.jsx";
 import Manager from "./pages/Manager.jsx";
 import Projects from "./pages/Projects.jsx";
 import NewProject from "./components/new-project/NewProject.jsx";
-import EditProject from "./components/edit-project/Edit.project.jsx";
+import EditProject from "./components/edit-project/EditProject.jsx";
 import "./App.css";
 
 const App = () => {

@@ -34,7 +34,15 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Editinimas
+router.get("/:id", async (req, res) => {
+  try {
+    res.json(await Project.findById(req.params.id));
+  } catch (e) {
+    console.log(e);
+    res.status(500).json("Įvyko klaida");
+  }
+});
+// Editinimas - Įrašo atnaujinimnas
 router.put("/:id", upload.single("project_photo"), async (req, res) => {
   if (req.file) {
     const newProject = await Project.findById(req.params.id);
@@ -67,15 +75,6 @@ router.put("/:id", upload.single("project_photo"), async (req, res) => {
 //     res.status(500).json("Įvyko klaida");
 //   }
 // });
-
-router.get("/:id", async (req, res) => {
-  try {
-    res.json(await Project.findById(req.params.id));
-  } catch (e) {
-    console.log(e);
-    res.status(500).json("ivyko klaida");
-  }
-});
 
 // Projekto ištrynimas
 router.delete("/:id", async (req, res) => {

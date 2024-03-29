@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainContext from "../context/Main";
 import axios from "axios";
+import project from "../../../server/model/project";
 
 const Projects = () => {
   const [data, setData] = useState([]);
@@ -27,8 +28,8 @@ const Projects = () => {
 
   // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
   const [loader, setLoader] = useState(false);
-  const handleDelete = (id) => {
-    fetch("http://localhost:3000/projects/" + id, {
+  const handleDelete = (project._id) => {
+    fetch("http://localhost:3000/projects/" + project._id, {
       method: "DELETE",
     })
       .then((resp) => resp.text())
@@ -57,6 +58,7 @@ const Projects = () => {
         <thead>
           <tr>
             <th>#</th>
+            <th>ID</th>
             <th>Projekto pavadinimas</th>
             <th>Nuotrauka</th>
             <th>Projekto aprašymas</th>
@@ -67,9 +69,10 @@ const Projects = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((project, id) => (
-            <tr key={id}>
-              <td>{id}</td>
+          {data.map((project, index) => (
+            <tr key={project._id}>
+              <td>{(project, index)}</td>
+              <td>{project._id}</td>
               <td>{project.project_name}</td>
               <td>
                 <img
@@ -98,7 +101,10 @@ const Projects = () => {
                 >
                   Ištrinti
                 </button>
-                <Link to={"/edit-project/" + id} className="btn btn-warning">
+                <Link
+                  to={"/edit-project/" + project._id}
+                  className="btn btn-warning"
+                >
                   Redaguoti
                 </Link>
               </td>

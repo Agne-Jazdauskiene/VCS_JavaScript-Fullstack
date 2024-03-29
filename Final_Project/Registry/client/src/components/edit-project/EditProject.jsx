@@ -53,7 +53,7 @@ const EditProject = () => {
         <div className="mb-3">
           <label>Nuotrauka</label>
           <input
-            type="text"
+            type="file"
             className="form-control"
             name="photo"
             defaultValue={form.project_photo}
