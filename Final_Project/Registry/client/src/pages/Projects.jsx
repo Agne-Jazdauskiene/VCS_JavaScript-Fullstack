@@ -25,6 +25,19 @@ const Projects = () => {
       });
   }, []);
 
+  // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
+  const [loader, setLoader] = useState(false);
+  const handleDelete = (id) => {
+    fetch("http://localhost:3000/projects/" + id, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.text())
+      .then((resp) => {
+        console.log(resp);
+        setLoader(!loader);
+      });
+  };
+
   return (
     <>
       {/* {true && <button>Naujas vartotojas</button>} */}
@@ -65,7 +78,7 @@ const Projects = () => {
                 />
               </td>
               <td>{project.project_description}</td>
-              <td>{project.consideration_day}</td>
+              <td>{project.consideration_date}</td>
               <td>
                 {project.author && (
                   <>
@@ -81,7 +94,7 @@ const Projects = () => {
               <td>
                 <button
                   className="btn btn-danger"
-                  onClick={() => handleDelete(id)}
+                  onClick={() => handleDelete(data._id)}
                 >
                   Ištrinti
                 </button>

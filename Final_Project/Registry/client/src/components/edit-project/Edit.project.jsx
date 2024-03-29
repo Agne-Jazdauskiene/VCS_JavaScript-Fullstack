@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import MainContext from "../../context/Main.jsx";
+import axios from "axios";
 
 const EditProject = () => {
   const [form, setForm] = useState({});
+  const [message, setMessage] = useState();
 
   // Peradresavimo (redirect) kūrimas
   const navigate = useNavigate();
@@ -10,53 +13,40 @@ const EditProject = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    // Duomenų iš localStorage paėmimas
-    const localData = JSON.parse(localStorage.getItem("data"));
-
-    // Patikrinimas ar jie buvo priskirti
-    if (!localData) return;
-
-    // Duomenų priskyrimas prie state'o, tam, kad formoje matytume anksčiau buvusias reikšmes
-    setForm(localData[id]);
+    // Vartotojo duomenų paėmimas
+    // AXIOS - formuojame užklausą
+    axios
+      .get("http://localhost:3000/projects/" + id) // Pagal posto ID
+      .then((resp) => setForm(resp.data))
+      .catch((err) => setMessage(err.response.data));
   }, []);
 
   // Formos duomenų įrašymas
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Formos duomenų paėmimo pradžia
     const formData = new FormData(e.target);
-    const data = {};
-
-    for (const input of formData.entries()) {
-      data[input[0]] = input[1];
-    }
-
-    // Formos duomenų paėmimo pabaiga
-
-    // 1. Paimame duomenis iš localStorage
-    // 2. Konvertuojam duomenis
-    // 3. Redaguojame duomenis
-    // 4. Konvertuojame duomenis iš naujo
-    // 5. Išsaugome duomenis
-    const localData = JSON.parse(localStorage.getItem("data"));
-    localData[id] = data;
-    localStorage.setItem("data", JSON.stringify(localData));
-
-    // Peradresavimo iniciavimas
-    navigate("/");
+    // įvesti project id (put)
+    axios
+      .put("http://localhost:3000/projects/" + id, formData)
+      .then((resp) => navigate("/"))
+      .catch((err) => setMessage(err.response.data));
   };
 
   return (
     <>
-      <h1 className="mb-5">Redaguojamas projektas</h1>
+      <h1 className="mb-5">Redaguoti projektą</h1>
+
       <form onSubmit={handleSubmit}>
+        {message && <div className="alert alert-danger">{message}</div>}
+
         <div className="mb-3">
           <label>Pavadinimas</label>
           <input
             type="text"
             className="form-control"
             name="project_name"
+            // Reikšmės atvaizdavimas laukelyje
             defaultValue={form.project_name}
           />
         </div>
@@ -66,7 +56,7 @@ const EditProject = () => {
             type="text"
             className="form-control"
             name="photo"
-            defaultValue={form.photo}
+            defaultValue={form.project_photo}
           />
         </div>
         <div className="mb-3">
