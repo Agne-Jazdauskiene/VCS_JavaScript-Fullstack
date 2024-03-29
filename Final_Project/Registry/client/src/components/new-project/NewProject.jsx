@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import MainContext from "../../context/Main.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import style from "./NewProject.module.css";
+// import style from "./NewProject.module.css";
 
 const NewProject = () => {
   const [message, setMessage] = useState();
@@ -10,8 +10,7 @@ const NewProject = () => {
   // Pasiimam is konteksto user reiksme
   // Patikrinam ar ji yra
   // Jeigu nera tuomet prijungiam useNavigate()
-  // Ir padarom peradresavima navigate('/login');
-  const { setNewProjects, User } = useContext(MainContext);
+  // Ir padarom peradresavima navigate('/login');;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -20,12 +19,13 @@ const NewProject = () => {
     const formData = new FormData(e.target);
 
     // formData.append('author', user._id);
+    formData.append("author", "6602932cfcec01c6a35ac699");
 
     axios
       .post("http://localhost:3000/projects/", formData)
       .then((resp) => {
-        // setNewProject(formData);
         navigate("/");
+        // console.log(resp);
       })
       .catch((err) => setMessage(err.message));
   };
@@ -33,7 +33,10 @@ const NewProject = () => {
   return (
     <>
       <h1 className="mb-5">Naujas projektas</h1>
+
       <form onSubmit={handleSubmit}>
+        {message && <div className="alert alert-danger">{message}</div>}
+
         <div className="mb-3">
           {/* <label>Projekto pavadinimas</label> */}
           <input
@@ -45,9 +48,8 @@ const NewProject = () => {
         </div>
         <div className="mb-3">
           {/* <label>Nuotrauka</label> */}
-          {/* kaip pridėti failą??? */}
           <input
-            type="text"
+            type="file"
             placeholder="Nuotrauka"
             className="form-control"
             name="project_photo"
@@ -68,7 +70,7 @@ const NewProject = () => {
             type="date"
             placeholder="Siūloma svarstymo data"
             className="form-control"
-            name="consideration_day"
+            name="consideration_date"
           />
         </div>
         {/* <label>Autorius</label> */}

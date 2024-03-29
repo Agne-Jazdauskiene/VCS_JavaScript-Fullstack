@@ -30,18 +30,22 @@ const NewPost = () => {
       <div className={style.close} onClick={() => setNewPost(false)}>
         <i className="bi bi-x"></i>
       </div>
+
       <div className={style.modal}>
         <h2>Sukurti Nauja Irasa</h2>
+
         <form onSubmit={handleSubmit}>
           {message && <div className="alert alert-danger">{message}</div>}
           <div className="mb-3">
             <label>Projekto pavadinimas</label>
             <input type="text" className="form-control" name="project_name" />
           </div>
+
           <div className="mb-3">
             <label>Nuotrauka</label>
             <input type="file" className="form-control" name="photo" />
           </div>
+
           <div className="mb-3">
             <label>Projekto aprasymas</label>
             <input type="text" className="form-control" name="description" />

@@ -33,6 +33,7 @@ const projectSchema = new Schema(
     project_status: {
       type: Schema.Types.ObjectId,
       ref: "Status",
+      default: "6602d41ad3c37a670419bbf9",
     },
   }
   // {

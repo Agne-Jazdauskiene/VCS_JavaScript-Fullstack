@@ -27,12 +27,12 @@ const Projects = () => {
 
   return (
     <>
+      {/* {true && <button>Naujas vartotojas</button>} */}
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="mb-5">VISI Projektai svarstymui - MATO VISI</h2>
         {/* <Link to="/users/new-user" className="btn btn-success">
           Kurti naują/ koreguoti vartotoją
         </Link> */}
-        {/* {true && <button>Naujas vartotojas</button>} */}
         <Link to="/new-user" className="btn btn-primary">
           Naujas vartotojas
         </Link>
@@ -67,11 +67,16 @@ const Projects = () => {
               <td>{project.project_description}</td>
               <td>{project.consideration_day}</td>
               <td>
-                {project.author.user_name} {project.author.last_name}{" "}
-                {project.author.party_name}
+                {project.author && (
+                  <>
+                    <span>{project.author.user_name}</span>
+                    <span>{project.author.last_name}</span>
+                    <span>{project.author.party_name}</span>
+                  </>
+                )}
               </td>
               <td>{project.created_at}</td>
-              <td>{project.project_status.project_status}</td>
+              <td>{project.project_status?.project_status}</td>
 
               <td>
                 <button

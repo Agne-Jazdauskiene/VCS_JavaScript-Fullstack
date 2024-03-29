@@ -6,12 +6,11 @@ import MainContext from "./context/Main.jsx";
 import Login from "./pages/Login.jsx";
 import Manager from "./pages/Manager.jsx";
 import Projects from "./pages/Projects.jsx";
-import NewProject from "./components/newProject/NewProject.jsx";
+import NewProject from "./components/new-project/NewProject.jsx";
 import EditProject from "./components/edit-project/Edit.project.jsx";
 import "./App.css";
 
 const App = () => {
-  const [showProjects, setShowProjects] = useState(false);
   const [user, setUser] = useState();
 
   //PAČIOJ PABAIGOJ DARYTI
@@ -23,8 +22,6 @@ const App = () => {
   // }, []);
 
   const contextValues = {
-    // showProjects,
-    // setShowProjects,
     user,
     setUser,
   };
