@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import MainContext from "./context/Main.jsx";
 import Login from "./pages/Login.jsx";
-import Manager from "./pages/Manager.jsx";
 import Projects from "./pages/Projects.jsx";
 import NewProject from "./components/new-project/NewProject.jsx";
 import EditProject from "./components/edit-project/EditProject.jsx";
+import Users from "./pages/Users.jsx";
+import EditUser from "./components/edit-user/EditUser.jsx";
+import Manager from "./pages/Manager.jsx";
 import "./App.css";
 
 const App = () => {
@@ -37,15 +39,13 @@ const App = () => {
             <Route path="/" element={<Projects />} />
             <Route path="/new-project" element={<NewProject />} />
             <Route path="/edit-project/:id" element={<EditProject />} />
-            {/* <Route path="/user" element={<User />} /> */}
+            <Route path="/users" element={<Users />} />
+            <Route path="/edit-user/:id" element={<EditUser />} />
+
             {/* <Route path="/manager" element={<Manager />} /> */}
             {/* <Route
               path="/manager/new-user/:identifikatorius"
               element={<NewUser />}
-            /> */}
-            {/* <Route
-              path="/manager/edit-user/:identifikatorius"
-              element={<EditUser />}
             /> */}
             {/* <Route path="/user/:id" element={<User />} /> */}
           </Routes>

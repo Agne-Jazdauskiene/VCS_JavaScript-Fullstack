@@ -74,6 +74,15 @@ router.get("/single-user/:id", async (req, res) => {
   }
 });
 
+// All Users informacijos paėmimas
+router.get("/", async (req, res) => {
+  try {
+    res.json(await User.find());
+  } catch {
+    res.status(500).json("ivyko klaida");
+  }
+});
+
 // AUTENTIFIKAVIMAS --- DARYTI PAČIOJE PABAIGOJE
 // kad neatsijungtų iš serverio ir nedingtų visa info
 // router.get("/check-auth", auth, (req, res) => {

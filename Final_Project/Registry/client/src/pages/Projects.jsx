@@ -2,7 +2,6 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainContext from "../context/Main";
 import axios from "axios";
-import project from "../../../server/model/project";
 
 const Projects = () => {
   const [data, setData] = useState([]);
@@ -27,17 +26,17 @@ const Projects = () => {
   }, []);
 
   // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
-  const [loader, setLoader] = useState(false);
-  const handleDelete = (project._id) => {
-    fetch("http://localhost:3000/projects/" + project._id, {
-      method: "DELETE",
-    })
-      .then((resp) => resp.text())
-      .then((resp) => {
-        console.log(resp);
-        setLoader(!loader);
-      });
-  };
+  // const [loader, setLoader] = useState(false);
+  // const handleDelete = (project._id) => {
+  //   fetch("http://localhost:3000/projects/" + project._id, {
+  //     method: "DELETE",
+  //   })
+  //     .then((resp) => resp.text())
+  //     .then((resp) => {
+  //       console.log(resp);
+  //       setLoader(!loader);
+  //     });
+  // };
 
   return (
     <>
@@ -47,6 +46,9 @@ const Projects = () => {
         {/* <Link to="/users/new-user" className="btn btn-success">
           Kurti naują/ koreguoti vartotoją
         </Link> */}
+        <Link to="/users" className="btn btn-primary">
+          Vartotojai
+        </Link>
         <Link to="/new-user" className="btn btn-primary">
           Naujas vartotojas
         </Link>
@@ -57,12 +59,12 @@ const Projects = () => {
       <table className="table">
         <thead>
           <tr>
-            <th>#</th>
-            <th>ID</th>
-            <th>Projekto pavadinimas</th>
+            <th>Nr.</th>
+            {/* <th>ID</th> */}
+            <th>Pavadinimas</th>
             <th>Nuotrauka</th>
             <th>Projekto aprašymas</th>
-            <th>Siūloma svarstymo data</th>
+            <th>Data svarstymui</th>
             <th>Autorius</th>
             <th>Sukurta</th>
             <th>Statusas</th>
@@ -72,16 +74,19 @@ const Projects = () => {
           {data.map((project, index) => (
             <tr key={project._id}>
               <td>{(project, index)}</td>
-              <td>{project._id}</td>
+              {/* <td>{project._id}</td> */}
               <td>{project.project_name}</td>
               <td>
                 <img
                   src={"http://localhost:3000/uploads/" + project.project_photo}
-                  style={{ maxWidth: 50 }}
+                  style={{ maxWidth: 100 }}
                 />
               </td>
               <td>{project.project_description}</td>
-              <td>{project.consideration_date}</td>
+              {/* <td>{project.consideration_date}</td> */}
+              <td>
+                {new Date(data.consideration_date).toLocaleDateString("lt-LT")}
+              </td>
               <td>
                 {project.author && (
                   <>
@@ -91,7 +96,16 @@ const Projects = () => {
                   </>
                 )}
               </td>
-              <td>{project.created_at}</td>
+              {/* <td>{project.created_at}</td> */}
+              <td>
+                <div>
+                  {new Date(data.created_at).toLocaleDateString("lt-LT")}
+                </div>
+                <div>
+                  {new Date(data.created_at).toLocaleTimeString("lt-LT")}
+                </div>
+              </td>
+
               <td>{project.project_status?.project_status}</td>
 
               <td>
