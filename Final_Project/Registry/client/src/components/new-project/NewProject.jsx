@@ -19,7 +19,7 @@ const NewProject = () => {
     const formData = new FormData(e.target);
 
     // formData.append('author', user._id);
-    formData.append("author", "6602932cfcec01c6a35ac699");
+    formData.append("author", "66029e6559e812b86f82e1e3");
 
     axios
       .post("http://localhost:3000/projects/", formData)

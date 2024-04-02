@@ -10,9 +10,11 @@ const Projects = () => {
   // Patikrinam ar ji yra
   // Jeigu nera tuomet prijungiam useNavigate()
   // Ir padarom peradresavima navigate('/login');
-  const { showProjects, setUser } = useContext(MainContext);
   const navigate = useNavigate();
   const [manager, setManager] = useState();
+  const [message, setMessage] = useState();
+  const [loading, setLoading] = useState(false);
+  const { showProjects, setUser } = useContext(MainContext);
 
   useEffect(() => {
     axios
@@ -24,39 +26,51 @@ const Projects = () => {
           navigate("/login");
         }
       });
-  }, []);
+  }, [showProjects, loading]);
+  //NEVEIKIA PSL ATNAUJINIMAS
 
   // Ištrynimo funkcija - sutvarkyta - suvienodinti - naudoti axios. Padaryti puslapio perkrovimą informacijai atnaujinti
-  const [loader, setLoader] = useState(false);
   const handleDelete = (id) => {
-    fetch("http://localhost:3000/projects/" + id, {
-      method: "DELETE",
-    })
-      .then((resp) => resp.text())
-      .then((resp) => {
-        console.log(resp);
-        setLoader(!loader);
-      });
+    const confirmation = window.confirm("Ar tikrai norite ištrinti?");
+    if (confirmation) {
+      axios
+        .delete("http://localhost:3000/projects/" + id)
+        .then((resp) => console.log(resp.data))
+        .catch((err) => {
+          //  console.err("Klaida", err);
+          setMessage("Įvyko klaida");
+        });
+    }
   };
+
+  // const [loader, setLoader] = useState(false);
+  // const handleDelete = (id) => {
+  //   fetch("http://localhost:3000/projects/" + id, {
+  //     method: "DELETE",
+  //   })
+  //     .then((resp) => resp.text())
+  //     .then((resp) => {
+  //       console.log(resp);
+  //       setLoader(!loader);
+  //     });
+  // };
 
   return (
     <>
       {/* {true && <button>Naujas vartotojas</button>} */}
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="mb-5">VISI Projektai svarstymui - MATO VISI</h2>
-        {/* <Link to="/users/new-user" className="btn btn-success">
-          Kurti naują/ koreguoti vartotoją
-        </Link> */}
-        {manager && (
-          <>
-            <Link to="/users" className="btn btn-primary">
-              Vartotojai
-            </Link>
-            <Link to="/new-user" className="btn btn-primary">
-              Naujas vartotojas
-            </Link>
-          </>
-        )}
+
+        {/* {manager && ( */}
+        <>
+          <Link to="/users" className="btn btn-primary">
+            Vartotojai
+          </Link>
+          <Link to="/new-user" className="btn btn-primary">
+            Naujas vartotojas
+          </Link>
+        </>
+        {/* )} */}
 
         {!manager && (
           <Link to="/new-project" className="btn btn-success">

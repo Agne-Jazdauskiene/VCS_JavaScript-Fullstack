@@ -83,8 +83,8 @@ router.delete("/:id", async (req, res) => {
     await Project.deleteOne({ _id: req.params.id });
     res.json("Projektas sėkmingai pašalintas");
   } catch (e) {
-    // console.log(e);
-    res.status(500).json("Įvyko klaida");
+    console.log(e);
+    res.status(500).json("Įvyko serverio klaida trinant projektą");
   }
 });
 

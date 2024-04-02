@@ -29,7 +29,7 @@ const EditUser = () => {
     // įvesti user id (put)
     axios
       .put("http://localhost:3000/users" + id, formData)
-      .then((resp) => navigate("/"))
+      .then((resp) => navigate("/users"))
       .catch((err) => setMessage(err.response.data));
   };
 
