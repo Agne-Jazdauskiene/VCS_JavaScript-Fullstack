@@ -9,6 +9,7 @@ import NewProject from "./components/new-project/NewProject.jsx";
 import EditProject from "./components/edit-project/EditProject.jsx";
 import Users from "./pages/Users.jsx";
 import EditUser from "./components/edit-user/EditUser.jsx";
+import NewUser from "./components/new-user/NewUser.jsx";
 import Manager from "./pages/Manager.jsx";
 import "./App.css";
 
@@ -41,13 +42,7 @@ const App = () => {
             <Route path="/edit-project/:id" element={<EditProject />} />
             <Route path="/users" element={<Users />} />
             <Route path="/edit-user/:id" element={<EditUser />} />
-
-            {/* <Route path="/manager" element={<Manager />} /> */}
-            {/* <Route
-              path="/manager/new-user/:identifikatorius"
-              element={<NewUser />}
-            /> */}
-            {/* <Route path="/user/:id" element={<User />} /> */}
+            <Route path="/new-user/" element={<NewUser />} />
           </Routes>
         </BrowserRouter>
       </MainContext.Provider>

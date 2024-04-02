@@ -12,6 +12,7 @@ const Users = () => {
   // Ir padarom peradresavima navigate('/login');
   const { showUsers, setUser } = useContext(MainContext);
   const navigate = useNavigate();
+  const [loading, setLoader] = useState(false);
 
   useEffect(() => {
     axios
@@ -23,7 +24,7 @@ const Users = () => {
           navigate("/login");
         }
       });
-  }, []);
+  }, [loading]);
 
   // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
   // const [loader, setLoader] = useState(false);
@@ -37,6 +38,19 @@ const Users = () => {
   //       setLoader(!loader);
   //     });
   // };
+
+  const handleDelete = (id) => {
+    const confirmation = window.confirm("Ar tikrai norite ištrinti?");
+    if (confirmation) {
+      axios
+        .delete("http://localhost:3000/users/" + id)
+        .then((resp) => console.log(resp.data))
+        .catch((err) => {
+          //  console.err("Klaida", err);
+          setMessage("Įvyko klaida");
+        });
+    }
+  };
 
   return (
     <>

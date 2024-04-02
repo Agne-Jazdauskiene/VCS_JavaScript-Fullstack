@@ -1,75 +1,104 @@
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import MainContext from "../../context/Main.jsx";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import user from "../../../../server/model/user.js";
 
 const NewUser = () => {
-  // Peradresavimo (redirect) kūrimas
+  const [message, setMessage] = useState();
   const navigate = useNavigate();
 
-  // Produkto formos submitas
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Duomenų iš formos paėmimo pradžia
     const formData = new FormData(e.target);
-    const data = {};
 
+    // formData.append('author', user._id);
+    // LAIKINAS SPRENDIMAS
+    const data = {
+      author: user._id,
+    };
+    // formData.append("author", "6602932cfcec01c6a35ac699");
     for (const input of formData.entries()) {
       data[input[0]] = input[1];
     }
-    // Duomenų iš formos paėmimos pabaiga
 
-    // Duomenų iš localStorage paėmimas
-    const localData = localStorage.getItem("data");
-
-    // Patikrinimas ar jie egzistuoja
-    if (localData) {
-      // Produkto pridėjimas jau esančiame masyve
-      let convertedData = JSON.parse(localData);
-      convertedData.push(data);
-      convertedData = JSON.stringify(convertedData);
-      localStorage.setItem("data", convertedData);
-    } else {
-      // Produkto pridėjimas naujame masyve
-      localStorage.setItem("data", JSON.stringify([data]));
-    }
-
-    // Peradresavimo iniciavimas
-    navigate("/user");
+    axios
+      .post("http://localhost:3000/users/register", data)
+      .then((resp) => {
+        navigate("/users");
+        console.log(resp);
+      })
+      .catch((err) => setMessage(err.message));
   };
 
   return (
     <>
-      <h1>Naujas projektas</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label>Projekto pavadinimas</label>
-          <input type="text" className="form-control" name="project_name" />
-        </div>
-        <div className="mb-3">
-          <label>Nuotrauka</label>
-          <input type="text" className="form-control" name="project_photo" />
-        </div>
-        <div className="mb-3">
-          <label>Projekto aprašymas</label>
-          <input
-            type="text"
-            className="form-control"
-            name="project_description"
-          />
-        </div>
-        <div className="mb-3">
-          <label>Siūloma svarstymo data</label>
-          <input
-            type="text"
-            className="form-control"
-            name="consideration_day"
-          />
-        </div>
-        <div className="mb-3">
-          <label>Autorius</label>
-          <input type="text" className="form-control" name="author" />
-        </div>
+      <h1 className="mb-5">Naujas vartotojas</h1>
 
-        <button className="btn btn-primary">Pridėti</button>
+      <form onSubmit={handleSubmit}>
+        {message && <div className="alert alert-danger">{message}</div>}
+
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Vardas"
+            className="form-control"
+            name="user_name"
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Pavardė"
+            className="form-control"
+            name="last_name"
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Politinė partija"
+            className="form-control"
+            name="party_name"
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="El. pašto adresas"
+            className="form-control"
+            name="email"
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Slaptažodis"
+            className="form-control"
+            name="password"
+          />
+        </div>
+        {/* <label>Autorius</label> */}
+        {/* kažkaip pridėti pagal id autorius */}
+        {/* <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Autorius"
+            className="form-control"
+            name="author"
+          />
+        </div> */}
+        {/* <div className="mb-3">
+          <input
+            type="text"
+            placeholder="Projekto statusas"
+            className="form-control"
+            name="status"
+          />
+        </div> */}
+
+        <button className="btn btn-primary">Pridėti vartotoją</button>
       </form>
     </>
   );

@@ -14,7 +14,7 @@ const Projects = () => {
   const [manager, setManager] = useState();
   const [message, setMessage] = useState();
   const [loading, setLoading] = useState(false);
-  const { showProjects, setUser } = useContext(MainContext);
+  // const { showProjects, setUser } = useContext(MainContext);
 
   useEffect(() => {
     axios
@@ -26,7 +26,7 @@ const Projects = () => {
           navigate("/login");
         }
       });
-  }, [showProjects, loading]);
+  }, [loading]);
   //NEVEIKIA PSL ATNAUJINIMAS
 
   // Ištrynimo funkcija - sutvarkyta - suvienodinti - naudoti axios. Padaryti puslapio perkrovimą informacijai atnaujinti

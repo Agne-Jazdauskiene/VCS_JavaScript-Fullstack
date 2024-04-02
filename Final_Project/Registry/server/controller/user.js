@@ -5,7 +5,7 @@ import auth from "../middleware/auth.js";
 
 const router = Router();
 
-router.post("/register", async (req, res) => {
+router.post("/register/", async (req, res) => {
   console.log(req.body);
   try {
     // Slaptažodžio šifravimas
@@ -44,6 +44,7 @@ router.post("/login", async (req, res) => {
       last_name: data.last_name,
       party_name: data.party_name,
       email: data.email,
+      manager: data.manager,
     };
 
     // Išsiunčiame vartotojo duomenis
@@ -64,12 +65,18 @@ router.get("/logout", (req, res) => {
 router.get("/single-user/:id", async (req, res) => {
   try {
     res.json(
-      await User.findById(req.params.id)
-        .select(["user_name", "last_name", "party_name", "email", "manager"])
-        .populate("projects")
+      await User.findById(req.params.id).select([
+        "user_name",
+        "last_name",
+        "party_name",
+        "email",
+        "manager",
+      ])
+      // .populate("projects")
       // .populate("postCount")
     );
-  } catch {
+  } catch (e) {
+    console.log(e);
     res.status(500).json("Įvyko klaida");
   }
 });

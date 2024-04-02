@@ -16,7 +16,7 @@ const EditUser = () => {
     // Vartotojo duomenų paėmimas
     // AXIOS - formuojame užklausą
     axios
-      .get("http://localhost:3000/users" + id) // Pagal user ID
+      .get("http://localhost:3000/users/single-user/" + id) // Pagal user ID
       .then((resp) => setForm(resp.data))
       .catch((err) => setMessage(err.response.data));
   }, []);
@@ -28,7 +28,7 @@ const EditUser = () => {
     const formData = new FormData(e.target);
     // įvesti user id (put)
     axios
-      .put("http://localhost:3000/users" + id, formData)
+      .put("http://localhost:3000/users/", formData)
       .then((resp) => navigate("/users"))
       .catch((err) => setMessage(err.response.data));
   };
