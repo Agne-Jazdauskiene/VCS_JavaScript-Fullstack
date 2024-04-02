@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MainContext from "../../context/Main.jsx";
 import axios from "axios";
+import user from "../../../../server/model/user.js";
 
 const EditUser = () => {
   const [form, setForm] = useState({});
@@ -26,9 +27,17 @@ const EditUser = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
+
+    const data = {
+      author: user._id,
+    };
+    for (const input of formData.entries()) {
+      data[input[0]] = input[1];
+    }
+
     // įvesti user id (put)
     axios
-      .put("http://localhost:3000/users/", formData)
+      .put("http://localhost:3000/users/single-user/" + id, data)
       .then((resp) => navigate("/users"))
       .catch((err) => setMessage(err.response.data));
   };

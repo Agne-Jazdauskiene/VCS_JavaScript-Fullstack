@@ -38,10 +38,10 @@ const userSchema = new Schema(
       default: new Date(),
     },
     manager: {
-      type: String,
-      minLength: 3,
-      maxLength: 150,
-      unique: true,
+      type: Boolean,
+      // minLength: 3,
+      // maxLength: 150,
+      default: false,
     },
   }
   // {

@@ -80,6 +80,11 @@ router.get("/single-user/:id", async (req, res) => {
     res.status(500).json("Įvyko klaida");
   }
 });
+// Editinimas - userio atnaujinimnas
+router.put("/single-user/:id", async (req, res) => {
+  await User.findByIdAndUpdate(req.params.id, req.body);
+  res.send(req.body);
+});
 
 // All Users informacijos paėmimas
 router.get("/", async (req, res) => {
