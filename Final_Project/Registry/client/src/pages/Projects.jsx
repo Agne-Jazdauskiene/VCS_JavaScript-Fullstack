@@ -12,6 +12,7 @@ const Projects = () => {
   // Ir padarom peradresavima navigate('/login');
   const { showProjects, setUser } = useContext(MainContext);
   const navigate = useNavigate();
+  const [manager, setManager] = useState();
 
   useEffect(() => {
     axios
@@ -25,18 +26,18 @@ const Projects = () => {
       });
   }, []);
 
-  // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
-  // const [loader, setLoader] = useState(false);
-  // const handleDelete = (project._id) => {
-  //   fetch("http://localhost:3000/projects/" + project._id, {
-  //     method: "DELETE",
-  //   })
-  //     .then((resp) => resp.text())
-  //     .then((resp) => {
-  //       console.log(resp);
-  //       setLoader(!loader);
-  //     });
-  // };
+  // Ištrynimo funkcija - sutvarkyta - suvienodinti - naudoti axios. Padaryti puslapio perkrovimą informacijai atnaujinti
+  const [loader, setLoader] = useState(false);
+  const handleDelete = (id) => {
+    fetch("http://localhost:3000/projects/" + id, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.text())
+      .then((resp) => {
+        console.log(resp);
+        setLoader(!loader);
+      });
+  };
 
   return (
     <>
@@ -46,15 +47,22 @@ const Projects = () => {
         {/* <Link to="/users/new-user" className="btn btn-success">
           Kurti naują/ koreguoti vartotoją
         </Link> */}
-        <Link to="/users" className="btn btn-primary">
-          Vartotojai
-        </Link>
-        <Link to="/new-user" className="btn btn-primary">
-          Naujas vartotojas
-        </Link>
-        <Link to="/new-project" className="btn btn-success">
-          Naujas projektas
-        </Link>
+        {manager && (
+          <>
+            <Link to="/users" className="btn btn-primary">
+              Vartotojai
+            </Link>
+            <Link to="/new-user" className="btn btn-primary">
+              Naujas vartotojas
+            </Link>
+          </>
+        )}
+
+        {!manager && (
+          <Link to="/new-project" className="btn btn-success">
+            Naujas projektas
+          </Link>
+        )}
       </div>
       <table className="table">
         <thead>
@@ -85,7 +93,9 @@ const Projects = () => {
               <td>{project.project_description}</td>
               {/* <td>{project.consideration_date}</td> */}
               <td>
-                {new Date(data.consideration_date).toLocaleDateString("lt-LT")}
+                {new Date(project.consideration_date).toLocaleDateString(
+                  "lt-LT"
+                )}
               </td>
               <td>
                 {project.author && (
@@ -99,29 +109,30 @@ const Projects = () => {
               {/* <td>{project.created_at}</td> */}
               <td>
                 <div>
-                  {new Date(data.created_at).toLocaleDateString("lt-LT")}
+                  {new Date(project.created_at).toLocaleDateString("lt-LT")}
                 </div>
                 <div>
-                  {new Date(data.created_at).toLocaleTimeString("lt-LT")}
+                  {new Date(project.created_at).toLocaleTimeString("lt-LT")}
                 </div>
               </td>
 
               <td>{project.project_status?.project_status}</td>
-
-              <td>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleDelete(data._id)}
-                >
-                  Ištrinti
-                </button>
-                <Link
-                  to={"/edit-project/" + project._id}
-                  className="btn btn-warning"
-                >
-                  Redaguoti
-                </Link>
-              </td>
+              {!manager && (
+                <td>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(project._id)}
+                  >
+                    Ištrinti
+                  </button>
+                  <Link
+                    to={"/edit-project/" + project._id}
+                    className="btn btn-warning"
+                  >
+                    Redaguoti
+                  </Link>
+                </td>
+              )}
             </tr>
           ))}
         </tbody>

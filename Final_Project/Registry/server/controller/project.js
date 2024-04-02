@@ -78,10 +78,12 @@ router.put("/:id", upload.single("project_photo"), async (req, res) => {
 
 // Projekto ištrynimas
 router.delete("/:id", async (req, res) => {
+  console.log(req.params.id);
   try {
     await Project.deleteOne({ _id: req.params.id });
     res.json("Projektas sėkmingai pašalintas");
-  } catch {
+  } catch (e) {
+    // console.log(e);
     res.status(500).json("Įvyko klaida");
   }
 });

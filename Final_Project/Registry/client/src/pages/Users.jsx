@@ -27,8 +27,8 @@ const Users = () => {
 
   // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
   // const [loader, setLoader] = useState(false);
-  // const handleDelete = (project._id) => {
-  //   fetch("http://localhost:3000/projects/" + project._id, {
+  // const handleDelete = (user._id) => {
+  //   fetch("http://localhost:3000/users/" + user._id, {
   //     method: "DELETE",
   //   })
   //     .then((resp) => resp.text())
