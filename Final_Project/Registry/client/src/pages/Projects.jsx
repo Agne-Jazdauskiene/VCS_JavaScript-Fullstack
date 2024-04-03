@@ -11,10 +11,11 @@ const Projects = () => {
   // Jeigu nera tuomet prijungiam useNavigate()
   // Ir padarom peradresavima navigate('/login');
   const navigate = useNavigate();
-  const [manager, setManager] = useState();
+  // const [manager, setManager] = useState();
   const [message, setMessage] = useState();
   const [loading, setLoading] = useState(false);
   const { user } = useContext(MainContext);
+  const { manager } = useContext(MainContext);
   // const { showProjects, setUser } = useContext(MainContext);
 
   useEffect(() => {
@@ -62,7 +63,7 @@ const Projects = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h2 className="mb-5">Projektai svarstymui</h2>
 
-        {manager && (
+        {user.manager ? (
           <>
             <Link to="/users" className="btn btn-primary">
               Seimo nariai
@@ -71,9 +72,7 @@ const Projects = () => {
               Naujas seimo narys
             </Link>
           </>
-        )}
-
-        {user && (
+        ) : (
           <Link to="/new-project" className="btn btn-success">
             Naujas projektas
           </Link>

@@ -46,16 +46,19 @@ const App = () => {
                 <Route path="/" element={<Projects />} />
                 <Route path="/new-project" element={<NewProject />} />
                 <Route path="/edit-project/:id" element={<EditProject />} />
+                {user.manager && (
+                  <>
+                    <Route path="/users" element={<Users />} />
+                    <Route path="/edit-user/:id" element={<EditUser />} />
+                    <Route path="/new-user/" element={<NewUser />} />
+                  </>
+                )}
               </>
             )}
 
-            {manager && (
-              <>
-                <Route path="/users" element={<Users />} />
-                <Route path="/edit-user/:id" element={<EditUser />} />
-                <Route path="/new-user/" element={<NewUser />} />
-              </>
-            )}
+            {/* {manager && ( */}
+            <></>
+            {/* )} */}
             {/* <Route path="/" element={<Home />} /> */}
           </Routes>
         </BrowserRouter>
