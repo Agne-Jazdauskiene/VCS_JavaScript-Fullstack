@@ -78,17 +78,19 @@ const Projects = () => {
   return (
     <>
       {/* {true && <button>Naujas vartotojas</button>} */}
-      <div className="d-flex justify-content-between align-items-center">
-        <h2 className="mb-5">Projektai svarstymui</h2>
 
+      <h2 className="mb-5">Projektai</h2>
+      <div className="d-flex justify-content-between align-items-center">
         {user.manager ? (
           <>
-            <Link to="/users" className="btn btn-primary">
-              Seimo nariai
-            </Link>
-            <Link to="/new-user" className="btn btn-primary">
-              Naujas seimo narys
-            </Link>
+            <div className="d-flex gap-4">
+              <Link to="/users" className="btn btn-primary">
+                Seimo nariai
+              </Link>
+              <Link to="/new-user" className="btn btn-primary">
+                Naujas seimo narys
+              </Link>
+            </div>
             <Link to="/new-project" className="btn btn-success">
               Naujas projektas
             </Link>
@@ -152,19 +154,6 @@ const Projects = () => {
               </td>
 
               <td>{project.project_status?.project_status}</td>
-              {/* <td>
-                <div>
-                  <Combobox
-                    defaultValue="Pateiktas"
-                    data={[
-                      "Pateiktas",
-                      "Priimtas",
-                      "Atmestas",
-                      "Nepakanka duomenų",
-                    ]}
-                  />
-                </div>
-              </td> */}
 
               {/* <td>
                 <Link to={'/' + (data._id)} className={${styles.statusButton} ${getStatusColorClassName(data.status_name.name)}}>
@@ -177,13 +166,13 @@ const Projects = () => {
                     className="btn btn-danger"
                     onClick={() => handleDelete(project._id)}
                   >
-                    Ištrinti
+                    <i class="bi bi-trash3"></i>
                   </button>
                   <Link
                     to={"/edit-project/" + project._id}
                     className="btn btn-warning"
                   >
-                    Redaguoti
+                    <i class="bi bi-pencil"></i>
                   </Link>
                 </td>
               )}

@@ -92,7 +92,7 @@ const EditProject = () => {
           <Combobox
             defaultValue="Pateiktas"
             data={["Pateiktas", "Priimtas", "Atmestas", "Nepakanka duomenų"]}
-            value={form.project_status_edit}
+            name={form.project_status_edit}
           />
           {/* <input
             type="text"

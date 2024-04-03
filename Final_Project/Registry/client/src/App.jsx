@@ -10,6 +10,7 @@ import EditProject from "./components/edit-project/EditProject.jsx";
 import Users from "./pages/Users.jsx";
 import EditUser from "./components/edit-user/EditUser.jsx";
 import NewUser from "./components/new-user/NewUser.jsx";
+import Sidebar from "./components/sidebar/Sidebar.jsx";
 // import Manager from "./pages/Manager.jsx";
 import "./App.css";
 
@@ -43,6 +44,7 @@ const App = () => {
 
             {user && (
               <>
+                <Sidebar />
                 <Route path="/" element={<Projects />} />
                 <Route path="/new-project" element={<NewProject />} />
                 <Route path="/edit-project/:id" element={<EditProject />} />

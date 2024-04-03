@@ -92,7 +92,7 @@ const Users = () => {
                   Ištrinti
                 </button> */}
                 <Link to={"/edit-user/" + user._id} className="btn btn-warning">
-                  Redaguoti
+                  <i class="bi bi-pencil"></i>
                 </Link>
               </td>
             </tr>
