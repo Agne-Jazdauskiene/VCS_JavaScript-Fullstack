@@ -35,6 +35,9 @@ const projectSchema = new Schema(
       ref: "Status",
       default: "6602d41ad3c37a670419bbf9",
     },
+    project_status_edit: {
+      type: String,
+    },
   }
   // {
   //   toJSON: {

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import MainContext from "../context/Main";
 import axios from "axios";
 import style from "../components/edit-status/EditStatus.module.css";
-import Combobox from "react-widgets/Combobox";
+import { Dropdown } from "react-native-element-dropdown";
 
 const Projects = () => {
   const [data, setData] = useState([]);
@@ -152,19 +152,6 @@ const Projects = () => {
               </td>
 
               <td>{project.project_status?.project_status}</td>
-              {/* <td>
-                <div>
-                  <Combobox
-                    defaultValue="Pateiktas"
-                    data={[
-                      "Pateiktas",
-                      "Priimtas",
-                      "Atmestas",
-                      "Nepakanka duomenų",
-                    ]}
-                  />
-                </div>
-              </td> */}
 
               {/* <td>
                 <Link to={'/' + (data._id)} className={${styles.statusButton} ${getStatusColorClassName(data.status_name.name)}}>
@@ -191,11 +178,6 @@ const Projects = () => {
           ))}
         </tbody>
       </table>
-
-      {/* <Combobox
-        defaultValue="Pateiktas"
-        data={["Pateiktas", "Priimtas", "Atmestas", "Nepakanka duomenų"]}
-      /> */}
     </>
   );
 };

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import MainContext from "../../context/Main.jsx";
 import axios from "axios";
+import Combobox from "react-widgets/Combobox";
 
 const EditProject = () => {
   const [form, setForm] = useState({});
@@ -86,15 +87,20 @@ const EditProject = () => {
             defaultValue={form.author}
           />
         </div> */}
-        {/* <div className="mb-3">
+        <div className="mb-3">
           <label>Projekto statusas</label>
-          <input
+          <Combobox
+            defaultValue="Pateiktas"
+            data={["Pateiktas", "Priimtas", "Atmestas", "Nepakanka duomenų"]}
+            value={form.project_status_edit}
+          />
+          {/* <input
             type="text"
             className="form-control"
             name="status"
             defaultValue={form.status}
-          />
-        </div> */}
+          /> */}
+        </div>
 
         <button className="btn btn-primary">Patvirtinti pakeitimus</button>
       </form>
