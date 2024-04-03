@@ -2,11 +2,12 @@ import { Router } from "express";
 import Project from "../model/project.js";
 import upload from "../middleware/multer.js";
 import { rm } from "node:fs/promises";
+import auth from "../middleware/auth.js";
 
 const router = Router();
 
 // Naujo projekto siūlymo sukūrimas
-router.post("/", upload.single("project_photo"), async (req, res) => {
+router.post("/", auth, upload.single("project_photo"), async (req, res) => {
   if (req.file) req.body.project_photo = req.file.filename;
 
   try {
@@ -20,7 +21,7 @@ router.post("/", upload.single("project_photo"), async (req, res) => {
 });
 
 // Grąžinamas visų projektų sąrašas
-router.get("/", async (req, res) => {
+router.get("/", auth, async (req, res) => {
   try {
     // Populate metodas užildo schemoje pažymėtą raktažodį modelio informacija
     res.json(
@@ -34,7 +35,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id", async (req, res) => {
+// grąžinamas vienas projektas
+router.get("/:id", auth, async (req, res) => {
   try {
     res.json(await Project.findById(req.params.id));
   } catch (e) {
@@ -42,8 +44,9 @@ router.get("/:id", async (req, res) => {
     res.status(500).json("Įvyko klaida");
   }
 });
+
 // Editinimas - Įrašo atnaujinimnas
-router.put("/:id", upload.single("project_photo"), async (req, res) => {
+router.put("/:id", auth, upload.single("project_photo"), async (req, res) => {
   if (req.file) {
     const newProject = await Project.findById(req.params.id);
     if (newProject.project_photo) {
@@ -77,7 +80,7 @@ router.put("/:id", upload.single("project_photo"), async (req, res) => {
 // });
 
 // Projekto ištrynimas
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", auth, async (req, res) => {
   console.log(req.params.id);
   try {
     await Project.deleteOne({ _id: req.params.id });

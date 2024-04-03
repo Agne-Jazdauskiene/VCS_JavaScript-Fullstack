@@ -14,6 +14,7 @@ const Projects = () => {
   const [manager, setManager] = useState();
   const [message, setMessage] = useState();
   const [loading, setLoading] = useState(false);
+  const { user } = useContext(MainContext);
   // const { showProjects, setUser } = useContext(MainContext);
 
   useEffect(() => {
@@ -59,20 +60,20 @@ const Projects = () => {
     <>
       {/* {true && <button>Naujas vartotojas</button>} */}
       <div className="d-flex justify-content-between align-items-center">
-        <h2 className="mb-5">VISI Projektai svarstymui - MATO VISI</h2>
+        <h2 className="mb-5">Projektai svarstymui</h2>
 
-        {/* {manager && ( */}
-        <>
-          <Link to="/users" className="btn btn-primary">
-            Vartotojai
-          </Link>
-          <Link to="/new-user" className="btn btn-primary">
-            Naujas vartotojas
-          </Link>
-        </>
-        {/* )} */}
+        {manager && (
+          <>
+            <Link to="/users" className="btn btn-primary">
+              Seimo nariai
+            </Link>
+            <Link to="/new-user" className="btn btn-primary">
+              Naujas seimo narys
+            </Link>
+          </>
+        )}
 
-        {!manager && (
+        {user && (
           <Link to="/new-project" className="btn btn-success">
             Naujas projektas
           </Link>

@@ -13,4 +13,10 @@ router.get("/project", async (req, res) => {
   }
 });
 
+// Editinimas - Įrašo atnaujinimnas - statuso keitimas
+router.put("/:id", async (req, res) => {
+  await Status.findByIdAndUpdate(req.params.id, req.body);
+  res.send(req.body);
+});
+
 export default router;

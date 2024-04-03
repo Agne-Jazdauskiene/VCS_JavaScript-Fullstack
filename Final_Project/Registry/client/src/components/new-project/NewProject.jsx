@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import MainContext from "../../context/Main.jsx";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 // import style from "./NewProject.module.css";
 
 const NewProject = () => {
@@ -12,14 +13,15 @@ const NewProject = () => {
   // Jeigu nera tuomet prijungiam useNavigate()
   // Ir padarom peradresavima navigate('/login');;
   const navigate = useNavigate();
+  const { user } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
 
-    // formData.append('author', user._id);
-    formData.append("author", "66029e6559e812b86f82e1e3");
+    formData.append("author", user._id);
+    // formData.append("author", "66029e6559e812b86f82e1e3");
 
     axios
       .post("http://localhost:3000/projects/", formData)
@@ -92,7 +94,7 @@ const NewProject = () => {
           />
         </div> */}
 
-        <button className="btn btn-primary">Pridėti</button>
+        <button className="btn btn-primary">Teikti projektą</button>
       </form>
     </>
   );

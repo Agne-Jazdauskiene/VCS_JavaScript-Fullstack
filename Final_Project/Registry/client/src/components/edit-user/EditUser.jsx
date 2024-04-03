@@ -44,7 +44,7 @@ const EditUser = () => {
 
   return (
     <>
-      <h1 className="mb-5">Redaguoti vartotoją</h1>
+      <h1 className="mb-5">Redaguoti seimo nario duomenis</h1>
 
       <form onSubmit={handleSubmit}>
         {message && <div className="alert alert-danger">{message}</div>}

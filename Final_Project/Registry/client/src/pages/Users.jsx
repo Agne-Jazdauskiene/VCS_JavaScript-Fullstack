@@ -14,6 +14,7 @@ const Users = () => {
   const navigate = useNavigate();
   const [loading, setLoader] = useState(false);
 
+  // NEVEIKIA puslapio perkrovimas po info ištrynimo !!!!!!!!!
   useEffect(() => {
     axios
       .get("http://localhost:3000/users/")
@@ -26,7 +27,7 @@ const Users = () => {
       });
   }, [loading]);
 
-  // Ištrynimo funkcija - NEVEIKIA !!!!!!!!!!!!!!
+  // Ištrynimo funkcija - su fetch. Apačioj pertvarkiau su axios
   // const [loader, setLoader] = useState(false);
   // const handleDelete = (user._id) => {
   //   fetch("http://localhost:3000/users/" + user._id, {
@@ -55,10 +56,10 @@ const Users = () => {
   return (
     <>
       <div className="d-flex justify-content-between align-items-center">
-        <h2 className="mb-5">Vartotojai - seimo nariai</h2>
+        <h2 className="mb-5">Seimo narių sąrašas</h2>
 
         <Link to="/new-user" className="btn btn-primary">
-          Naujas vartotojas
+          Naujas seimo narys
         </Link>
       </div>
       <table className="table">
@@ -69,7 +70,7 @@ const Users = () => {
             <th>Pavardė</th>
             <th>Politinė partija</th>
             <th>El. pašto adresas</th>
-            <th>Slaptažodis</th>
+            {/* <th>Slaptažodis</th> */}
           </tr>
         </thead>
         <tbody>
@@ -81,15 +82,15 @@ const Users = () => {
               <td>{user.last_name}</td>
               <td>{user.party_name}</td>
               <td>{user.email}</td>
-              <td>{user.password}</td>
+              {/* <td>{user.password}</td> */}
 
               <td>
-                <button
+                {/* <button
                   className="btn btn-danger"
                   onClick={() => handleDelete(data._id)}
                 >
                   Ištrinti
-                </button>
+                </button> */}
                 <Link to={"/edit-user/" + user._id} className="btn btn-warning">
                   Redaguoti
                 </Link>

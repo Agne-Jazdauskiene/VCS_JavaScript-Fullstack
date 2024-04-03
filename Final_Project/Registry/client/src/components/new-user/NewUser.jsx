@@ -34,7 +34,7 @@ const NewUser = () => {
 
   return (
     <>
-      <h1 className="mb-5">Naujas vartotojas</h1>
+      <h1 className="mb-5">Naujas seimo narys</h1>
 
       <form onSubmit={handleSubmit}>
         {message && <div className="alert alert-danger">{message}</div>}
@@ -98,7 +98,7 @@ const NewUser = () => {
           />
         </div> */}
 
-        <button className="btn btn-primary">Pridėti vartotoją</button>
+        <button className="btn btn-primary">Pridėti seimo narį</button>
       </form>
     </>
   );

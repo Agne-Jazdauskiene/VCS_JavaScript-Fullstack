@@ -5,6 +5,20 @@ import auth from "../middleware/auth.js";
 
 const router = Router();
 
+// Autentifikacija
+router.get("/check-auth", auth, (req, res) => {
+  res.status(200).json(req.session.user);
+});
+
+// Atsijungimas
+
+// logout turi eiti prieš router.get single-user info, jei single-user info adrese naudoju tik :id, t.y. nepatikslintą adresą.
+router.get("/logout", auth, (req, res) => {
+  req.session.destroy();
+  res.json("Sveikiname sėkmingai atsijungus");
+});
+
+//Naujo userio registravimas
 router.post("/register/", async (req, res) => {
   console.log(req.body);
   try {
@@ -24,6 +38,7 @@ router.post("/register/", async (req, res) => {
   }
 });
 
+//Prisijungimas
 router.post("/login", async (req, res) => {
   console.log(req.body);
   // Prisijungimui tikimės:
@@ -53,12 +68,6 @@ router.post("/login", async (req, res) => {
     // Grąžinamas atsakymas įvykus klaidai
     res.status(500).json("Įvyko klaida prisijungiant");
   }
-});
-
-// logout turi eiti prieš router.get single-user info, jei single-user info adrese naudoju tik :id, t.y. nepatikslintą adresą.
-router.get("/logout", (req, res) => {
-  req.session.destroy();
-  res.json("Sveikiname sėkmingai atsijungus");
 });
 
 // Vartotojo informacijos paėmimas. Adresą patikslinau - /single-user/:id
@@ -97,7 +106,7 @@ router.get("/", async (req, res) => {
 
 // AUTENTIFIKAVIMAS --- DARYTI PAČIOJE PABAIGOJE
 // kad neatsijungtų iš serverio ir nedingtų visa info
-// router.get("/check-auth", auth, (req, res) => {
-//   res.status(200).json(req.session.user);
-// });
+router.get("/check-auth", auth, (req, res) => {
+  res.status(200).json(req.session.user);
+});
 export default router;
