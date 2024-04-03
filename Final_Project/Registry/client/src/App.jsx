@@ -56,9 +56,8 @@ const App = () => {
               </>
             )}
 
-            {/* {manager && ( */}
             <></>
-            {/* )} */}
+
             {/* <Route path="/" element={<Home />} /> */}
           </Routes>
         </BrowserRouter>

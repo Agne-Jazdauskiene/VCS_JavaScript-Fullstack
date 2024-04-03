@@ -14,7 +14,7 @@ router.get("/project", async (req, res) => {
 });
 
 // Editinimas - Įrašo atnaujinimnas - statuso keitimas
-router.put("/:id", async (req, res) => {
+router.put("/projects/:id/project-status/", async (req, res) => {
   await Status.findByIdAndUpdate(req.params.id, req.body);
   res.send(req.body);
 });

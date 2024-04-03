@@ -1,0 +1,27 @@
+.statusButton {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+.statusProvided {
+  background-color: rgb(35, 53, 194);
+  color: black;
+}
+.statusAccepted {
+  background-color: rgb(15, 132, 9);
+  color: black;
+}
+
+.statusRejected {
+  background-color: rgb(189, 11, 35);
+  color: black;
+}
+
+.statusInsufficientData {
+  background-color: rgb(199, 136, 19);
+  color: black;
+}

@@ -21,7 +21,16 @@ router.get("/logout", auth, (req, res) => {
 //Naujo userio registravimas
 router.post("/register/", async (req, res) => {
   console.log(req.body);
+
   try {
+    // limito nustatymas - naujas vartotojas-  ir skaičiavimas
+    const usersCount = await User.countDocuments();
+    if (usersCount >= 141) {
+      return res.status(403).send("Viršytas seimo narių maksimalus skaičius");
+    }
+    const newUser = req.body.user_name;
+    // registeredUsers.push(newUser);
+
     // Slaptažodžio šifravimas
     // hash - yra šifruotas stringas
     req.body.password = await bcrypt.hash(req.body.password, 10);

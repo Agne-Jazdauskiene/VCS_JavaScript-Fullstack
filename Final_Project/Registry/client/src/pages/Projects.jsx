@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MainContext from "../context/Main";
 import axios from "axios";
+import style from "../components/edit-status/EditStatus.module.css";
 
 const Projects = () => {
   const [data, setData] = useState([]);
@@ -16,6 +17,7 @@ const Projects = () => {
   const [loading, setLoading] = useState(false);
   const { user } = useContext(MainContext);
   const { manager } = useContext(MainContext);
+  const [project, setProject] = useState();
   // const { showProjects, setUser } = useContext(MainContext);
 
   useEffect(() => {
@@ -45,6 +47,21 @@ const Projects = () => {
     }
   };
 
+  const getStatusColorClassName = (status) => {
+    switch (status) {
+      case "Pateiktas":
+        return style.statusProvided;
+      case "Priimtas":
+        return style.statusAccepted;
+      case "Atmestas":
+        return style.statusRejected;
+      case "Nepakanka duomenų":
+        return style.statusInsufficientData;
+      default:
+        return "";
+    }
+  };
+
   // const [loader, setLoader] = useState(false);
   // const handleDelete = (id) => {
   //   fetch("http://localhost:3000/projects/" + id, {
@@ -70,6 +87,9 @@ const Projects = () => {
             </Link>
             <Link to="/new-user" className="btn btn-primary">
               Naujas seimo narys
+            </Link>
+            <Link to="/new-project" className="btn btn-success">
+              Naujas projektas
             </Link>
           </>
         ) : (
@@ -116,7 +136,7 @@ const Projects = () => {
                   <>
                     <span>{project.author.user_name}</span>
                     <span>{project.author.last_name}</span>
-                    <span>{project.author.party_name}</span>
+                    <div>{project.author.party_name}</div>
                   </>
                 )}
               </td>
@@ -131,7 +151,12 @@ const Projects = () => {
               </td>
 
               <td>{project.project_status?.project_status}</td>
-              {!manager && (
+              {/* <td>
+                <Link to={'/' + (data._id)} className={${styles.statusButton} ${getStatusColorClassName(data.status_name.name)}}>
+                {data.status_name.name}</Link>
+              </td> */}
+
+              {project.author._id === user._id && (
                 <td>
                   <button
                     className="btn btn-danger"
