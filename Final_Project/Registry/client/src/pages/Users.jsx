@@ -55,11 +55,13 @@ const Users = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-between align-items-center">
-        <h2 className="mb-5">Seimo narių sąrašas</h2>
-
+      <h2 className="mb-5">Seimo narių sąrašas</h2>
+      <div className="d-flex justify-content-end align-items-center mb-3">
         <Link to="/new-user" className="btn btn-primary">
-          Naujas seimo narys
+          <div className="d-flex gap-2">
+            <i class="bi bi-person-plus"></i>
+            <span>Naujas seimo narys</span>
+          </div>
         </Link>
       </div>
       <table className="table">
@@ -91,8 +93,12 @@ const Users = () => {
                 >
                   Ištrinti
                 </button> */}
-                <Link to={"/edit-user/" + user._id} className="btn btn-warning">
+                <Link
+                  to={"/edit-user/" + user._id}
+                  className="btn btn-warning d-flex gap-2"
+                >
                   <i class="bi bi-pencil"></i>
+                  <span>Keisti</span>
                 </Link>
               </td>
             </tr>

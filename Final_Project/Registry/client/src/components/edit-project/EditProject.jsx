@@ -102,7 +102,12 @@ const EditProject = () => {
           /> */}
         </div>
 
-        <button className="btn btn-primary">Patvirtinti pakeitimus</button>
+        <button className="btn btn-primary">
+          <div className="d-flex gap-2">
+            <i class="bi bi-check2-square"></i>
+            <span>Patvirtinti pakeitimus</span>
+          </div>
+        </button>
       </form>
     </>
   );

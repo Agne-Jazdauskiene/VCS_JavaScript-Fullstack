@@ -85,14 +85,23 @@ const Projects = () => {
           <>
             <div className="d-flex gap-4">
               <Link to="/users" className="btn btn-primary">
-                Seimo nariai
+                <div className="d-flex gap-2">
+                  <i class="bi bi-people"></i>
+                  <span>Seimo nariai</span>
+                </div>
               </Link>
               <Link to="/new-user" className="btn btn-primary">
-                Naujas seimo narys
+                <div className="d-flex gap-2">
+                  <i class="bi bi-person-plus"></i>
+                  <span>Naujas seimo narys</span>
+                </div>
               </Link>
             </div>
             <Link to="/new-project" className="btn btn-success">
-              Naujas projektas
+              <div className="d-flex gap-2">
+                <i class="bi bi-plus-square"></i>
+                <span>Naujas projektas</span>
+              </div>
             </Link>
           </>
         ) : (
@@ -161,19 +170,23 @@ const Projects = () => {
               </td> */}
 
               {project.author._id === user._id && (
-                <td>
-                  <button
-                    className="btn btn-danger"
-                    onClick={() => handleDelete(project._id)}
-                  >
-                    <i class="bi bi-trash3"></i>
-                  </button>
+                <td className="d-flex gap-1">
                   <Link
                     to={"/edit-project/" + project._id}
                     className="btn btn-warning"
                   >
-                    <i class="bi bi-pencil"></i>
+                    <div className="d-flex gap-2">
+                      <i class="bi bi-pencil"></i> <span>Keisti</span>
+                    </div>
                   </Link>
+                  <button
+                    className="btn btn-danger"
+                    onClick={() => handleDelete(project._id)}
+                  >
+                    <div className="d-flex gap-1">
+                      <i class="bi bi-trash3"></i> <span>Trinti</span>
+                    </div>
+                  </button>
                 </td>
               )}
             </tr>

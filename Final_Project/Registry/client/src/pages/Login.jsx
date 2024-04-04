@@ -51,7 +51,12 @@ const Login = () => {
             name="password"
           />
         </div>
-        <button className="btn btn-primary">Prisijungti</button>
+        <button className="btn btn-primary ">
+          <div className="d-flex gap-2">
+            <span>Prisijungti</span>
+            <i class="bi bi-box-arrow-in-right"></i>
+          </div>
+        </button>
       </form>
     </>
   );

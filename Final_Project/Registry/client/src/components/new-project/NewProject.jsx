@@ -94,7 +94,12 @@ const NewProject = () => {
           />
         </div> */}
 
-        <button className="btn btn-primary">Teikti projektą</button>
+        <button className="btn btn-primary">
+          <div className="d-flex gap-2">
+            <i class="bi bi-box-arrow-in-down"></i>
+            <span>Teikti projektą</span>
+          </div>
+        </button>
       </form>
     </>
   );

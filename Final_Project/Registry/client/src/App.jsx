@@ -44,7 +44,7 @@ const App = () => {
 
             {user && (
               <>
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <Route path="/" element={<Projects />} />
                 <Route path="/new-project" element={<NewProject />} />
                 <Route path="/edit-project/:id" element={<EditProject />} />
