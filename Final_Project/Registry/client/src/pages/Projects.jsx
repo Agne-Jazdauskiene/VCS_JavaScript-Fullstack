@@ -4,6 +4,7 @@ import MainContext from "../context/Main";
 import axios from "axios";
 import style from "../components/edit-status/EditStatus.module.css";
 import Combobox from "react-widgets/Combobox";
+import Sidebar from "../components/sidebar/Sidebar";
 
 const Projects = () => {
   const [data, setData] = useState([]);

@@ -25,7 +25,7 @@ router.post("/register/", async (req, res) => {
   try {
     // limito nustatymas - naujas vartotojas-  ir skaičiavimas
     const usersCount = await User.countDocuments();
-    if (usersCount >= 141) {
+    if (usersCount >= 11) {
       return res.status(403).send("Viršytas seimo narių maksimalus skaičius");
     }
     const newUser = req.body.user_name;
