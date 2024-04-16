@@ -25,14 +25,38 @@ const Projects = () => {
   useEffect(() => {
     axios
       .get("http://localhost:3000/projects/")
-      .then((resp) => setData(resp.data))
+      .then((resp) => {
+        setData(resp.data);
+      })
       .catch((err) => {
-        if (err.response.status === 401) {
-          setUser(false);
-          navigate("/login");
+        if (err.response) {
+          // Jeigu yra atsakymas, bet ne 200 statusas
+          if (err.response.status === 401) {
+            setUser(false);
+            navigate("/login");
+          } else {
+            // Kitos klaidos tvarkymas
+            console.error("Klaida gavus duomenis:", err.response.data);
+            // Galima pridėti pranešimą vartotojui
+          }
+        } else {
+          // Jeigu nėra atsakymo iš serverio
+          console.error("Klaida gavus duomenis:", err.message);
+          // Galima pridėti pranešimą vartotojui
         }
       });
   }, [loading]);
+
+  //   axios
+  //     .get("http://localhost:3000/projects/")
+  //     .then((resp) => setData(resp.data))
+  //     .catch((err) => {
+  //       if (err.response.status === 401) {
+  //         setUser(false);
+  //         navigate("/login");
+  //       }
+  //     });
+  // }, [loading]);
   //NEVEIKIA PSL ATNAUJINIMAS
 
   // Ištrynimo funkcija - sutvarkyta - suvienodinti - naudoti axios. Padaryti puslapio perkrovimą informacijai atnaujinti
@@ -47,6 +71,13 @@ const Projects = () => {
           setMessage("Įvyko klaida");
         });
     }
+  };
+  const { setShowNewPost, setUser } = useContext(MainContext);
+  const handleLogout = () => {
+    axios.get("http://localhost:3000/users/logout").then((resp) => {
+      setUser(false);
+      navigate("/login");
+    });
   };
 
   const getStatusColorClassName = (status) => {
@@ -81,26 +112,34 @@ const Projects = () => {
       {/* {true && <button>Naujas vartotojas</button>} */}
 
       <h2 className="mb-5">Projektai</h2>
+      <div className="mb-5 d-flex">
+        <Link className="btn btn-secondary" onClick={handleLogout}>
+          <div className="d-flex gap-2">
+            <i className="bi bi-box-arrow-left"></i>
+            <span>Atsijungti</span>
+          </div>
+        </Link>
+      </div>
       <div className="d-flex justify-content-between align-items-center">
         {user.manager ? (
           <>
             <div className="d-flex gap-4">
               <Link to="/users" className="btn btn-primary">
                 <div className="d-flex gap-2">
-                  <i class="bi bi-people"></i>
+                  <i className="bi bi-people"></i>
                   <span>Seimo nariai</span>
                 </div>
               </Link>
               <Link to="/new-user" className="btn btn-primary">
                 <div className="d-flex gap-2">
-                  <i class="bi bi-person-plus"></i>
+                  <i className="bi bi-person-plus"></i>
                   <span>Naujas seimo narys</span>
                 </div>
               </Link>
             </div>
             <Link to="/new-project" className="btn btn-success">
               <div className="d-flex gap-2">
-                <i class="bi bi-plus-square"></i>
+                <i className="bi bi-plus-square"></i>
                 <span>Naujas projektas</span>
               </div>
             </Link>
