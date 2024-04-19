@@ -37,8 +37,8 @@ const EditKirpejas = () => {
     // 1. Paimame duomenis iš localStorage
     // 2. Konvertuojam duomenis
     // 3. Redaguojame duomenis
-    // 4. Konvertuojame duomenis iš naujos
-    // 5. Išsaugojame duomenis
+    // 4. Konvertuojame duomenis iš naujo
+    // 5. Išsaugome duomenis
     const localData = JSON.parse(localStorage.getItem("data"));
     localData[indentifikatorius] = data;
     localStorage.setItem("data", JSON.stringify(localData));
