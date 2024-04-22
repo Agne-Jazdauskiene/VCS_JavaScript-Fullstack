@@ -98,98 +98,100 @@
       //   }
 
       //   i++;
-      // }
+    }
 
 
 
-      // Ciklo aprasymas nezinant iteraciju kiekio
-      // Cikla stabdome kai iskrenta skaicius 55. Kiekv. iteracijos metu generuojame atsitikt. skc iki 100 ir ji tikriname
-
-      // i. pvs - ciklas nestabdomas
-      // i = 0;
-      // while (i < 100000) {
-      //   let skaicius = rand(0, 100);
-
-      //   if (skaicius === 55) {
-      //     console.log(`Rezultatas pasiektas`);
-      //   }
-
-      // i++;
-      // }
-
-      // 2 pvz. Ciklas stabdmas su kintamuoju
-
-      let veikia = true;
-      let kiekis = 0;
-
-      while (veikia) {
-        console.log(`Ciklas veikia`);
+    // Ciklo aprasymas nezinant iteraciju kiekio
+    // Cikla stabdome kai iskrenta skaicius 55. Kiekv. iteracijos metu generuojame atsitikt. skc iki 100 ir ji tikriname
 
 
-        if (skaicius === 55) {
-          console.log(`Rezultatas pasiektas`);
-          veikia = false;
-        }
+    // 1 Pavyzdys - ciklas nestabdomas
 
-        kiekis++;
+    // i = 0;
+    // while (i < 100000) {
+    //   let skaicius = rand(0, 100);
+
+    //   if (skaicius === 55) {
+    //     console.log(`Rezultatas pasiektas`);
+    //   }
+
+    // i++;
+    // }
+
+    // 2 pvz. Ciklas stabdmas su kintamuoju
+
+    let veikia = true;
+    let kiekis = 0;
+
+    while (veikia) {
+      console.log(`Ciklas veikia`);
+
+
+      if (skaicius === 55) {
+        console.log(`Rezultatas pasiektas`);
+        veikia = false;
       }
 
-      console.log(`Rezultatui pasiekti prireike: ${kiekis} iteraciju`);
+      kiekis++;
+    }
+
+    console.log(`Rezultatui pasiekti prireike: ${kiekis} iteraciju`);
 
 
-      // 3  pvz. Ciklas stabdmas break komanda
+    // 3  pvz. Ciklas stabdmas break komanda
 
-      kiekis = 0;
+    kiekis = 0;
 
-      while (true) {
-        let skaicius = rand(0, 100);
+    while (true) {
+      let skaicius = rand(0, 100);
 
-        if (skaicius === 55) {
-          console.log(`Rezultatas pasiektas`);
-          break; // ciklo nutraukimo komanda
-          //break komanda taip pat nutraukia viso zemiau einancio kodo kompiliaciją
-        }
-        // si eilute jau ignoruojama, nes po break parasyta
-        console.log(`gautas skaicius: ` + skaicius);
+      if (skaicius === 55) {
+        console.log(`Rezultatas pasiektas`);
+        break; // ciklo nutraukimo komanda
+        //break komanda taip pat nutraukia viso zemiau einancio kodo kompiliaciją
+      }
+      // si eilute jau ignoruojama, nes po break parasyta
+      console.log(`gautas skaicius: ` + skaicius);
 
-        kiekis++;
+      kiekis++;
+    }
+
+    console.log(`Rezultatui pasiekti prireike: ${kiekis} iteraciju`);
+
+
+    // 4 Pvs. Ciklo iteracijos praleidimas
+
+    i = 1;
+
+    while (i <= 10) {
+
+      i++;
+
+      if (i % 2 === 1) {
+        continue; //perejimas i kita iteracija
+        //continue komanda taip pat nutraukia viso zemiau einancio kodo kompiliacija
       }
 
-      console.log(`Rezultatui pasiekti prireike: ${kiekis} iteraciju`);
+      console.log(`Gautas skaicius:${i}`);
 
+    }
 
-      // 4 Pvs. Ciklo iteracijos praleidimas
+    // For ciklas
+    // i deklaruosime bloko viduje
+    // for(let i = 100; i < 0; i--)
 
-      i = 1;
+    // Perduodamos trys reiksmes atskirtos kabliataskiais
+    // Pirmoji - inkremento deklaravimas
+    // Antroji - kondicija kuomet ciklas turi baigtis
+    // Trecioji - kas nutinka su inkrementu
+    for (let i = 0; i < 100; i++) {
+      console.log(`For ciklas sukasi, dabartine iteracija: ` + i);
+    }
 
-      while (i <= 10) {
-
-        i++;
-
-        if (i % 2 === 1) {
-          continue; //perejimas i kita iteracija
-          //continue komanda taip pat nutraukia viso zemiau einancio kodo kompiliacija
-        }
-
-        console.log(`Gautas skaicius:${i}`);
-
-      }
-
-      // For ciklas
-      // i deklaruosime bloko viduje
-      // for(let i = 100; i < 0; i--)
-
-      // Perduodamos trys reiksmes atskirtos kabliataskiais
-      // Pirmoji - inkremento deklaravimas
-      // Antroji - kondicija kuomet ciklas turi baigtis
-      // Trecioji - kas nutinka su inkrementu
-      for (let i = 0; i < 100; i++) {
-        console.log(`For ciklas sukasi, dabartine iteracija: ` + i);
-      }
-
-      for (let i = 100; i < 0; i--) {
-        console.log(`For ciklas sukasi, dekremento principu dabartine iteracija: ` + i);
-      }
+    for (let i = 100; i < 0; i--) {
+      console.log(`For ciklas sukasi, dekremento principu dabartine iteracija: ` + i);
+    }
 
     //  while cikle galim nurodyti tik true
     // for ciklas turi ivardijimus
