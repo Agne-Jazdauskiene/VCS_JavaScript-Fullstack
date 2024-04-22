@@ -101,6 +101,6 @@ let gamintojas = `Samsung`;
 let produktas = `Televizorius`;
 
 console.log(gamintojas.length);
-console.log(gamintojas[0], produktas[1], produktas[2];
+console.log(gamintojas[0], produktas[1], produktas[2]);
   //ilgi grazina 12, o ppoziciju yra 11. nes length pradeda skaiciuoti nuo 0.
   console.log(gamintojas.length -1);
