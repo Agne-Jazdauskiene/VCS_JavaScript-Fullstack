@@ -1,6 +1,6 @@
 // Sukurkite tris kintamuosius ir naudodamiesi funkcija rand()
 // jiems priskirkite atsitiktines reikšmes nuo 0 iki 25.
-// Raskite ir atspausdinkite kintamąjį turintį vidurinę reikšmę.
+// Raskite ir atspausdinkite kintamąjį, turintį vidurinę reikšmę.
 
 // 3-užduotis
 

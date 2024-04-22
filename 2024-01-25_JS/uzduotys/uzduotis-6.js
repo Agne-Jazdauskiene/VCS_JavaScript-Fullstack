@@ -7,7 +7,7 @@ function rand(min, max) {
 // Naudokite funkcija rand().
 // Atspausdinkite 3 skaičius nuo -10 iki 10.
 // Skaičiai mažesni už 0 turi būti žali,
-// 0 - raudonas, didesni už 0 mėlyni.
+// 0 - raudoni, didesni už 0 mėlyni.
 // Rezultatą atvaizduoti naršyklės lange.
 // Pavyzdys: -5 0 15
 
@@ -21,7 +21,6 @@ console.log(one, two, three);
 // galima supaprastinti
 let digit;
 let color;
-
 
 if (one < 0) {
   document.write(`<span style="color:green">${one}</span>`);
