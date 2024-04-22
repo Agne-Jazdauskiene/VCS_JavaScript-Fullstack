@@ -19,7 +19,7 @@ console.log(string.at(-4));
 
 // endsWith metodas tikrina ar stringas baigiasi nurodytu zodziu ar fraze
 if (string.endsWith("rand()")) {
-  console.log("Stringas baigiasi funkcijos pavadinium");
+  console.log("Stringas baigiasi funkcijos pavadinimu");
 }
 
 // string[2], skaicius 2 yra turima pozicija (index)
@@ -72,7 +72,7 @@ console.log(
 
 skaicius = 3.00000001;
 rezultatas = Math.ceil(skaicius);
-console.log(`Suapvalina skaicius ceil metodu, bus 3: ${rezultatas}`);
+console.log(`Suapvalina skaicius ceil metodu, bus 4: ${rezultatas}`);
 
 // Suranda mažiausią skaičių
 let maziausias = Math.min(55, 15, 88, 105, 12, 65); // Skaiciu kiekis neribotas

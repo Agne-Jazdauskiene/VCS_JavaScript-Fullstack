@@ -19,8 +19,8 @@ console.log(first, second, third);
 
 // aritmetinis vidurkis
 
-let average = (first + second + third) / 3;
-document.write(average);
+// let average = (first + second + third) / 3;
+// document.write(average);
 
 // aritmetinis vidurkis, atmetus tas reikšmes, kurios yra mažesnės nei 10 arba didesnės nei 90, t.y. daugiau už 10 ir mažiau už 90.
 let sum = 0;
@@ -39,8 +39,8 @@ if (third > 10 && third < 90) {
   digits++;
 }
 
-// let average = sum / digits;
-// document.write(average);
+let average = sum / digits;
+document.write(average);
 
 // Rezultatus apvalinkite iki sveiko skaičiaus.
 let result = Math.round(average);

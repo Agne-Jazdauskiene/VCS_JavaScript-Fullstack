@@ -147,6 +147,6 @@ console.log(ternaryOperatorius);
 // VIENOS EILUTES VEIKSMAS
 console.log("VIENOS EILUTES VEIKSMAS");
 // jei turime tik viena eilute - nenaudojame riestiniu skliaustu
-// jei reikia daugiau eiluciu - tuomet rasome riestinius ksliaustus
+// jei reikia daugiau eiluciu - tuomet rasome riestinius skliaustus
 if (antrasSkaicius > 25);
 console.log("Antras skaicius didesnis nei 25");
