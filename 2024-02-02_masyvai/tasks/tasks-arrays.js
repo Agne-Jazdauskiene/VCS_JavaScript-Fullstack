@@ -168,7 +168,7 @@ let kiekisC = 0;
 let kiekisD = 0;
 let kiekis = [0, 0, 0, 0];
 
-// Vienos raides paemimas
+// Vienos raidės paemimas
 console.log(raides[rand(0, raides.length - 1)]);
 
 for (let i = 0; i < 200; i++) {
