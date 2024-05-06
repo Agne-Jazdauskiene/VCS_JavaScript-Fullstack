@@ -125,7 +125,6 @@ let rezultatas = "";
 if (pirmasSkaicius > 10) {
   // Block scope (Bloko apimtis) - tarp riestiniu skliaustu
   let rezultatas = "Kondiciju pabaiga";
-  console.log(rezultatas);
 }
 
 // dar kruva kodo
@@ -144,7 +143,7 @@ let ternaryOperatorius =
 // This operator is frequently used as an alternative to an if...else statement.
 console.log(ternaryOperatorius);
 
-// VIENOS EILUTES VEIKSMAS
+// VIENOS EILUTES VEIKSMAS - KONDICIJA
 console.log("VIENOS EILUTES VEIKSMAS");
 // jei turime tik viena eilute - nenaudojame riestiniu skliaustu
 // jei reikia daugiau eiluciu - tuomet rasome riestinius skliaustus
