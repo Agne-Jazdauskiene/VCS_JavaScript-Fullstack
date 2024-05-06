@@ -11,5 +11,5 @@ console.log(lastName.substring(8));
 document.write(
   `<p>${firstName.substring(3).toUpperCase(firstName)} ${lastName
     .substring(8)
-    .toUpperCase(firstName)}</p>`
+    .toUpperCase(lastName)}</p>`
 );

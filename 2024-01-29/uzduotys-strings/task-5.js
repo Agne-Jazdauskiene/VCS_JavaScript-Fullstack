@@ -9,7 +9,7 @@
 
 // document.write(`<p>${film.replaceAll("a", "*").replaceAll("A", "*")}</p>`);
 
-// REGEX paieskos irankis
+// KITI BŪDAI:
 
 let string = "An American in Paris";
 
@@ -21,7 +21,7 @@ let string = "An American in Paris";
 // string = string.replaceAll("A", "*").replaceAll("a", "*");
 // console.log(string);
 
-//arba naudoti REGEX
+//arba naudoti REGEX paieskos irankį
 
 string = string.replaceAll(/[a]/gi, "*");
 // string = string.replaceAll(/[Aa]/g, "*");
@@ -29,6 +29,6 @@ string = string.replaceAll(/[a]/gi, "*");
 // g - global, t.y. visam stringe
 // i - case insensitive, ignoruojamas skirtumas tarp didziuju ir mazuju raidziu
 // - bus range (nuo iki) pvz a-z ar nuo g-z
-//[] - nurodo nespecifine kombinacija
+//[] - nurodo nespecifinę kombinaciją
 
 console.log(string);
