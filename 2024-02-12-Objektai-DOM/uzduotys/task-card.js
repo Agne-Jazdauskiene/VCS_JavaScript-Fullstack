@@ -21,4 +21,4 @@ document.querySelector(`.height h1`).textContent = info.height;
 document.querySelector(`.description p`).textContent = info.skills;
 
 document.querySelector(".weight h1").textContent = info.weight += " kg";
-document.querySelector(".height h1").textContent = info.weight += " cm";
+document.querySelector(".height h1").textContent = info.height += " cm";
